@@ -13,15 +13,15 @@ import java.util.Arrays;
 
 void setup() {
   // First, create the file allwords.txt
-  writeAllWords("hendrix2.txt", "allwords.txt");
+  writeAllWords("heart_of_darkness.txt", "allwords.txt");
   
   // Only after the step above does allwords.txt exist. Now, create the file
   // uniquewords.txt;
-  writeUniqueWords("allwords.txt", "../a3_novelvisualization/uniquewords.txt");
+  writeUniqueWords("allwords.txt", "../a3_novelvisualization/data/uniquewords.txt");
   
   // Finally, get the frequencies
-  writeWordFrequency("allwords.txt", "../a3_novelvisualization/uniquewords.txt",
-  "../a3_wordfrequency/wordfrequency.txt");
+  writeWordFrequency("allwords.txt", "../a3_novelvisualization/data/uniquewords.txt",
+  "../a3_wordfrequency/data/wordfrequency.txt");
   
   
   

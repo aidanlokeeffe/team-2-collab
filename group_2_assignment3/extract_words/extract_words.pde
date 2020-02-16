@@ -13,14 +13,14 @@ import java.util.Arrays;
 
 void setup() {
   // First, create the file allwords.txt
-  writeAllWords("heart_of_darkness.txt", "allwords.txt");
+  writeAllWords("heart_of_darkness.txt", "data/allwords.txt");
   
   // Only after the step above does allwords.txt exist. Now, create the file
   // uniquewords.txt;
-  writeUniqueWords("allwords.txt", "../a3_novelvisualization/data/uniquewords.txt");
+  writeUniqueWords("data/allwords.txt", "../a3_novelvisualization/data/uniquewords.txt");
   
   // Finally, get the frequencies
-  writeWordFrequency("allwords.txt", "../a3_novelvisualization/data/uniquewords.txt",
+  writeWordFrequency("data/allwords.txt", "../a3_novelvisualization/data/uniquewords.txt",
   "../a3_wordfrequency/data/wordfrequency.txt");
   
   
@@ -104,11 +104,11 @@ void writeWordFrequency(String allFile, String uniqueFile, String outFile) {
   
   // Get a hash map of word frequencies
   Map<String, Integer> wordCounts = tallyWords(allFile, uniqueFile);
-  println(wordCounts);
+  //println(wordCounts);
   
   // Get a hash map of frequency counts
   Map<Integer, Integer> freqCounts = tallyFrequencies(uniqueFile, wordCounts);
-  println(freqCounts);
+  //println(freqCounts);
   
   // Get an array of frequency keys and sort it
   Integer[] freqKeys = new Integer[freqCounts.keySet().size()];

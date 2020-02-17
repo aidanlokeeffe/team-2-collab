@@ -2,12 +2,18 @@
 
 Aidan O'Keeffe: extract_words.pde:
 	This program intakes the novel "Heart of Darkness" as a text document and produces the text documents
-"allwords.txt", "uniquewords.txt", and "wordfrequency.txt" per the assignment specifications. The code for writing each
-file are all separated into their own functions, and the function creating wordfrequency.txt makes heavy use of hashmaps
-and sets to perform its task.
-	Please note that, although the assignment specifies that extract_words be a Python script, Professor Abraham 
-clarified in a comment after class that using Processing was acceptable, although more cumbersone. That is was.
+	"allwords.txt", "uniquewords.txt", and "wordfrequency.txt" per the assignment specifications. The code for writing each
+	file are all separated into their own functions, and the function creating wordfrequency.txt makes heavy use of hashmaps
+	and sets to perform its task.
+Please note that, although the assignment specifies that extract_words be a Python script, Professor Abraham 
+	clarified in a comment after class that using Processing was acceptable, although more cumbersone. That is was.
 
 Russell Dickerson: a3_novelvisualization.pde:
+	This program takes the text file "uniquewords.txt" and creates a visualiztion on the canvas of random words from the file.
+	It randomly selects colors for each word and will update the word visualization with a new set of random words from
+	"uniquewords.txt" when the user clicks the canvas. The colors chosen for the words were green, light blue and yellow because the
+	takes place on a river in a jungle. There are several functions in the file that take care of writing the words to the
+	canvas including one that shuffles the string array, and another that writes the text to the canvas. The shuffle function was made
+	based on the Fisher-Yates shuffle algorithm which I referenced wikipedia for to learn how to code it.
 
 Angelo Gomez: a3_wordfrequency.pde:

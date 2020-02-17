@@ -1,0 +1,13 @@
+	This submission consists of three programs: extract_words.pde, a3_novelvisualization.pde, and a3_wordfrequency.pde.
+
+Aidan O'Keeffe: extract_words.pde:
+	This program intakes the novel "Heart of Darkness" as a text document and produces the text documents
+"allwords.txt", "uniquewords.txt", and "wordfrequency.txt" per the assignment specifications. The code for writing each
+file are all separated into their own functions, and the function creating wordfrequency.txt makes heavy use of hashmaps
+and sets to perform its task.
+	Please note that, although the assignment specifies that extract_words be a Python script, Professor Abraham 
+clarified in a comment after class that using Processing was acceptable, although more cumbersone. That is was.
+
+Russell Dickerson: a3_novelvisualization.pde:
+
+Angelo Gomez: a3_wordfrequency.pde:

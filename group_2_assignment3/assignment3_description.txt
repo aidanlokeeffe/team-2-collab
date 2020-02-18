@@ -9,7 +9,7 @@ Please note that, although the assignment specifies that extract_words be a Pyth
 	clarified in a comment after class that using Processing was acceptable, although more cumbersone. That is was.
 
 Russell Dickerson: a3_novelvisualization.pde:
-	This program takes the text file "uniquewords.txt" and creates a visualiztion on the canvas of random words from the file.
+	This program takes the text file "uniquewords.txt" and creates a visualization on the canvas of random words from the file.
 	It randomly selects colors for each word and will update the word visualization with a new set of random words from
 	"uniquewords.txt" when the user clicks the canvas. The colors chosen for the words were green, light blue and yellow because the
 	takes place on a river in a jungle. There are several functions in the file that take care of writing the words to the
@@ -17,3 +17,7 @@ Russell Dickerson: a3_novelvisualization.pde:
 	based on the Fisher-Yates shuffle algorithm which I referenced wikipedia for to learn how to code it.
 
 Angelo Gomez: a3_wordfrequency.pde:
+	This program takes the text file "wordfrequency.txt" and creates a graphic representation on the canvas of how many times
+	the words in the text are used. For example in "Heart of Darkness" 3493 words are each used once. This data is then turned into
+	a bar graph showing how there are fewer and fewer words in the text used more than once. As the usage goes up the 
+	bars alternate between red and blue because I wanted to add a flavor of color to the image.

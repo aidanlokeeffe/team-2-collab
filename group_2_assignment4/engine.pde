@@ -1,7 +1,13 @@
 class Engine {
-  float a;
+  float a, theta, transitionRate;
+  color color1,color2;
   
-  Engine() {}
+  Engine() {
+    color1 = color(176, 2, 2);
+    color2 = color(69,65,65);
+    theta = 0.0;
+    transitionRate = .01;
+  }
   
   // starts the animation
   void start() {
@@ -23,11 +29,11 @@ class Engine {
     stroke(255);
     fill(168, 165, 165);
     
-    // vibrates exhaust pipe separately from engine but still coincides with engine
-    // vibrations
+    // vibrates exhaust pipe in addition to engine vibrations
+    // uses nested push and pop matrix functions
     pushMatrix();
     translate(87,0);
-    rotate(random(-.01,.01));
+    rotate(random(-.02,.02));
     beginShape();
     vertex(75,500);
     vertex(100,500);
@@ -93,6 +99,15 @@ class Engine {
     vertex(300,650);
     vertex(290,650);
     endShape(CLOSE);
+    
+    // heats furnace periodically by transitioning between two colors
+    this.heat();
+    ellipse(175, 575, 75, 75);
     popMatrix();
+  }
+  
+  // uses sine curve and linear interpolation function to transition
+  void heat() {
+    fill(lerpColor(color1, color2, (sin(theta += transitionRate) + 1.0) / 2.0));
   }
 }

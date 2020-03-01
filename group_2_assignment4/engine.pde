@@ -50,7 +50,7 @@ class Engine {
     vertex(200,500);
     vertex(0,500);
     endShape(CLOSE);
-    fill(130, 130, 127);
+    fill(0);
     beginShape();
     vertex(0,750);
     vertex(0,650);
@@ -74,6 +74,7 @@ class Engine {
     vertex(290,650);
     vertex(240,750);
     endShape(CLOSE);
+    //fill(255, 252, 51);
     fill(255, 252, 51);
     beginShape();
     vertex(0,750);

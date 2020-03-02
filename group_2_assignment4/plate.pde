@@ -1,3 +1,7 @@
 class plate{
 
+   plate(){
+   
+   }
+   
 }

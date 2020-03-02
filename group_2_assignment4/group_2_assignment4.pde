@@ -5,6 +5,7 @@ We're required to use separate tabs for each class
 // initializing objects
 Engine e1;
 conveyorBelt c1;
+plate p1;
 Steam[] particles = new Steam[50];
 Hammer hammer1;
 
@@ -15,6 +16,7 @@ void setup() {
   // create an engine instance and fill particles array with instances of Steam
   e1 = new Engine();
   c1 = new conveyorBelt();
+  p1 = new plate();
   for (int i=0; i < particles.length; i++) {
     particles[i] = new Steam(180,400);
   }
@@ -32,14 +34,17 @@ void setup() {
 void draw() {
   frameRate(60); 
   e1.start();
+  p1.start();
   c1.start();
+
   for (int i=0; i < particles.length; i++) {
     particles[i].move();
     particles[i].display();
   }
+
   hammer1.strike(frameCount);
   shape(hammer1.head); shape(hammer1.shaft);
   
   
-  
+
 }

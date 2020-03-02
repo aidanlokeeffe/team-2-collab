@@ -17,11 +17,9 @@ class plate{
      fill(color1);
      stroke(colorStroke);
      rect(xPoint, yPoint, 850, 50, 5, 5, 5, 5);
-     
-     if (second() >=3){
-       if(xPoint < 450){
-         xPoint += 5;
-       }
+     xPoint += 1;
+     if (xPoint >= 1500){
+       xPoint = -600;
      }
    
    }

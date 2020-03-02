@@ -46,13 +46,16 @@ void draw() {
   background(20, 20, 21);
   frameRate(60); 
   p1.start();
-  e1.start();
+  
   c1.start();
 
   for (int i=0; i < particles.length; i++) {
     particles[i].move();
     particles[i].display();
   }
+  e1.start();
+  
+  
   if(frameCount > 3*tau){
     hammer1.strike(frameCount - tau);
     hammer2.strike(frameCount - 2*tau);

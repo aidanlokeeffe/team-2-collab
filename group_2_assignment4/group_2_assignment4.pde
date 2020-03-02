@@ -32,7 +32,7 @@ void setup() {
   hammer3 = new Hammer(1100, 599, 500);
   
   // Delay: Use this value to control when the hammers start going
-  tau = 60;
+  tau = 90;
   
   
   

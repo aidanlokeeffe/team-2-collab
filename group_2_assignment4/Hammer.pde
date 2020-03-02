@@ -64,7 +64,7 @@ class Hammer {
       background(255,69,0);
     }
     else if(u==9){
-      background(255, 0, 0);
+      background(117, 6, 6);
     }
     else if(u==10){ this.head.translate(0, -this.headHeight/2); }
     else if(u<420){

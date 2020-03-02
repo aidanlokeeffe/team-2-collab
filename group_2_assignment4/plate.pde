@@ -20,7 +20,7 @@ class plate{
      
      if (second() >=3){
        if(xPoint < 450){
-         xPoint += 10;
+         xPoint += 5;
        }
      }
    

@@ -32,9 +32,10 @@ void setup() {
 
 
 void draw() {
+  background(69, 65, 65);
   frameRate(120); 
-  e1.start();
   p1.start();
+  e1.start();
   c1.start();
 
   for (int i=0; i < particles.length; i++) {

@@ -16,7 +16,7 @@ class Engine {
   
   // displays engine and animates vibrations using small rotations
   void display() {
-    background(69, 65, 65);
+
     
     // finds time and only vibrates whole engine on even seconds
     if (second() % 2 == 0) {  

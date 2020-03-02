@@ -30,7 +30,7 @@ void setup() {
 
 
 void draw() {
-  frameRate(60); 
+  frameRate(120); 
   e1.start();
   c1.start();
   for (int i=0; i < particles.length; i++) {

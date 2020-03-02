@@ -1,0 +1,7 @@
+class plate{
+
+   plate(){
+   
+   }
+   
+}

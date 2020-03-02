@@ -1,0 +1,25 @@
+The animation shown is meant to be a golden plate leaving a furnace and proceeding 
+to be smashed by mechanical hammers in a factory. 
+
+The classes in cluded in the project are the following:
+
+conveyorBelt - the conveyor belt class, created by Angelo Gomez, displays the constantly moving image of the conveyor belt.
+	This image creates the illusion of motion by having the circles, or "rotors," of the belt constantly spinning while
+	the lines, or "treads," of the belt move along with it in order to give the appearance of rightward motion to the
+	shape.
+
+engine - 
+
+Hammer - 
+
+plate - the plate class, created by Angelo Gomez, is a simple rectangular shape that constantly moves across the screen.
+	It initially appears behind the engine and slides slowly across the screen, emerging from the engine and over the
+	belt. Once it completely moves off screen the bar will reappear behind the engine and repeat.
+
+steam - 
+
+
+Unexpected Challenges:
+Angelo - "I came across no real challenges in my part though I did struggle with how to give the belt the illusion of movement
+	  because I did not know how to create a proper rotation movement with the vectors of the belt."
+

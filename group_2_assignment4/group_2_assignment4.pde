@@ -15,7 +15,7 @@ int tau;
 
 void setup() {
   size(1500,750);
-  background(69, 65, 65);
+  background(20, 20, 21);
   
   // create an engine instance and fill particles array with instances of Steam
   e1 = new Engine();
@@ -43,8 +43,8 @@ void setup() {
 
 
 void draw() {
-  background(69, 65, 65);
-  frameRate(120); 
+  background(20, 20, 21);
+  frameRate(60); 
   p1.start();
   e1.start();
   c1.start();

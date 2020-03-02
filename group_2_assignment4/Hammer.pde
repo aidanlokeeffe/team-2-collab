@@ -21,7 +21,7 @@ class Hammer {
     // Draw the head
     this.head = createShape();
     this.head.beginShape(QUAD);
-      this.head.fill(20);
+      this.head.fill(5);
       this.head.stroke(20);
       this.head.vertex(x-headWidth/2, yMax-d);
       this.head.vertex(x+headWidth/2, yMax-d);

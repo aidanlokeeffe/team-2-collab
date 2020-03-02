@@ -3,7 +3,8 @@ class plate{
   float xPoint, yPoint;
 
    plate(){
-     color1 = color(218, 165, 32);
+     //color1 = color(218, 165, 32);
+     color1 = color(223,125,30);
      colorStroke = color(139, 69, 19);
      xPoint = -600;
      yPoint = 599;

@@ -63,8 +63,8 @@ class conveyorBelt{
     for(int i = 375; i < 1400; i+= 25){
       line(i - 25 + movement, topY, i + movement, bottomY);
     }
-    movement += 1;
-    if (movement == 26){
+    movement += 6;
+    if (movement == 30){
       movement =0;
     }
     popMatrix();

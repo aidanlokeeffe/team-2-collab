@@ -13,7 +13,10 @@ engine - the engine class, created by Russell Dickerson displays a multicolored 
 	as a child transformations to the main engine. While the main engine vibrates only on even seconds, the exhaust pipe always
 	vibrates and its motion changes depending on if the main engine is vibrating or not. 
 
-Hammer - 
+Hammer - the Hammer class, created by Aidan O'Keeffe, draws two rectangles, a head and a shaft. A Hammer is instantiated 
+	on an x-value x, and two y-values yMax (the target surface level) and d (the distanced the hammer rests from the 
+	target surface). The class has one method, strike(int t), which takes the frameCount as a parameter and runs the 
+	animation cycle.
 
 plate - the plate class, created by Angelo Gomez, is a simple rectangular shape that constantly moves across the screen.
 	It initially appears behind the engine and slides slowly across the screen, emerging from the engine and over the
@@ -29,7 +32,10 @@ Unexpected Challenges:
 Angelo - "I came across no real challenges in my part though I did struggle with how to give the belt the illusion of movement
 	  because I did not know how to create a proper rotation movement with the vectors of the belt."
 
-Russell Dickerson - "The most interesting challenge I had to overcome involved figuring out how to store all of the instances of steam in
+Russell - "The most interesting challenge I had to overcome involved figuring out how to store all of the instances of steam in
 			an array. This proved difficult as I have not worked with Processing prior to this class and was unfamiliar with
 			how object arrays work."
-s
+
+Aidan - "My first go at animating the hammer descent, I used calculus instead of discrete methods to determine the velocity.
+	This caused the hammer to inch off screen with every strike. I corrected this by summing values instead of
+	integrating, and I found the error to be nearly 100 pixels, quite large!"

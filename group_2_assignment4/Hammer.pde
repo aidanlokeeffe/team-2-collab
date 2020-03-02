@@ -5,7 +5,7 @@ class Hammer {
   PShape head, shaft, line;
   // Class constants
   int headHeight = 100, headWidth = 55, shaftWidth = 135;
-  
+   
   // Animation values
   boolean newCall;
   int t0;
@@ -43,8 +43,8 @@ class Hammer {
     // Initialize animation values
     this.t0 = 0;
     this.newCall = true;
-    this.alpha = (2*this.d-this.headHeight)/144;
-    this.m = (-96*this.alpha)/411;
+    this.alpha = (2*this.d-this.headHeight)/182;
+    this.m = (this.headHeight/2-this.d)/409;
   }
   
   void strike(int t) {
@@ -60,34 +60,18 @@ class Hammer {
       this.head.translate(0, this.alpha*u*u);
     }
     else if(u==7){ this.head.translate(0, this.headHeight/2); }
-    else if(u==8){ this.head.translate(0, -this.headHeight/2); }
+    else if(u==8){
+      background(255,69,0);
+    }
+    else if(u==9){
+      background(255, 0, 0);
+    }
+    else if(u==10){ this.head.translate(0, -this.headHeight/2); }
     else if(u<420){
       this.shaft.translate(0, m); 
       this.head.translate(0, m);
     }
-    else{
-      noLoop();
-      this.head.beginShape(QUAD);
-        this.head.fill(20);
-        this.head.stroke(20);
-        this.head.vertex(x-headWidth/2, yMax-d);
-        this.head.vertex(x+headWidth/2, yMax-d);
-        this.head.vertex(x+headWidth/2, yMax-d-headHeight);
-        this.head.vertex(x-headWidth/2, yMax-d-headHeight);
-      this.head.endShape(CLOSE);
-      
-      this.shaft.beginShape(QUAD);
-        this.shaft.fill(168, 165, 165);
-        this.shaft.stroke(255);
-        this.shaft.vertex(x-shaftWidth/2, yMax-d-headHeight/2);
-        this.shaft.vertex(x+shaftWidth/2, yMax-d-headHeight/2);
-        this.shaft.vertex(x+shaftWidth/2, -d-headHeight/2);
-        this.shaft.vertex(x-shaftWidth/2, -d-headHeight/2);
-      this.shaft.endShape(CLOSE);  
-    
-      this.newCall = true; 
-      loop();
-    }
+    else{ this.newCall = true; }
   } 
 
 

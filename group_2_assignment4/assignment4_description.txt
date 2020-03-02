@@ -1,14 +1,17 @@
 The animation shown is meant to be a golden plate leaving a furnace and proceeding 
 to be smashed by mechanical hammers in a factory. 
 
-The classes in cluded in the project are the following:
+The classes included in the project are the following:
 
 conveyorBelt - the conveyor belt class, created by Angelo Gomez, displays the constantly moving image of the conveyor belt.
 	This image creates the illusion of motion by having the circles, or "rotors," of the belt constantly spinning while
 	the lines, or "treads," of the belt move along with it in order to give the appearance of rightward motion to the
 	shape.
 
-engine - 
+engine - the engine class, created by Russell Dickerson displays a multicolored engine that uses rotation transformations to
+	give the enitre engine a vibration effect. The engine is comprised of multiple shapes and has an exhaust pipe that acts as a
+	as a child transformations to the main engine. While the main engine vibrates only on even seconds, the exhaust pipe always
+	vibrates and its motion changes depending on if the main engine is vibrating or not. 
 
 Hammer - 
 
@@ -16,10 +19,17 @@ plate - the plate class, created by Angelo Gomez, is a simple rectangular shape 
 	It initially appears behind the engine and slides slowly across the screen, emerging from the engine and over the
 	belt. Once it completely moves off screen the bar will reappear behind the engine and repeat.
 
-steam - 
+steam - the steam class consists of a white ellipse that moves towards the top of the canvas. As it moves towards the top, it loses its
+	opacity and grardually disappears. Once it reaches the top, the instance is moved back to the starting point for all of the
+	instances. Additionally, each instance has random horizontal movement for a spread effect. 
+	All of the instances together are stored in an object array and they give off a steam effect as they rise. 
 
 
 Unexpected Challenges:
 Angelo - "I came across no real challenges in my part though I did struggle with how to give the belt the illusion of movement
 	  because I did not know how to create a proper rotation movement with the vectors of the belt."
+
+Russell Dickerson - "The most interesting challenge I had to overcome involved figuring out how to store all of the instances of steam in
+			an array. This proved difficult as I have not worked with Processing prior to this class and was unfamiliar with
+			how object arrays work."
 s

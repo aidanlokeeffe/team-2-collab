@@ -9,9 +9,9 @@ class Bubble {
     this.x = x;
     this.y = y;
     this.z = z;
-    this.x0 = x0;
+    /*this.x0 = x0;
     this.y0 = y0;
-    this.z0 = z0;
+    this.z0 = z0;*/
     noStroke();
     fill(197, 234, 250, 150);
     Sphere = createShape(SPHERE, 70);

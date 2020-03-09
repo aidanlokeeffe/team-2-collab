@@ -4,10 +4,10 @@ Bubble b3;
 PShape myCube;
 
 void setup() {
-  size(1000, 1000, P3D);
-  b1 = new Bubble(100,1000,0);
-  b2 = new Bubble(900,1000,0);
-  b3 = new Bubble(150,1000,0);
+  size(1000, 600, P3D);
+  b1 = new Bubble(100,600,0);
+  b2 = new Bubble(900,600,0);
+  b3 = new Bubble(300,600,0);
   //translate(400, 250, 0);
   //fill(255, 0, 0);
   //myCube = createShape(BOX, 150);

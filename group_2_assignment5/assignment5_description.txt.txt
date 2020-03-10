@@ -1,0 +1,17 @@
+	This program is a simple 3D animaiton. Depicted in the scene are two fish and a number of bubbles. The fish swim 
+off to the vanishing point in a bounded sort of way, each of them spinning on their own z-axes faster and faster as they
+do so. The bubbles eminate from the deep and jitter up to the top of the screen.
+
+
+Russell Dickerson:
+
+Aidan O'Keeffe: I worked on the fish. I like animations that spiral out of control, hence my choice for the fish to spin so
+rapidly as they move along. Originally, I wanted the fish to move around in their own directions and be bounded to the
+PacMan style. However, (1) I was having a rough go of it trying to orient the fish in the direction of their velocities
+because I didn't have the patience to parametrize the unit sphere using this weird left handed basis, and (2) when I had 
+that idea, I didn't account for the fact that the world space as seen on the screen is not a simple box, but a kind of 
+distorted prism due to the projective geometry. Another difficulty I encountered was in importing the models. I found
+several free models of better looking fish, but none of them would load in their textures. Then I stumbled upon this goofy
+little gold fish, and I knew better than to pass up something that worked.
+
+Angelo Gomez:

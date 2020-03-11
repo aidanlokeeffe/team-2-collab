@@ -19,4 +19,7 @@ distorted prism due to the projective geometry. Another difficulty I encountered
 several free models of better looking fish, but none of them would load in their textures. Then I stumbled upon this goofy
 little gold fish, and I knew better than to pass up something that worked.
 
-Angelo Gomez:
+Angelo Gomez:I wasn't able to do a lot of work on this assignment because I was dealing with a lot of work load from other classes as well,
+as personal issues. Thankfully my teammates were able to do a lot of the bulk of the work. I was able to add a little bit of lighting to
+the scene. By adding lighting a light source to top the top of the scene it makes it appear as if the sun is beaming into the 
+ocean view of our scene. I also added a little bit of blue filter to the scene to add some color to the bubbles. 

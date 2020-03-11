@@ -3,7 +3,12 @@ off to the vanishing point in a bounded sort of way, each of them spinning on th
 do so. The bubbles eminate from the deep and jitter up to the top of the screen.
 
 
-Russell Dickerson:
+Russell Dickerson: I created the bubble field by creating a bubble class and then initializing two arrays filled with instances of the
+class. One array contains 8 larger bubbles that have their size and starting position randomly decided, while the other array has 
+100 small bubbles that are the same size, but have their starting position randomly decided. The bubbles then ascend upwards using a method
+from the class bubble and once they reach the top of the screen, they are reset to their starting position. This gives the effect of a
+wall of bubbles coming up from the depths of the ocean. The motion of the bubbles as they rise contains random motion in all three axes,
+but the motion in th x and z directions is much smaller compared to the very quick y directional travel.
 
 Aidan O'Keeffe: I worked on the fish. I like animations that spiral out of control, hence my choice for the fish to spin so
 rapidly as they move along. Originally, I wanted the fish to move around in their own directions and be bounded to the

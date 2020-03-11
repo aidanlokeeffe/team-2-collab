@@ -1,6 +1,5 @@
 Bubble[] BubbleStream = new Bubble[100];
 Bubble[] bigBubble = new Bubble[8];
-int zBound = -600;
 
 Fish2 fish4;
 

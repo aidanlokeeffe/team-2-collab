@@ -4,17 +4,19 @@
 class Bubble {
   float x, y, z, x0, y0, z0;
   PShape Sphere;
+  int size;
   
-  Bubble(float x, float y, float z) {
+  Bubble(float x, float y, float z, int size) {
     this.x = x;
     this.y = y;
     this.z = z;
+    this.size = size;
     /*this.x0 = x0;
     this.y0 = y0;
     this.z0 = z0;*/
     noStroke();
     fill(197, 234, 250, 150);
-    Sphere = createShape(SPHERE, 70);
+    Sphere = createShape(SPHERE, size);
   }
   
   void display() {
@@ -38,6 +40,16 @@ class Bubble {
     }
     this.x += random(-2,2);
     this.y += random(-4,-1);
+    this.z += random(-1,1);
+  }
+  void smallAscend() {
+    if (this.y < -70) {
+      this.x = this.x0;
+      this.y = this.y0;
+      this.z = this.z0;
+    }
+    this.x += random(-2,2);
+    this.y += random(-9,-1);
     this.z += random(-1,1);
   }
 }

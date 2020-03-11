@@ -20,13 +20,18 @@ class Bubble {
   }
   
   void display() {
+      
+
+    
     if (frameCount == 1) {
       x0 = x;
       y0 = y;
       z0 = z;
     }
     lights();
+    spotLight(255, 255, 255, 500, 0, 100, 1, 1, 0, PI/2, 0);  
     pushMatrix();
+    ambientLight(0, 60, 75);
     translate(this.x, this.y, this.z);
     shape(Sphere);
     popMatrix();

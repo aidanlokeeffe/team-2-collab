@@ -27,6 +27,8 @@ class Fish2 {
   }
 
   void display() {
+    spotLight(255, 255, 255, 500, 0, 100, 1, 1, 0, PI/2, 0);  
+    spotLight(0, 0, 0, 500, 0, 100, -1, -1, 0, PI/2, 0);
     this.swim();
     
     pushMatrix();

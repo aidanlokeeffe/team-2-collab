@@ -1,0 +1,20 @@
+Progress Report 6.1
+	We will be using cellular automata to simulate the reaction
+	NH3 (g) + HCl (g) --> NH4Cl (s)
+on the canvas. 
+	
+	Aidan is the lead regarding the math involved, and regarding assigning initial velocities to the gas particles 
+as they are spawned in by the user. This thus entails user input.
+	Russel is the lead for implementing the collision rules for the automate. For the following, the name of a 
+compound refers to a single moluecule of that compound:
+	(1) NH3 always collides perfectly elastically with NH3
+	(2) HCl always collides perfectly elastically with HCl
+	(3) If NH3 collides with HCl, but their velocities fail to meet some "reaction criterion" yet TBD, then they 
+	collide perfectly elastically
+	(4) If NH3 collides with HCl and their velocities meet the "reaction criterion", they they react to form a molecule
+	of NH4Cl
+	(5) NH4Cl is subject to gravity and falls through the bottom of the screen
+	(6) If NH3 or HCl collide with NH4Cl, they they are deflected perfectly elastically
+	Angelo is the support on both of the above.
+
+	The team will confer periodically during the week to keep an eye on progress and address hurdles.

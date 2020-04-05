@@ -19,8 +19,11 @@ void setup() {
 }
 
 void draw() {
-  background(20, 96, 136);
+  background(20, 116, 136);
   
+
+  
+
   for (int i=0; i < BubbleStream.length; i++) {
     BubbleStream[i].smallAscend();
     BubbleStream[i].display();
@@ -30,8 +33,7 @@ void draw() {
     bigBubble[i].display();
   }
   fish4.display();
-  
-  
+
   
   
 }

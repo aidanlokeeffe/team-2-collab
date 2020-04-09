@@ -29,5 +29,25 @@ class NH3Gas {
       particles.get(i).display();
     }
   }
+  
+  // checks if two NH3 particles collide and if true has them bounce off each other
+  void collides() {
+    for (int i = 0; i<particles.size(); i++) {
+      for (int j = i+1; j<particles.size() - i; j++) {
+        float d = dist(particles.get(i).x, particles.get(i).y, particles.get(j).x, particles.get(j).y);
+        if (d < 2 * 8) {
+          particles.get(i).velocity.x *= pow(-1, 1);
+          particles.get(i).velocity.y *= pow(-1, 1);
+          particles.get(i).x += particles.get(i).velocity.x;
+          particles.get(i).y += particles.get(i).velocity.y;
+          particles.get(j).velocity.x *= pow(-1, 1);
+          particles.get(j).velocity.y *= pow(-1, 1);
+          particles.get(j).x += particles.get(i).velocity.x;
+          particles.get(j).y += particles.get(i).velocity.y;
+          //println("NH3 overlap by ", d, " pixels");
+        }
+      }
+    }
+  }
 
 }

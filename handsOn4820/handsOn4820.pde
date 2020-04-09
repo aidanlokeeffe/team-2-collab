@@ -47,10 +47,12 @@ void draw() {
   test2.display();*/
   
   test3.injectGas();
+  test3.collides();
   test3.update();
   test3.display();
   
   test4.injectGas();
+  test4.collides();
   test4.update();
   test4.display();
 

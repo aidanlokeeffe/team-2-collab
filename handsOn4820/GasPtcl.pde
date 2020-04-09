@@ -31,10 +31,5 @@ class GasPtcl {
   
   // Must be defined in child class
   void display() {}
-
-
-
-
-
-
+  
 }

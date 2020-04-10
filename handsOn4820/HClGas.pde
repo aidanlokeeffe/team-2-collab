@@ -35,7 +35,7 @@ class HClGas {
     for (int i = 0; i<particles.size(); i++) {
       for (int j = i+1; j<particles.size() - i; j++) {
         float d = dist(particles.get(i).x, particles.get(i).y, particles.get(j).x, particles.get(j).y);
-        if (d < 2 * 8) {
+        if (d < 2 * 10) {
           particles.get(i).velocity.x *= pow(-1, 1);
           particles.get(i).velocity.y *= pow(-1, 1);
           particles.get(i).x += particles.get(i).velocity.x;

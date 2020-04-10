@@ -8,7 +8,7 @@ PImage[] makeSprite(String nameStr, int len, String imgType) {
   return outArray;
 }
 // The sprites to be used
-public PImage[] NH3_sprite = new PImage[2];
+public PImage[] NH3_sprite = new PImage[4];
 public PImage[] HCl_sprite = new PImage[6];
 public PImage[] NH4Cl_sprite = new PImage[4];
 

@@ -1,3 +1,4 @@
+// Makes a sprite
 PImage[] makeSprite(String nameStr, int len, String imgType) {
   PImage[] outArray = new PImage[len]; 
   for(int i=0; i<len; i++) {
@@ -6,34 +7,35 @@ PImage[] makeSprite(String nameStr, int len, String imgType) {
   } 
   return outArray;
 }
+// The sprites to be used
 public PImage[] NH3_sprite = new PImage[2];
 public PImage[] HCl_sprite = new PImage[6];
 public PImage[] NH4Cl_sprite = new PImage[4];
 
+// Mouse indicator
 boolean mPressed = false;
 
+// Classes to manage behavior of individual particles
 NH3Gas reactant1;
 HClGas reactant2;
+NH4ClBody product;
 
-
-
+// Allows user to control gas inflow
 Button NH3Button;
 Button HCLButton;
 
 void setup() {
   size(1000, 600);
   background(0);
-  frameRate(18);
+  frameRate(10);
   
   // Create the sprites
-  NH3_sprite = makeSprite("NH3_", 2, ".png");
+  NH3_sprite = makeSprite("NH3_", 4, ".png");
   HCl_sprite = makeSprite("HCl_", 6, ".png");  
   NH4Cl_sprite = makeSprite("NH4Cl_", 4, ".png");
   
-  reactant1 = new NH3Gas(100, 300, 10, 6);
-  reactant2 = new HClGas(900, 300, 10, 6);
-  
-
+  reactant1 = new NH3Gas(100, 300, 7, 2);
+  reactant2 = new HClGas(900, 300, 7, 2);
   
   NH3Button = new Button(100, 300, 100, 234, 255, 0, "NH3");
   HCLButton = new Button(900, 300, 100, 0, 162, 8, "HCl");

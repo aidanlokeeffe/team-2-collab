@@ -63,6 +63,7 @@ void draw() {
   reactant1.display();
 
   reactant2.collides();
+  reactant2.reacts(reactant1);
   reactant2.update();
   reactant2.display();
   

@@ -72,7 +72,8 @@ void draw() {
   product.update(frameCount);
   product.display();
   
-  
+  //used for making the final movie
+  //saveFrame("output/g2a6_####.png");
   
 
 }

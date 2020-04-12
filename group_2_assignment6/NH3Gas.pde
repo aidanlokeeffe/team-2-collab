@@ -1,7 +1,7 @@
 class NH3Gas {
   int Ox, Oy; int freq;
   float variance;
-  ArrayList<NH3Ptcl> particles = new ArrayList<NH3Ptcl>();
+  public ArrayList<NH3Ptcl> particles = new ArrayList<NH3Ptcl>();
 
   NH3Gas(int _Ox, int _Oy, float _var, int _freq) {
     this.Ox = _Ox;

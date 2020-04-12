@@ -1,14 +1,13 @@
 class NH4ClBody {
-  int Ox, Oy;
-  ArrayList<NH4ClPtcl> particles = new ArrayList<NH4ClPtcl>();
+  public ArrayList<NH4ClPtcl> particles = new ArrayList<NH4ClPtcl>();
   
-  NH4ClBody(int _Ox, int _Oy){
-    this.Ox = _Ox;
-    this.Oy = _Oy;
+  // Doesn't need any paramaters upon creation
+  NH4ClBody(){
   }
   
-  void formSolid() {
-    NH4ClPtcl nextPtcl = new NH4ClPtcl(Ox, Oy, 2);
+  // Use this to put a new NH4Cl particle in the particles array list
+  void formSolid(int _x, int _y) {
+    NH4ClPtcl nextPtcl = new NH4ClPtcl(_x, _y, 4);
     particles.add(nextPtcl);
   }
   

@@ -27,7 +27,7 @@ Button HCLButton;
 void setup() {
   size(1000, 600);
   background(0);
-  frameRate(10);
+  frameRate(30);
   
   // Create the sprites
   NH3_sprite = makeSprite("NH3_", 4, ".png");
@@ -36,6 +36,8 @@ void setup() {
   
   reactant1 = new NH3Gas(100, 300, 7, 2);
   reactant2 = new HClGas(900, 300, 7, 2);
+  
+  product = new NH4ClBody();
   
   NH3Button = new Button(100, 300, 100, 234, 255, 0, "NH3");
   HCLButton = new Button(900, 300, 100, 0, 162, 8, "HCl");
@@ -63,9 +65,13 @@ void draw() {
   reactant1.display();
 
   reactant2.collides();
-  reactant2.reacts(reactant1);
+  reactant2.reacts(reactant1, product);
   reactant2.update();
   reactant2.display();
+  
+  product.update(frameCount);
+  product.display();
+  
   
   
 

@@ -1,7 +1,7 @@
 class HClGas {
   int Ox, Oy; int freq;
   float variance;
-  ArrayList<HClPtcl> particles = new ArrayList<HClPtcl>();
+  public ArrayList<HClPtcl> particles = new ArrayList<HClPtcl>();
   NH4ClBody product;
 
   HClGas(int _Ox, int _Oy, float _var, int _freq) {
@@ -51,7 +51,7 @@ class HClGas {
     }
   }
   
-  void reacts(NH3Gas gas) {
+  void reacts(NH3Gas gas, NH4ClBody product) {
     for (int i = particles.size() - 1; i >= 0; i--) {
       for (int j = gas.particles.size() - 1; j >= 0; j--) {
         float d = dist(particles.get(i).x, particles.get(i).y, gas.particles.get(j).x, gas.particles.get(j).y);
@@ -61,12 +61,15 @@ class HClGas {
             
             // IMPORTANT there is a bug here. When a particle is removed from the arrayList in lines 69 and 70, the program crashes because it causes the index to change
             
-            //int newX = int((gas.particles.get(j).x + particles.get(i).x)/2);
-            //int newY = int((gas.particles.get(j).y + particles.get(i).y)/2);
-            //product = new NH4ClBody(newX, newY);
-            //gas.particles.remove(i);
-            //particles.remove(i);
+            int newX = int((gas.particles.get(j).x + particles.get(i).x)/2);
+            int newY = int((gas.particles.get(j).y + particles.get(i).y)/2);
+            
+            product.formSolid(newX, newY);
+            gas.particles.remove(j);
+            particles.remove(i);
             println("HCL and NH3 reacted with overlap of ", d, " pixels");
+            return;
+            
           } 
           else {
             particles.get(i).velocity.x *= pow(-1, 1);

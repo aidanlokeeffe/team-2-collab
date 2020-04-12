@@ -51,6 +51,7 @@ class HClGas {
     }
   }
   
+  // method causes a reaction or collision between particles when HCL collides with NH3
   void reacts(NH3Gas gas, NH4ClBody product) {
     for (int i = particles.size() - 1; i >= 0; i--) {
       for (int j = gas.particles.size() - 1; j >= 0; j--) {
@@ -58,8 +59,6 @@ class HClGas {
         if (d < 2 * 10) {
           float rxnChance = random(0, 100);
           if (rxnChance < 100/5) {
-            
-            // IMPORTANT there is a bug here. When a particle is removed from the arrayList in lines 69 and 70, the program crashes because it causes the index to change
             
             int newX = int((gas.particles.get(j).x + particles.get(i).x)/2);
             int newY = int((gas.particles.get(j).y + particles.get(i).y)/2);

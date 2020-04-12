@@ -1,3 +1,4 @@
+//particle parent class
 class GasPtcl {
   float x, y;
   float variance;

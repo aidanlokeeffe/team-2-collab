@@ -64,6 +64,10 @@ Member Contributions
 	of the NH4ClBody class using its formSolid() method.
 
     Angelo:
+	Angelo provided a support role by implementing the extra credit portions of the assignment. 
+	He created the button class and added the GUI that user uses in order to spawn in the particles
+	of the simulation and additionally put together the animation video for the project and converted
+	it into a .mp4 while keeping the original .mov so mac and windows users can both see the video.
 
     Aidan:
 	Aidan wrote the rule set, and coded the class structure, the particle and gas/body class 

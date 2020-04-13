@@ -2,14 +2,14 @@ Assignment 6 Description (Group 2)
 
 This program is a simple simulation of the reaction between gaseous ammonia and gaseous hydrogen chloride to produce ammonium chloride; symbolically,
     NH3(g) + HCl (g) NH4Cl (s).
-Just to cover our bases, this choice of system was discussed with Professor Abraham and Logan in Discord.
+Note that this choice of project was discussed with Professor Abraham and Logan in Discord.
 
 Simulation Type and Rules
 	Out of the three categories of simulation under one of which this assignment needs to fall, the best choice is to call this a rules-based system. 
-	Notably, it is not a system of cellular automata, since the enactment of different rules takes place under different classes. 
+	Although the inspiration for this project was boids, this itself is not a system of cellular automata, since the enactment of different rules takes place under different classes. 
 	There are many rules; namely:
-	1) If two particles of ammonia collide, then they always repel.*
-	2) If two particles of hydrogen chloride collide, then they always repel.*
+	1) If two particles of ammonia collide, then they always repel.
+	2) If two particles of hydrogen chloride collide, then they always repel.
 	3) If a particle of ammonia and a particle of hydrogen chloride collide, then:
 		a) With 20% probability, they react to form ammonium chloride; or,
 		b) With 80% probability, they repel.
@@ -26,10 +26,6 @@ Simulation Type and Rules
 
     Rule 5 prevents creating particles that will never interact, which would waste space in the particle arraylists.
 
-    (*) You may notice that on occasion particles of the same type often pass through each other or get stuck on each other instead of repelling. 
-	They are in fact programmed to collide. This issue becomes worse as more particles are added to each gas, so we predict that the problem 
-	is simply that we’re having the computer check for a large number of collisions in a fraction of a second.
-
 Classes
     Button: Allows users to control inflow of a given particle type.
     GasPtcl: Parent class to NH3Ptcl and HClPtcl. Manages collision with the frame boundary.
@@ -40,7 +36,7 @@ Classes
     NH4ClBody: An array-type class that manages all NH4Cl particles present in the frame. Note that this specifically is not a gas, so we call it body to differentiate.
     NH4ClPtcl: A particle (not a gas particle) with the NH4Cl sprite. Has a method to fall out of the frame.
 
-Unexpected Challenges
+Unexpected Challenges / Possible Improvements
 
 	1) We ran into problems removing particles from their respective arrayLists when they reacted. Since multiple loops were cycling through the arrayList, even though 
 		one arrayList was fine, the other would go out of bounds and cause the program to crash. However, this error was fixed by changing the loop parameters.
@@ -48,6 +44,9 @@ Unexpected Challenges
 	2) When a large number of particles is added, particles may on occasion pass through each other. This is because the program is having to check for many collisions in a small
 		time frame. As many more are added, the computer is not always able to check all of the particles in that time frame and can occasionally miss one or two before they
 		collide.
+	
+	3) Animations are parametrized by frameCount, which may be a contributing factor to the collision detection. Future projects should have some capacity for 
+		timing events independently of frameCount.
 
 Member Contributions
 
@@ -67,5 +66,8 @@ Member Contributions
     Angelo:
 
     Aidan:
-
+	Aidan wrote the rule set, and coded the class structure, the particle and gas/body class 
+	constructors, the initial velocity assignment, and the animation methods. He also created
+	the sprites using Piskel.  
+	 
 

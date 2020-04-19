@@ -1,0 +1,47 @@
+Progress Report 7.1
+
+Our group has decided to make a turn based strategy game where the player moves soldiers on a map. The objective of the game is to defeat
+	an opposing army with the soldiers that the player commands. As of now, the game will have the following rules:
+
+	1. There will be three types of soldiers: infantry, archers, and cavalry. Each type will move or attack differently than the others.
+		a. Infantry can move two spaces and can only attack enemies adjacent to the tile that the infantry occupies.
+		b. Archers can move two spaces but can only attack enemies one away from them in every direction.
+		c. Cavalry can move three spaces and can only attack enemies adjacent to the tile that the cavalry occupies.
+	
+	
+	2. The map will be a 10 x 10 square grid consisting of three types of terrain. Each terrain type affects how soldiers can move.
+		a. Plains tiles can be accessed by any type of soldier.
+		b. Water tile cannot be accessed by anyone, however; archers can shoot over water tiles.
+		c. Forest tiles can be accessed by anyone except for cavalry. Additionally, archers cannot shoot through a forest tile.
+	
+	3. The final score of the game will be based off of how many enemy units you take down but also how many of your units you keep 
+		alive.
+
+	4. Soldiers can only move in the directions north, south, east and west.
+
+	5. A soldier does not have to move its full movement range.
+
+	6. All soldiers have health, attack, and defense stats. They will be preset and determined as follows.
+		a. Cavalry: high health, medium attack, low defense
+		b. Infantry: medium health, medium attack, high defense
+		c. Archer: medium health, high attack, low defense
+
+	7. When a soldier is defeated, that soldier disappears from the map.
+
+	8. A soldier has the option to do nothing for a turn.
+
+	9. A soldier may only move once per turn
+
+	10. After the player or enemy has ended their turn the turn will switch to the other player.
+
+	11. The enemy player will be controlled by the program and will try to defeat the player.
+
+Roles for the project will be split into three areas:
+
+Aidan:
+
+Russell:
+
+Angelo:
+
+The team will confer periodically during the week to keep an eye on progress and address hurdles.

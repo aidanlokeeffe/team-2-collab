@@ -1,4 +1,5 @@
 Progress Report 7.1
+Group2
 
 Our group has decided to make a turn based strategy game where the player moves soldiers on a map. The objective of the game is to defeat
 	an opposing army with the soldiers that the player commands. As of now, the game will have the following rules:
@@ -38,10 +39,10 @@ Our group has decided to make a turn based strategy game where the player moves 
 
 Roles for the project will be split into three areas:
 
-Aidan: Map/Grid
+Aidan:
 
-Russell: Soldiers/Sprites
+Russell:
 
-Angelo: GUI
+Angelo:
 
 The team will confer periodically during the week to keep an eye on progress and address hurdles.

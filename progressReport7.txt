@@ -38,10 +38,10 @@ Our group has decided to make a turn based strategy game where the player moves 
 
 Roles for the project will be split into three areas:
 
-Aidan:
+Aidan: Map/Grid
 
-Russell:
+Russell: Soldiers/Sprites
 
-Angelo:
+Angelo: GUI
 
 The team will confer periodically during the week to keep an eye on progress and address hurdles.

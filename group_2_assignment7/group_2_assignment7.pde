@@ -1,7 +1,7 @@
 PImage[] makeSprite(String nameStr, int len, String imgType) {
   PImage[] outArray = new PImage[len]; 
   for(int i=0; i<len; i++) {
-    String imgName = nameStr + nf(i) + imgType;
+    String imgName = nameStr + imgType;
     outArray[i] = loadImage(imgName);
   } 
   return outArray;
@@ -21,9 +21,9 @@ void setup() {
   imageMode(CENTER);
   background(25);
   
-  plainsSprite = makeSprite("plains_", 3, ".png");
-  forestSprite = makeSprite("forest_", 3, ".png");
-  waterSprite = makeSprite("water_", 3, ".png");
+  plainsSprite = makeSprite("Plains_Tile", 3, ".png");
+  forestSprite = makeSprite("Forest_Tile", 3, ".png");
+  waterSprite = makeSprite("Water_Tile", 3, ".png");
   
   testSprite = makeSprite("test_", 1, ".png");
   

@@ -11,6 +11,8 @@ public static PImage[] plainsSprite = new PImage[3];
 public static PImage[] forestSprite = new PImage[3];
 public static PImage[] waterSprite = new PImage[3];
 
+public static PImage[] testSprite = new PImage[1];
+
 Board board;
 
 
@@ -22,6 +24,8 @@ void setup() {
   plainsSprite = makeSprite("plains_", 3, ".png");
   forestSprite = makeSprite("forest_", 3, ".png");
   waterSprite = makeSprite("water_", 3, ".png");
+  
+  testSprite = makeSprite("test_", 1, ".png");
   
   board = new Board(35, 35);
   

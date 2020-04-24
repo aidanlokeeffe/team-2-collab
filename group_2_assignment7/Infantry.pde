@@ -1,13 +1,13 @@
 class Infantry extends Unit {
-  
-  int hp, atk, def, movement, range;
   String id;
 
-  Infantry(float x, float y,int hp, int atk, int def) {
-    super(x, y);
-    this.hp = hp;
-    this.atk = atk;
-    this.def = def;
+  Infantry(String label) {
+    super(label);
+    
+    
+    this.hp = 1;
+    this.atk = 1;
+    this.def = 1;
     this.movement = 2;
     this.range = 1;
     this.id = "Infantry";

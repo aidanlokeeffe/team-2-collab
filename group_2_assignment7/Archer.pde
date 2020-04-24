@@ -1,5 +1,4 @@
 class Archer extends Unit {
-  
   int hp, atk, def, movement, range;
   String id;
   

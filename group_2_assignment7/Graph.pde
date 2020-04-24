@@ -163,7 +163,28 @@ class Graph {
     // available tile. If a player wants to leave a unit where it is, he can hit 
     // a pass button
     this.tiles[v].visited = true;
+    print(v);
     theStack.push(v);
+    while (!theStack.empty()) {
+      String nxtLbl = theStack.peek().toString();
+      int u = this.getAdjUnivisitedVertex(nxtLbl);
+      //print(theStack.peek().toString(),"",u);
+      if (u == -1) {
+        u = theStack.pop();
+      }
+      else {
+        this.tiles[u].visited = true;
+        print(u);
+        theStack.push(u);
+      }
+      
+      // reset tiles visited flags to false
+      int lenTiles = this.tiles.length;
+      for (int i = 0; i < lenTiles; i++) {
+        this.tiles[i].visited = false;
+      }
+      
+    }
     
     
     

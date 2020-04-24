@@ -17,6 +17,4 @@ class Cavalry extends Unit {
   void display() {
     image(cavalryIdle[frameCount/50%3], x, y);
   }
-
-  void playIdle() {}
 }

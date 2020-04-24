@@ -46,7 +46,8 @@ void setup() {
   
   // Create board graph
   board = new Graph(35, 35);
-  
+  //board.availableTiles("a5", 3);
+  board.getAdjUnivisitedVertex("4");
   // Create all units
   testcav = new Cavalry("a5");
   testarch = new Archer("j9");

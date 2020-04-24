@@ -48,9 +48,9 @@ void setup() {
   board = new Graph(35, 35);
   
   // Create all units
-  testcav = new Cavalry(900, 100, 1, 1, 1);
-  testarch = new Archer(900, 170, 1, 1, 1);
-  testinf = new Infantry(900, 240, 1, 1, 1);
+  testcav = new Cavalry("a5");
+  testarch = new Archer("j9");
+  testinf = new Infantry("e4");
   
   
   

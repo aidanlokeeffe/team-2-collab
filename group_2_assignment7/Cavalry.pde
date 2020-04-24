@@ -1,15 +1,14 @@
 class Cavalry extends Unit {
 
-  int hp, atk, def, movement, range;
   String id;
   int idleFrame;
   int currentFrame;
 
-  Cavalry(float x, float y, int hp, int atk, int def) {
-    super(x, y);
-    this.hp = hp;
-    this.atk = atk;
-    this.def = def;
+  Cavalry(String label) {
+    super(label);
+    this.hp = 1;
+    this.atk = 1;
+    this.def = 1;
     this.movement = 3;
     this.range = 1;
     this.id = "Cavalry";

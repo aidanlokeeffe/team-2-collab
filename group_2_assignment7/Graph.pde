@@ -133,7 +133,7 @@ class Graph {
   // Give me a label, and I'll give you the index of an adjacent vertex that hasn't 
   // been visited. However, if you give me a label for a vertex I don't have, or 
   // all adjacent verticies are visited, then I'm giving you -1
-  int getAdjUnivisitedVertex(String label) {
+  int getAdjUnvisitedVertex(String label) {
     int nVert = tiles.length;
     int idx = getIndex(label);
     if (idx==-1) {return -1;}
@@ -166,8 +166,7 @@ class Graph {
     print(v);
     theStack.push(v);
     while (!theStack.empty()) {
-      String nxtLbl = theStack.peek().toString();
-      int u = this.getAdjUnivisitedVertex(nxtLbl);
+      int u = this.getAdjUnvisitedVertex(theStack.peek().toString());
       //print(theStack.peek().toString(),"",u);
       if (u == -1) {
         u = theStack.pop();
@@ -186,12 +185,7 @@ class Graph {
       
     }
     
-    
-    
-    
-    
-    
-    
+
     return outList;
   }
   

@@ -130,7 +130,49 @@ class Graph {
     return -1;  
   }
   
+  // Give me a label, and I'll give you the index of an adjacent vertex that hasn't 
+  // been visited. However, if you give me a label for a vertex I don't have, or 
+  // all adjacent verticies are visited, then I'm giving you -1
+  int getAdjUnivisitedVertex(String label) {
+    int nVert = tiles.length;
+    int idx = getIndex(label);
+    if (idx==-1) {return -1;}
+    
+    
+    for(int i=0; i<nVert; i++) {
+      if(this.adjMat[idx][i] > 0 && !this.tiles[i].wasVisited()) {
+        return i;
+      }
+    }
+    return -1;
+  }
   
+  // I am a modification of depth first search. Give me a label and a budget, and
+  // I'll give you an ArrayList of the INDICES of all the tiles that are within 
+  // your budget
+  
+  // CURRENTLY NOT FUNCTIONAL
+  ArrayList<Integer> availableTiles(String label, int budget) {
+    ArrayList<Integer> outList = new ArrayList<Integer>();
+    
+    // The algorithm requires a stack. Here, we use a stack of vertex indices
+    Stack<Integer> theStack = new Stack<Integer>();
+    
+    int v = this.getIndex(label);
+    // A corner case: We automatically visit ourselves, but we don't make this an
+    // available tile. If a player wants to leave a unit where it is, he can hit 
+    // a pass button
+    this.tiles[v].visited = true;
+    theStack.push(v);
+    
+    
+    
+    
+    
+    
+    
+    return outList;
+  }
   
   
   

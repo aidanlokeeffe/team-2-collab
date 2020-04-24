@@ -13,6 +13,8 @@ class Infantry extends Unit {
     this.id = "Infantry";
   }
   
-  void display() {}
+  void display() {
+    image(infantryIdle[frameCount/50%3], x, y);
+  }
   
 }

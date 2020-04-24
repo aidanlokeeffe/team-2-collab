@@ -13,6 +13,8 @@ class Archer extends Unit {
     this.id = "Archer";
   }
   
-  void display() {}
+  void display() {
+    image(archerIdle[frameCount/50%3], x, y);
+  }
   
 }

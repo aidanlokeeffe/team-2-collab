@@ -13,7 +13,9 @@ class Archer extends Unit {
   }
   
   void display() {
-    image(archerIdle[frameCount/50%3], x, y);
+    if (this.hp > 0) {
+      image(archerIdle[frameCount/50%3], x, y);
+    }
   }
   
 }

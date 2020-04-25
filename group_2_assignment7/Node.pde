@@ -3,6 +3,7 @@ class Node {
   String label;
   boolean isOccupied = false;
   boolean visited = false;
+  boolean clicked;
   int type;
   int cost;
   PImage[] tileSprite = new PImage[3];
@@ -13,6 +14,7 @@ class Node {
     this.y = _y;
     this.label = _label;
     this.type = _type;
+    this.clicked = false;
     
     // 0: Plains, 1: Forest, 2: Water
     if(type == 0) {  
@@ -46,6 +48,20 @@ class Node {
   
   void display(int frame) {
     image(tileSprite[frame], x, y);       
+  }
+  
+  // checks if mouse cursor is over tile
+  boolean overTile(){
+    if (mouseX > this.x - (70 / 2) && mouseX < this.x + (70 / 2) && mouseY > this.y - (70 / 2) && mouseY < this.y + (70 / 2)) {
+      return true;
+    } 
+    else{
+      return false;
+    }
+  }
+  
+  void tileClicked() {
+    if (this.overTile()) {}
   }
   
   

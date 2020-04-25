@@ -14,7 +14,9 @@ class Infantry extends Unit {
   }
   
   void display() {
-    image(infantryIdle[frameCount/50%3], x, y);
+    if (this.hp > 0) {
+      image(infantryIdle[frameCount/50%3], x, y);
+    }
   }
   
 }

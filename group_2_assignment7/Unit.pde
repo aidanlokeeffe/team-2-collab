@@ -19,6 +19,21 @@ class Unit {
     
   }
   
-  void findPath() {}
-
+  // show the stats of a unit on the right side of the screen when the unit is clicked/selected
+  void displayStats() {}
+  
+  // move a unit
+  void move() {}
+  
+  // attacking unit attacks other unit
+  void attack(Unit otherUnit) {
+    int damage = this.atk;
+    int newHealth = otherUnit.hp - damage;
+    otherUnit.hp = newHealth;
+  }
+  
+  // when a units hp drops below zero I have it stopped being displayed in its display method but it will still exist so we must erase it because other
+  // units might need to occupy its space
+  void die() {}
+  
 }

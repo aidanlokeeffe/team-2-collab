@@ -4,6 +4,7 @@ class Node {
   boolean isOccupied = false;
   boolean visited = false;
   boolean clicked;
+  boolean pressed;
   int type;
   int cost;
   PImage[] tileSprite = new PImage[3];
@@ -15,6 +16,7 @@ class Node {
     this.label = _label;
     this.type = _type;
     this.clicked = false;
+    this.pressed = false;
     
     // 0: Plains, 1: Forest, 2: Water
     if(type == 0) {  
@@ -60,8 +62,23 @@ class Node {
     }
   }
   
-  void tileClicked() {
-    if (this.overTile()) {}
+  void update() {
+    if (mousePressed && this.pressed == false) {
+      this.pressed = true;
+      if (this.overTile()) {
+        this.clicked = true;
+      }
+      else {
+        this.clicked = false;
+      }
+      if (mousePressed != true) {
+        this.pressed = false;
+      }
+    }
+  }
+  
+  boolean isClicked() {
+    return this.clicked;
   }
   
   

@@ -31,6 +31,12 @@ class Graph {
     tiles = new Node[100];
     adjMat = new Integer[100][100];
     
+    for(int i=0; i<100; i++){
+      for(int j=0; j<100; j++){
+        adjMat[i][j] = 0;
+      }
+    }
+    
     this.x0 = _x0;
     this.y0 = _y0;
     
@@ -94,7 +100,6 @@ class Graph {
       }
       
       for(int j : adjSet) {
-        if(tiles[j].type == 2) {continue;}
         addEdge(i, j, tiles[j].cost);
         
         // Comment this out when not debugging
@@ -131,13 +136,9 @@ class Graph {
   }
   
   // Give me a label, and I'll give you the index of an adjacent vertex that hasn't 
-  // been visited. However, if you give me a label for a vertex I don't have, or 
-  // all adjacent verticies are visited, then I'm giving you -1
-  int getAdjUnvisitedVertex(String label) {
+  // been visited. But if all adjacent verticies are visited, then I return -1
+  int getAdjUnvisitedVertex(int idx) {
     int nVert = tiles.length;
-    int idx = getIndex(label);
-    if (idx==-1) {return -1;}
-    
     
     for(int i=0; i<nVert; i++) {
       if(this.adjMat[idx][i] > 0 && !this.tiles[i].wasVisited()) {
@@ -163,17 +164,18 @@ class Graph {
     // available tile. If a player wants to leave a unit where it is, he can hit 
     // a pass button
     this.tiles[v].visited = true;
-    print(v);
+    //print(v);
     theStack.push(v);
     while (!theStack.empty()) {
-      int u = this.getAdjUnvisitedVertex(theStack.peek().toString());
+      int u = this.getAdjUnvisitedVertex(theStack.peek());
       //print(theStack.peek().toString(),"",u);
       if (u == -1) {
         u = theStack.pop();
       }
       else {
         this.tiles[u].visited = true;
-        print(u);
+        outList.add(u);
+        //print(u);
         theStack.push(u);
       }
       

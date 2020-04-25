@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.Arrays;
 
 // This function makes sprite arrays for us
 PImage[] makeSprite(String nameStr, int len, String imgType) {
@@ -46,8 +47,22 @@ void setup() {
   
   // Create board graph
   board = new Graph(35, 35);
-  //board.availableTiles("a5", 3);
-  board.getAdjUnvisitedVertex("a5");
+  ArrayList<Integer> testList = board.availableTiles("a5", 3);
+  
+  print(testList);
+  
+  /*for(int i=0; i<100; i++){
+    for(int j=0; j<100; j++) {
+      if (board.adjMat[i][j] == null) {
+        print("N ");
+        continue;
+      }
+      print(board.adjMat[i][j] + " ");
+    }
+    print("\n");
+  }*/
+  
+  //board.getAdjUnvisitedVertex("a1");
   // Create all units
   testcav = new Cavalry("a5");
   testarch = new Archer("j9");

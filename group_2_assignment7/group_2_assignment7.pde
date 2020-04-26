@@ -24,10 +24,13 @@ public static PImage[] infantryIdle = new PImage[3];
 // Graph is public so as to be accessible by unit classes
 public Graph board;
 
-Cavalry testcav;
+/*Cavalry testcav;
 Archer testarch;
-Infantry testinf;
+Infantry testinf;*/
 
+// The players
+Player P1;
+Player P2;
 
 void setup() {
   // Basic setup
@@ -48,6 +51,8 @@ void setup() {
   
   // Create board graph
   board = new Graph(35, 35);
+  
+  // This is for testing
   ArrayList<Integer> testList = board.availableTiles("c1", 3);
   //print(board.getIndex("f8"));
   print(testList);
@@ -66,9 +71,13 @@ void setup() {
   
   //board.getAdjUnvisitedVertex("a1");
   // Create all units
-  testcav = new Cavalry("a5");
+  /*testcav = new Cavalry("a5");
   testarch = new Archer("j9");
-  testinf = new Infantry("e4");
+  testinf = new Infantry("e4");*/
+  
+  // Create players
+  P1 = new Player(1);
+  P2 = new Player(2);
   
   
   
@@ -78,14 +87,17 @@ void draw() {
   background(25); 
   line(700, 0, 700, 700);
   board.display();
-  testcav.display();
+  /*testcav.display();
   testarch.display();
-  testinf.display();
+  testinf.display();*/
   
   // Comment this out when not debugging
   for(int[] pSet : board.debug) {
     line(pSet[0], pSet[1], pSet[2], pSet[3]);
   }
+  
+  P1.display();
+  P2.display();
   
   
 }

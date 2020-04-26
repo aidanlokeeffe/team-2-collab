@@ -34,6 +34,7 @@ class Unit {
   
   // when a units hp drops below zero I have it stopped being displayed in its display method but it will still exist so we must erase it because other
   // units might need to occupy its space
+  // change tile.isOccupied to false
   void die() {}
   
 }

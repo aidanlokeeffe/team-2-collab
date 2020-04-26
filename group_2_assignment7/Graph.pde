@@ -172,9 +172,11 @@ class Graph {
       // This means all nodes are visited
       if (curr == -1) {
         curr = theStack.pop();
+        print("/ allvisited, index:" + curr,"currBgt: " +currBgt,"/");
       }
       else {
         theStack.push(curr);
+        print("/ adjunvisited, index:" + curr,"currBgt: " +currBgt,"/");
         this.tiles[curr].visited = true;
         
         if(currBgt - adjMat[prev][curr] >= 0) {
@@ -185,29 +187,17 @@ class Graph {
         else{
           currBgt += adjMat[prev][curr];
           theStack.pop();
-        
         }
-        
-        
-        
-        
-        
         //this.tiles[curr].visited = true;
         //outList.add(curr);
         //print(u);
-        
       }
     }
-      
       // reset tiles visited flags to false
       int lenTiles = this.tiles.length;
       for (int i = 0; i < lenTiles; i++) {
         this.tiles[i].visited = false;
       }
-      
-    
-    
-
     return outList;
   }
   

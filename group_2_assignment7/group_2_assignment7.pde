@@ -53,7 +53,7 @@ void setup() {
   board = new Graph(35, 35);
   
   // This is for testing
-  ArrayList<Integer> testList = board.availableTiles("c1", 3);
+  ArrayList<Integer> testList = board.availableTiles("a1", 7);
   //print(board.getIndex("f8"));
   print(testList);
 

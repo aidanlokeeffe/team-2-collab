@@ -155,50 +155,49 @@ class Graph {
   // CURRENTLY NOT FUNCTIONAL
   ArrayList<Integer> availableTiles(String label, int budget) {
     ArrayList<Integer> outList = new ArrayList<Integer>();
+    
+    ArrayList<Integer> budgets = new ArrayList<Integer>();
+    
+    Stack<Integer> idxStack = new Stack<Integer>();
+    Stack<Integer> expStack = new Stack<Integer>();
+    
+    int myPosn = this.getIndex(label);
+    idxStack.push(myPosn);
+    this.tiles[myPosn].visited = true;
+    expStack.push(0);
+    
     int currBgt = budget;
     
-    // The algorithm requires a stack. Here, we use a stack of vertex indices
-    Stack<Integer> theStack = new Stack<Integer>();
-    
-    int v = this.getIndex(label);
-    // A corner case: We automatically visit ourselves, but we don't make this available 
-    this.tiles[v].visited = true;
-    theStack.push(v);
-    
-    while (!theStack.empty()) {
-      int prev = theStack.peek();
+    while(idxStack.size() != 0) {
+      int prev = idxStack.peek();
       int curr = this.getAdjUnvisitedVertex(prev);
-      
-      // This means all nodes are visited
-      if (curr == -1) {
-        curr = theStack.pop();
-        print("/ allvisited, index:" + curr,"currBgt: " +currBgt,"/");
+      if(curr == -1 || currBgt <= 0) {
+        idxStack.pop();
+        currBgt += expStack.pop();
       }
       else {
-        theStack.push(curr);
-        print("/ adjunvisited, index:" + curr,"currBgt: " +currBgt,"/");
         this.tiles[curr].visited = true;
-        
-        if(currBgt - adjMat[prev][curr] >= 0) {
-          currBgt -= adjMat[prev][curr];
+        int cost = this.adjMat[prev][curr];
+        if(currBgt - cost >= 0) {
+          idxStack.push(curr);
+          expStack.push(cost);
+          currBgt -= cost;
           outList.add(curr);
-          
         }
-        else{
-          currBgt += adjMat[prev][curr];
-          theStack.pop();
-        }
-        //this.tiles[curr].visited = true;
-        //outList.add(curr);
-        //print(u);
       }
+      budgets.add(currBgt);
     }
-      // reset tiles visited flags to false
-      int lenTiles = this.tiles.length;
-      for (int i = 0; i < lenTiles; i++) {
-        this.tiles[i].visited = false;
-      }
+    
+    
+    for(int i : outList) {
+      this.tiles[i].visited = false;
+    }
+    this.tiles[myPosn].visited = false;
+    
+    println(budgets);
+    
     return outList;
+  
   }
   
   

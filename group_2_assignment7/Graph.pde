@@ -155,29 +155,49 @@ class Graph {
   // CURRENTLY NOT FUNCTIONAL
   ArrayList<Integer> availableTiles(String label, int budget) {
     ArrayList<Integer> outList = new ArrayList<Integer>();
+    int currBgt = budget;
     
     // The algorithm requires a stack. Here, we use a stack of vertex indices
     Stack<Integer> theStack = new Stack<Integer>();
     
     int v = this.getIndex(label);
-    // A corner case: We automatically visit ourselves, but we don't make this an
-    // available tile. If a player wants to leave a unit where it is, he can hit 
-    // a pass button
+    // A corner case: We automatically visit ourselves, but we don't make this available 
     this.tiles[v].visited = true;
-    //print(v);
     theStack.push(v);
+    
     while (!theStack.empty()) {
-      int u = this.getAdjUnvisitedVertex(theStack.peek());
-      //print(theStack.peek().toString(),"",u);
-      if (u == -1) {
-        u = theStack.pop();
+      int prev = theStack.peek();
+      int curr = this.getAdjUnvisitedVertex(prev);
+      
+      // This means all nodes are visited
+      if (curr == -1) {
+        curr = theStack.pop();
       }
       else {
-        this.tiles[u].visited = true;
-        outList.add(u);
+        theStack.push(curr);
+        this.tiles[curr].visited = true;
+        
+        if(currBgt - adjMat[prev][curr] >= 0) {
+          currBgt -= adjMat[prev][curr];
+          outList.add(curr);
+          
+        }
+        else{
+          currBgt += adjMat[prev][curr];
+          theStack.pop();
+        
+        }
+        
+        
+        
+        
+        
+        //this.tiles[curr].visited = true;
+        //outList.add(curr);
         //print(u);
-        theStack.push(u);
+        
       }
+    }
       
       // reset tiles visited flags to false
       int lenTiles = this.tiles.length;
@@ -185,7 +205,7 @@ class Graph {
         this.tiles[i].visited = false;
       }
       
-    }
+    
     
 
     return outList;

@@ -35,6 +35,7 @@ void setup() {
   imageMode(CENTER);
   background(25);
   
+  
   // Create all geosprites
   plainsSprite = makeSprite("plains_", 3, ".png");
   forestSprite = makeSprite("forest_", 3, ".png");
@@ -47,9 +48,10 @@ void setup() {
   
   // Create board graph
   board = new Graph(35, 35);
-  ArrayList<Integer> testList = board.availableTiles("a5", 3);
-  
+  ArrayList<Integer> testList = board.availableTiles("c1", 3);
+  //print(board.getIndex("f8"));
   print(testList);
+
   
   /*for(int i=0; i<100; i++){
     for(int j=0; j<100; j++) {

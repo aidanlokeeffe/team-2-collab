@@ -2,7 +2,7 @@ class Node {
   int x, y;
   String label;
   boolean isOccupied = false;
-  boolean visited = false;
+  public boolean visited = false;
   boolean clicked;
   boolean pressed;
   int type;

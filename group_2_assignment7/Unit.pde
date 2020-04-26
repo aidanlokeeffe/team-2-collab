@@ -3,7 +3,7 @@ class Unit {
   
   float x, y;
   String location; 
-  
+  int p;
 
   Unit(String label) {
     if(board.hasVertex(label)) {

@@ -1,7 +1,7 @@
 class Infantry extends Unit {
   String id;
 
-  Infantry(String label) {
+  Infantry(String label, int player) {
     super(label);
     
     
@@ -11,11 +11,17 @@ class Infantry extends Unit {
     this.movement = 2;
     this.range = 1;
     this.id = "Infantry";
+    this.p = player;
   }
   
   void display() {
     if (this.hp > 0) {
-      image(infantryIdle[frameCount/50%3], x, y);
+      if(this.p == 1){
+        image(infantryIdle[frameCount/50%3], x, y);
+      }
+      else{
+        image(infantryIdleRed[frameCount/50%3], x, y);
+      }
     }
   }
   

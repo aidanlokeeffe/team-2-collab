@@ -21,6 +21,10 @@ public static PImage[] cavalryIdle = new PImage[3];
 public static PImage[] archerIdle = new PImage[3];
 public static PImage[] infantryIdle = new PImage[3];
 
+public static PImage[] cavalryIdleRed = new PImage[3];
+public static PImage[] archerIdleRed = new PImage[3];
+public static PImage[] infantryIdleRed = new PImage[3];
+
 // Graph is public so as to be accessible by unit classes
 public Graph board;
 
@@ -48,6 +52,10 @@ void setup() {
   cavalryIdle = makeSprite("Cavalry_Idle_", 3, ".png");
   archerIdle = makeSprite("Archer_Idle_", 3, ".png");
   infantryIdle = makeSprite("Infantry_Idle_", 3, ".png");
+  
+  cavalryIdleRed = makeSprite("Cavalry_Idle_Enemy_", 3, ".png");
+  archerIdleRed = makeSprite("Archer_Idle_Enemy_", 3, ".png");
+  infantryIdleRed = makeSprite("Infantry_Idle_Enemy_", 3, ".png");
   
   // Create board graph
   board = new Graph(35, 35);

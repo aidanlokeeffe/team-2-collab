@@ -9,92 +9,63 @@ class Player{
   Player(int _p){
     this.p = _p;
     if(p==1) {
-      Infantry s1 = new Infantry("a9", p);
-      Infantry s2 = new Infantry("b9", p);
-      Infantry s3 = new Infantry("c9", p);
-      Infantry s4 = new Infantry("d9", p);
-      Infantry s5 = new Infantry("e9", p);
-      Infantry s6 = new Infantry("f9", p);
-      Infantry s7 = new Infantry("g9", p);
-      Infantry s8 = new Infantry("h9", p);
-      Infantry s9 = new Infantry("i9", p);
-      Infantry s10 = new Infantry("j9", p);
-      swords.add(s1);
-      swords.add(s2);
-      swords.add(s3);
-      swords.add(s4);
-      swords.add(s5);
-      swords.add(s6);
-      swords.add(s7);
-      swords.add(s8);
-      swords.add(s9);
-      swords.add(s10);
+      // Create infantry
+      for(int i=97; i<107; i++) {
+        char col = (char) i;
+        String place = col + "9";
+        Infantry next = new Infantry(place, p);
+        swords.add(next);
+      }
       
-      Archer b1 = new Archer("c10", p);
-      Archer b2 = new Archer("d10", p);
-      Archer b3 = new Archer("e10", p);
-      Archer b4 = new Archer("f10", p);
-      Archer b5 = new Archer("g10", p);
-      Archer b6 = new Archer("h10", p);
-      bows.add(b1);
-      bows.add(b2);
-      bows.add(b3);
-      bows.add(b4);
-      bows.add(b5);
-      bows.add(b6);
+      // Create archers
+      for(int i=99; i<105; i++) {
+        char col = (char) i;
+        String place = col + "10";
+        Archer next = new Archer(place, p);
+        bows.add(next);
+      }
       
-      Cavalry k1 = new Cavalry("a10", p);
-      Cavalry k2 = new Cavalry("b10", p);
-      Cavalry k3 = new Cavalry("i10", p);
-      Cavalry k4 = new Cavalry("j10", p);
-      knights.add(k1);
-      knights.add(k2);
-      knights.add(k3);
-      knights.add(k4);
+      // Create cavalry
+      for(int i=0; i<2; i++) {
+        char col1 = (char) (97 + i);
+        String place1 = col1 + "10";
+        char col2 = (char) (105 + i);
+        String place2 = col2 + "10";
+        Cavalry next1 = new Cavalry(place1, p);
+        knights.add(next1);
+        Cavalry next2 = new Cavalry(place2, p);
+        knights.add(next2);
+      }
     }
     else if(p==2) {
-      Infantry s1 = new Infantry("a2" ,p);
-      Infantry s2 = new Infantry("b2", p);
-      Infantry s3 = new Infantry("c2", p);
-      Infantry s4 = new Infantry("d2", p);
-      Infantry s5 = new Infantry("e2", p);
-      Infantry s6 = new Infantry("f2", p);
-      Infantry s7 = new Infantry("g2", p);
-      Infantry s8 = new Infantry("h2", p);
-      Infantry s9 = new Infantry("i2", p);
-      Infantry s10 = new Infantry("j2", p);
-      swords.add(s1);
-      swords.add(s2);
-      swords.add(s3);
-      swords.add(s4);
-      swords.add(s5);
-      swords.add(s6);
-      swords.add(s7);
-      swords.add(s8);
-      swords.add(s9);
-      swords.add(s10);
+      // Create infantry
+      for(int i=97; i<107; i++) {
+        char col = (char) i;
+        String place = col + "2";
+        Infantry next = new Infantry(place, p);
+        swords.add(next);
+      }
       
-      Archer b1 = new Archer("c1", p);
-      Archer b2 = new Archer("d1", p);
-      Archer b3 = new Archer("e1", p);
-      Archer b4 = new Archer("f1", p);
-      Archer b5 = new Archer("g1", p);
-      Archer b6 = new Archer("h1", p);
-      bows.add(b1);
-      bows.add(b2);
-      bows.add(b3);
-      bows.add(b4);
-      bows.add(b5);
-      bows.add(b6);
+      // Create archers
+      for(int i=99; i<105; i++) {
+        char col = (char) i;
+        String place = col + "1";
+        Archer next = new Archer(place, p);
+        bows.add(next);
+      }
       
-      Cavalry k1 = new Cavalry("a1", p);
-      Cavalry k2 = new Cavalry("b1", p);
-      Cavalry k3 = new Cavalry("i1", p);
-      Cavalry k4 = new Cavalry("j1", p);
-      knights.add(k1);
-      knights.add(k2);
-      knights.add(k3);
-      knights.add(k4);
+      // Create cavalry
+      for(int i=0; i<2; i++) {
+        char col1 = (char) (97 + i);
+        String place1 = col1 + "1";
+        char col2 = (char) (105 + i);
+        String place2 = col2 + "1";
+        Cavalry next1 = new Cavalry(place1, p);
+        knights.add(next1);
+        Cavalry next2 = new Cavalry(place2, p);
+        knights.add(next2);
+      }
+      
     }
 
   }

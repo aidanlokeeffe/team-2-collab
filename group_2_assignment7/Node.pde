@@ -1,7 +1,7 @@
 class Node {
   int x, y;
   String label;
-  boolean isOccupied = false;
+  public boolean isOccupied = false;
   public boolean visited = false;
   boolean clicked;
   boolean pressed;
@@ -9,6 +9,7 @@ class Node {
   int cost;
   PImage[] tileSprite = new PImage[3];
   boolean selected = false; 
+  int p;
   
   // Constructor 
   Node(int _x, int _y, String _label, int _type) {

@@ -23,7 +23,15 @@ class Unit {
   void displayStats() {}
   
   // move a unit
-  void move() {}
+  void move(String label) {
+    
+  
+  
+  
+  
+  }
+  
+  
   
   // attacking unit attacks other unit
   void attack(Unit otherUnit) {

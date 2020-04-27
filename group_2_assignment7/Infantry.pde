@@ -5,9 +5,9 @@ class Infantry extends Unit {
     super(label);
     
     
-    this.hp = 1;
-    this.atk = 1;
-    this.def = 1;
+    this.hp = 20;
+    this.atk = 15;
+    this.def = 15;
     this.movement = 2;
     this.range = 1;
     this.id = "Infantry";

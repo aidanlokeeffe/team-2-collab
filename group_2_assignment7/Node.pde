@@ -65,7 +65,7 @@ class Node {
   void update() {
     if (mousePressed && this.pressed == false) {
       this.pressed = true;
-      if (this.overTile()) {
+      if (this.overTile()) { //<>//
         this.clicked = true;
       }
       else {

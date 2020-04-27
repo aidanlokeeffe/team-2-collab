@@ -1,7 +1,4 @@
 class Graph {
-  // Comment this out when not debugging
-  ArrayList<int[]> debug;
-  
   Node[] tiles;
   Integer[][] adjMat;
   int x0, y0;
@@ -25,10 +22,6 @@ class Graph {
   // Make the graph
   // !!! Coded with some generality, but for our purposes, _x0 = _y0 = 35
   Graph(int _x0, int _y0) {
-    // Comment this out when not debugging
-    debug = new ArrayList<int[]>();
-    
-    
     tiles = new Node[100];
     adjMat = new Integer[100][100];
     
@@ -103,9 +96,7 @@ class Graph {
       for(int j : adjSet) {
         addEdge(i, j, tiles[j].cost);
         
-        // Comment this out when not debugging
-        int[] pointSet = new int[]{tiles[i].x, tiles[i].y, tiles[j].x, tiles[j].y};
-        debug.add(pointSet);
+        
       
       }
     }
@@ -149,11 +140,8 @@ class Graph {
     return -1;
   }
   
-  // I am a modification of depth first search. Give me a label and a budget, and
-  // I'll give you an ArrayList of the INDICES of all the tiles that are within 
-  // your budget
-  
-  // CURRENTLY NOT FUNCTIONAL
+  // Give me a label and a budget, and I'll give you an ArrayList of 
+  // the INDICES of all the tiles that are within your budget
   ArrayList<Integer> availableTiles(String label, int budget) {
     ArrayList<Integer> outList = new ArrayList<Integer>();
     

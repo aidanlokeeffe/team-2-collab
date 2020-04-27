@@ -70,6 +70,8 @@ class Node {
       }
     }
     
+    
+    // DO NOT CLEAR THIS
     // code to be used later
     //if (mousePressed && this.pressed == false) {
     //  this.pressed = true;

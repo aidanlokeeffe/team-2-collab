@@ -11,8 +11,6 @@ class Unit {
       int idx = board.getIndex(label);
       this.x = board.tiles[idx].x;
       this.y = board.tiles[idx].y;
-      board.tiles[idx].occupied = true;
-      
     }
     else {
       println("I don't have a tile labeled " + label);
@@ -26,19 +24,10 @@ class Unit {
   
   // move a unit
   void move(String label) {
-    int currIdx = board.getIndex(this.location);
-    int nextIdx = board.getIndex(label);
     
-    if( !board.tiles[nextIdx].isOccupied() ) {
-      board.tiles[currIdx].occupied = false;
-      Integer[] coords = board.tiles[nextIdx].getCoords();
-      this.x = coords[0];
-      this.y = coords[1];
-      this.location = label;
-    }
-    else{
-      println("Someone is standing here");
-    }
+  
+  
+  
   
   }
   

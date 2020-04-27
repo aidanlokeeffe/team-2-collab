@@ -27,7 +27,7 @@ class UI{
     
     if (selectedTile == null){
     }
-    else if (selectedTile.isOccupied() == true){
+    else if (selectedTile.isOccupied == true){
       print("occupied");
     }
     else{

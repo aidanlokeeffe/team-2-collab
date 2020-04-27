@@ -1,7 +1,7 @@
 class Node {
   int x, y;
   String label;
-  public boolean occupied = false;
+  public boolean isOccupied = false;
   public boolean visited = false;
   boolean clicked;
   boolean pressed;
@@ -37,10 +37,6 @@ class Node {
   
   boolean wasVisited() {
     return this.visited;
- }
- 
- boolean isOccupied() {
-   return this.occupied;
  }
   
   String getLabel() {

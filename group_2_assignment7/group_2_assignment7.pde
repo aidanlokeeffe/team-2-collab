@@ -68,6 +68,11 @@ void setup() {
   // Create board graph
   board = new Graph(35, 35);
 
+  // This is for testing
+  ArrayList<Integer> testList = board.availableTiles("a1", 7);
+  print(testList);
+
+
   // Create players
   P1 = new Player(1);
   P2 = new Player(2);

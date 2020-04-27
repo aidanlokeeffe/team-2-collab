@@ -10,6 +10,7 @@ class Node {
   PImage[] tileSprite = new PImage[3];
   boolean selected = false; 
   int p;
+  Unit currentUnit;
   
   // Constructor 
   Node(int _x, int _y, String _label, int _type) {

@@ -12,6 +12,7 @@ class Unit {
       this.x = board.tiles[idx].x;
       this.y = board.tiles[idx].y;
       board.tiles[idx].occupied = true;
+      board.tiles[idx].currentUnit = this;
       
     }
     else {

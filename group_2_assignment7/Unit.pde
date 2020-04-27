@@ -1,4 +1,4 @@
-class Unit {
+ class Unit {
   int hp, atk, def, movement, range;
   
   float x, y;

@@ -5,6 +5,7 @@ class Graph {
   Node[] tiles;
   Integer[][] adjMat;
   int x0, y0;
+  Node selectedTile; 
   
   // IMPORTANT, because of the ordering of (i, j), the matrix below is the 
   // TRANSPOSE of what will appear on the screen. This can be frustrating
@@ -209,10 +210,11 @@ class Graph {
     for(int i = 0; i < 10; i++){
       for(int j = 0; j < 10; j++) {
         tiles[10*i + j].update();
-        if (tiles[10*i + j].clicked == true){
-          tiles[10*i + j].display(1);
-        }
-        else if (tiles[10*i + j].overTile()){
+        //if (tiles[10*i + j].clicked == true){
+        //  tiles[10*i + j].display(1);
+        //}
+       //else 
+        if (tiles[10*i + j].overTile()){
             tiles[10*i + j].display(3);
         }
         else{

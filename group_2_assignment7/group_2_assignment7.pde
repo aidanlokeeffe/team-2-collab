@@ -38,6 +38,13 @@ Infantry testinf;*/
 Player P1;
 Player P2;
 
+//P1 = true, P2 = false
+boolean currentTurn = true;
+
+//Declare the UI
+UI theUI;
+
+
 void setup() {
   // Basic setup
   size(1000, 700);
@@ -91,6 +98,9 @@ void setup() {
   P1 = new Player(1);
   P2 = new Player(2);
   
+  //Create the UI
+  theUI = new UI();
+  
   
   
 }
@@ -110,11 +120,14 @@ void draw() {
   
   P1.display();
   P2.display();
+  theUI.display(currentTurn);
   //for i = 0; i < 10; i++){
   //  for(int j = 0; j < 10; j++){
   //    board.tiles[10*ate();
   //  }
   //}
+  
+  
   
   
 }

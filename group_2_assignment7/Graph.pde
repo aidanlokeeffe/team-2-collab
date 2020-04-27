@@ -209,6 +209,10 @@ class Graph {
     for(int i = 0; i < 10; i++){
       for(int j = 0; j < 10; j++) {
         tiles[10*i + j].display(0);
+        if (tiles[10*i + j].overTile()){
+            tiles[10*i + j].display(3);
+        }
+        //tiles[10*i + j].update();
       }
     
     }

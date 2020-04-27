@@ -45,8 +45,8 @@ void setup() {
   
   // Create all geosprites
   plainsSprite = makeSprite("plains_", 4, ".png");
-  forestSprite = makeSprite("forest_", 3, ".png");
-  waterSprite = makeSprite("water_", 3, ".png");
+  forestSprite = makeSprite("forest_", 4, ".png");
+  waterSprite = makeSprite("water_", 4, ".png");
   
   // Create all unit sprites
   cavalryIdle = makeSprite("Cavalry_Idle_", 3, ".png");
@@ -106,12 +106,11 @@ void draw() {
   
   P1.display();
   P2.display();
-  
-  for(int i = 0; i < 10; i++){
-    for(int j = 0; j < 10; j++){
-      board.tiles[10*i + j].update();
-    }
-  }
+  //for i = 0; i < 10; i++){
+  //  for(int j = 0; j < 10; j++){
+  //    board.tiles[10*ate();
+  //  }
+  //}
   
   
 }

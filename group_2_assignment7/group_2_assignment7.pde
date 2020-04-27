@@ -44,7 +44,7 @@ void setup() {
   
   
   // Create all geosprites
-  plainsSprite = makeSprite("plains_", 3, ".png");
+  plainsSprite = makeSprite("plains_", 4, ".png");
   forestSprite = makeSprite("forest_", 3, ".png");
   waterSprite = makeSprite("water_", 3, ".png");
   
@@ -100,12 +100,18 @@ void draw() {
   testinf.display();*/
   
   // Comment this out when not debugging
-  for(int[] pSet : board.debug) {
-    line(pSet[0], pSet[1], pSet[2], pSet[3]);
-  }
+  //for(int[] pSet : board.debug) {
+  //  line(pSet[0], pSet[1], pSet[2], pSet[3]);
+  //}
   
   P1.display();
   P2.display();
+  
+  for(int i = 0; i < 10; i++){
+    for(int j = 0; j < 10; j++){
+      board.tiles[10*i + j].update();
+    }
+  }
   
   
 }

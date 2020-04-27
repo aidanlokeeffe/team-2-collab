@@ -73,26 +73,8 @@ void setup() {
   
   // This is for testing
   ArrayList<Integer> testList = board.availableTiles("a1", 7);
-  //print(board.getIndex("f8"));
   print(testList);
 
-  
-  /*for(int i=0; i<100; i++){
-    for(int j=0; j<100; j++) {
-      if (board.adjMat[i][j] == null) {
-        print("N ");
-        continue;
-      }
-      print(board.adjMat[i][j] + " ");
-    }
-    print("\n");
-  }*/
-  
-  //board.getAdjUnvisitedVertex("a1");
-  // Create all units
-  /*testcav = new Cavalry("a5");
-  testarch = new Archer("j9");
-  testinf = new Infantry("e4");*/
   
   // Create players
   P1 = new Player(1);
@@ -109,23 +91,11 @@ void draw() {
   background(25); 
   line(700, 0, 700, 700);
   board.display();
-  /*testcav.display();
-  testarch.display();
-  testinf.display();*/
-  
-  // Comment this out when not debugging
-  //for(int[] pSet : board.debug) {
-  //  line(pSet[0], pSet[1], pSet[2], pSet[3]);
-  //}
-  
+
   P1.display();
   P2.display();
   theUI.display(currentTurn, board.selectedTile);
-  //for i = 0; i < 10; i++){
-  //  for(int j = 0; j < 10; j++){
-  //    board.tiles[10*ate();
-  //  }
-  //}
+
   
   
   

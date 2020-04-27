@@ -208,9 +208,15 @@ class Graph {
   void display() {
     for(int i = 0; i < 10; i++){
       for(int j = 0; j < 10; j++) {
-        tiles[10*i + j].display(0);
-        if (tiles[10*i + j].overTile()){
+        tiles[10*i + j].update();
+        if (tiles[10*i + j].clicked == true){
+          tiles[10*i + j].display(1);
+        }
+        else if (tiles[10*i + j].overTile()){
             tiles[10*i + j].display(3);
+        }
+        else{
+          tiles[10*i + j].display(0);
         }
         //tiles[10*i + j].update();
       }

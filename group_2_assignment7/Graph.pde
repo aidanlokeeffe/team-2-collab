@@ -183,8 +183,6 @@ class Graph {
     }
     this.tiles[myPosn].visited = false;
     
-    println(budgets);
-    
     return outList;
   
   }

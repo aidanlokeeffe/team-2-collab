@@ -209,18 +209,29 @@ class Graph {
   void display() {
     for(int i = 0; i < 10; i++){
       for(int j = 0; j < 10; j++) {
-        tiles[10*i + j].update();
-        //if (tiles[10*i + j].clicked == true){
-        //  tiles[10*i + j].display(1);
-        //}
-       //else 
-        if (tiles[10*i + j].overTile()){
+       tiles[10*i + j].update();
+       if (tiles[10*i + j].selected){
+         selectedTile = tiles[10*i + j];
+       }
+       else{
+         for(int x = 0; x < 10; x++){
+           for(int y = 0; y < 10; y++) {
+             if (tiles[10*x + y] != selectedTile){
+               tiles[10*x + y].selected = false;
+             }
+           }
+         }
+       }
+       if (tiles[10*i + j].selected == true){
+          tiles[10*i + j].display(1);
+        }
+       else if (tiles[10*i + j].overTile()){
             tiles[10*i + j].display(3);
         }
         else{
           tiles[10*i + j].display(0);
         }
-        //tiles[10*i + j].update();
+
       }
     
     }

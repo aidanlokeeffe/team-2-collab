@@ -8,6 +8,7 @@ class Node {
   int type;
   int cost;
   PImage[] tileSprite = new PImage[3];
+  boolean selected = false; 
   
   // Constructor 
   Node(int _x, int _y, String _label, int _type) {
@@ -63,18 +64,25 @@ class Node {
   }
   
   void update() {
-    if (mousePressed && this.pressed == false) {
-      this.pressed = true;
-      if (this.overTile()) { //<>// //<>//
-        this.clicked = true;
-      }
-      else {
-        this.clicked = false;
-      }
-      if (mousePressed != true) {
-        this.pressed = false;
+    if (mousePressed){
+      if (this.overTile()){
+        this.selected = true;
       }
     }
+    
+    // code to be used later
+    //if (mousePressed && this.pressed == false) {
+    //  this.pressed = true;
+    //  if (this.overTile()) { //<>// //<>//
+    //    this.clicked = true;
+    //  }
+    //  else {
+    //    this.clicked = false;
+    //  }
+    //  if (mousePressed != true) {
+    //    this.pressed = false;
+    //  }
+    //}
   }
   
   boolean isClicked() {

@@ -2,11 +2,11 @@ class Player{
   ArrayList<Infantry> swords = new ArrayList<Infantry>();
   ArrayList<Archer> bows = new ArrayList<Archer>();
   ArrayList<Cavalry> knights = new ArrayList<Cavalry>();
-  
-  // 0: Player 1; 
+
+  // 0: Player 1;
   // 1: Player 2
   int p;
-  
+
   Player(int _p){
     this.p = _p;
     if(p==0) {
@@ -17,7 +17,7 @@ class Player{
         Infantry next = new Infantry(place, p);
         swords.add(next);
       }
-      
+
       // Create archers
       for(int i=99; i<105; i++) {
         char col = (char) i;
@@ -25,7 +25,7 @@ class Player{
         Archer next = new Archer(place, p);
         bows.add(next);
       }
-      
+
       // Create cavalry
       for(int i=0; i<2; i++) {
         char col1 = (char) (97 + i);
@@ -46,7 +46,7 @@ class Player{
         Infantry next = new Infantry(place, p);
         swords.add(next);
       }
-      
+
       // Create archers
       for(int i=99; i<105; i++) {
         char col = (char) i;
@@ -54,7 +54,7 @@ class Player{
         Archer next = new Archer(place, p);
         bows.add(next);
       }
-      
+
       // Create cavalry
       for(int i=0; i<2; i++) {
         char col1 = (char) (97 + i);
@@ -66,7 +66,7 @@ class Player{
         Cavalry next2 = new Cavalry(place2, p);
         knights.add(next2);
       }
-      
+
     }
 
   }
@@ -81,7 +81,7 @@ class Player{
     for (Cavalry cal : this.knights) {
       cal.display();
     }
-  
+
   }
 
 }

@@ -36,7 +36,7 @@ Player P1;
 Player P2;
 
 //P1 = true, P2 = false
-boolean currentTurn = true;
+int currentTurn = 0;
 
 //Declare the UI
 UI theUI;

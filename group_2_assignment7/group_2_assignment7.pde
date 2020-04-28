@@ -1,5 +1,17 @@
 import java.util.Stack;
 import java.util.Arrays;
+import processing.sound.*;
+SoundFile file;
+Music soundButton;
+
+void togglePlay() {
+  if (!file.isPlaying()) {
+    file.loop();
+  }
+  else {
+    file.pause();
+  }
+}
 
 // This function makes sprite arrays for us
 PImage[] makeSprite(String nameStr, int len, String imgType) {
@@ -26,6 +38,8 @@ public static PImage[] cavalryIdleRed = new PImage[3];
 public static PImage[] archerIdleRed = new PImage[3];
 public static PImage[] infantryIdleRed = new PImage[3];
 public static PImage[] lumberjackIdleRed = new PImage[3];
+
+public static PImage[] soundButtons = new PImage[2];
 
 // Graph is public so as to be accessible by unit classes
 public Graph board;
@@ -63,6 +77,8 @@ void setup() {
   archerIdleRed = makeSprite("Archer_Idle_Enemy_", 3, ".png");
   infantryIdleRed = makeSprite("Infantry_Idle_Enemy_", 3, ".png");
   lumberjackIdleRed = makeSprite("Lumberjack_Idle_Enemy_", 3, ".png");
+  
+  soundButtons = makeSprite("Sound_", 2, ".png");
 
   // Create board graph
   board = new Graph(35, 35);
@@ -74,6 +90,10 @@ void setup() {
   //Create the UI
   theUI = new UI();
 
+  //play music
+  file = new SoundFile(this, "DistantLand.wav");
+  file.loop();
+  soundButton = new Music(735, 665);
   
 
 
@@ -87,9 +107,12 @@ void draw() {
   P1.display();
   P2.display();
   theUI.display(currentTurn, board.selectedTile);
-
-
-
+  
+  soundButton.display();
+  if (soundButton.isMuted() && soundButton.paused == false) {
+    togglePlay();
+    soundButton.paused = true;
+  }
 
 
 }

@@ -41,7 +41,6 @@ boolean currentTurn = true;
 //Declare the UI
 UI theUI;
 
-
 void setup() {
   // Basic setup
   size(1000, 700);
@@ -69,12 +68,13 @@ void setup() {
   board = new Graph(35, 35);
 
   // Create players
-  P1 = new Player(1);
-  P2 = new Player(2);
+  P1 = new Player(0);
+  P2 = new Player(1);
 
   //Create the UI
   theUI = new UI();
 
+  
 
 
 }

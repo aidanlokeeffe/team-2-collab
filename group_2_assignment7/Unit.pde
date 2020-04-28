@@ -1,8 +1,8 @@
- class Unit {
+class Unit {
   int hp, atk, def, movement, range;
   
   float x, y;
-  String location; 
+  public String location; 
   int p;
 
   Unit(String label) {

@@ -25,6 +25,7 @@ class UI{
     textSize(30);
     text("Player " + currentPlayer +"'s turn!", 710, 30);
     
+    //shows data of a character if a tile with one is selected
     if (selectedTile == null){
     }
     else if (selectedTile.isOccupied() == true){

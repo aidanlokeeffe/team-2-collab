@@ -4,6 +4,7 @@ class Lumberjack extends Unit {
   Lumberjack(String label, int player) {
     super(label);
     this.hp = 20;
+    this.currenthp = 20;
     this.atk = 20;
     this.def = 5;
     this.movement = 2;

@@ -6,6 +6,7 @@ class Infantry extends Unit {
     
     
     this.hp = 20;
+    this.currenthp = 20;
     this.atk = 15;
     this.def = 15;
     this.movement = 2;

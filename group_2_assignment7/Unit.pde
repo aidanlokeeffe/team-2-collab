@@ -1,5 +1,5 @@
 class Unit {
-  int hp, atk, def, movement, range;
+  int hp, currenthp, atk, def, movement, range;
   String id;
   float x, y;
   public String location; 
@@ -26,7 +26,7 @@ class Unit {
   void displayStats(Unit unitToDisplay) {
     String unitID = unitToDisplay.id;
     if (this.p ==0){
-      fill(192, 125, 240); //<>//
+      fill(192, 125, 240); //<>// //<>//
       rect(720, 60, 260, 240, 25, 25, 25, 25);   
       if(unitID == "Archer"){
         image(archerIdle[0], 900, 100);
@@ -54,6 +54,12 @@ class Unit {
     }
     fill(0);
     text(unitID, 730, 100);
+    textSize(20);
+    text("HP: "+ unitToDisplay.currenthp +"/" + unitToDisplay.hp,730, 130);
+    text("Attack:" + unitToDisplay.atk, 730, 160);
+    text("Defense:" + unitToDisplay.def, 730, 190);
+    text("Movement:" + unitToDisplay.movement, 730, 220);
+    text("Range:" + unitToDisplay.range, 730, 250);
   }
   
   // move a unit

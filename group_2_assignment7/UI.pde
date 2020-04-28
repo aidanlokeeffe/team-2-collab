@@ -1,7 +1,7 @@
 color Player1 = color(35, 63, 242);
-color P1Accent = color(201, 234, 255);
+//  color P1Accent = color(201, 234, 255);
 color Player2 = color(255, 0, 0);
-color P2Accent = color(255, 145, 145);
+//color P2Accent = color(255, 145, 145);
 color turnFont = color(244, 194, 13);
 int currentPlayer;
 
@@ -30,18 +30,13 @@ class UI{
     if (selectedTile == null){
     }
     else if (selectedTile.isOccupied() == true){
-      showCharacterInfo(selectedTile.label); //<>//
+      selectedTile.currentUnit.displayStats(); //<>//
     }
     else{
     }
   
   }
   
-  void showCharacterInfo(String unitAtTile){
-    Unit toDisplay;
-   //P1.swords;
-  
-  }
   
   
   

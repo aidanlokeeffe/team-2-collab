@@ -18,7 +18,7 @@ class Cavalry extends Unit {
 
   void display() {
     if (this.hp > 0) {
-      if (this.p == 1){
+      if (this.p == 0){
       image(cavalryIdle[frameCount/50%3], x, y);
       }
       else{

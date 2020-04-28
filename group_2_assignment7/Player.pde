@@ -3,12 +3,12 @@ class Player{
   ArrayList<Archer> bows = new ArrayList<Archer>();
   ArrayList<Cavalry> knights = new ArrayList<Cavalry>();
   
-  // This should only be 1 or 2
+  // This should only be 0 or 1
   int p;
   
   Player(int _p){
     this.p = _p;
-    if(p==1) {
+    if(p==0) {
       // Create infantry
       for(int i=97; i<107; i++) {
         char col = (char) i;
@@ -37,7 +37,7 @@ class Player{
         knights.add(next2);
       }
     }
-    else if(p==2) {
+    else if(p==1) {
       // Create infantry
       for(int i=97; i<107; i++) {
         char col = (char) i;

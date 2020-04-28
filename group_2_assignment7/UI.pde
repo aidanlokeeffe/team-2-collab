@@ -11,9 +11,9 @@ class UI{
   }
 
   
-  void display(boolean currentTurn, Node selectedTile){
+  void display(int currentTurn, Node selectedTile){
     
-    if (currentTurn){
+    if (currentTurn == 0){
       fill(Player1);
       rect(700, 0, 300, 700);
       currentPlayer = 1;

@@ -36,7 +36,7 @@ Player P1;
 Player P2;
 
 //P1 = true, P2 = false
-boolean currentTurn = true;
+int currentTurn = 0;
 
 //Declare the UI
 UI theUI;
@@ -69,8 +69,8 @@ void setup() {
   board = new Graph(35, 35);
 
   // Create players
-  P1 = new Player(1);
-  P2 = new Player(2);
+  P1 = new Player(0);
+  P2 = new Player(1);
 
   //Create the UI
   theUI = new UI();

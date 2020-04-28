@@ -32,23 +32,23 @@ class Music {
     return this.state;
   }
   
-  void changeState() {
-    if (mousePressed){
-      if (this.overButton()){
-        this.selected = true;
-      }
-    }
-    if (mousePressed && this.pressed == false) {
-      this.pressed = true;
-      if (this.overTile()) { //<>//
-        this.clicked = true;
-      }
-      else {
-        this.clicked = false;
-      }
-      if (mousePressed != true) {
-        this.pressed = false;
-      }
-    }
-  }
+  //void changeState() {
+  //  if (mousePressed){
+  //    if (this.overButton()){
+  //      this.selected = true;
+  //    }
+  //  }
+  //  if (mousePressed && this.pressed == false) {
+  //    this.pressed = true;
+  //    if (this.overTile()) { //<>//
+  //      this.clicked = true;
+  //    }
+  //    else {
+  //      this.clicked = false;
+  //    }
+  //    if (mousePressed != true) {
+  //      this.pressed = false;
+  //    }
+  //  }
+  //}
 }

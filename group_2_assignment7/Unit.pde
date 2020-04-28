@@ -44,7 +44,13 @@ class Unit {
     int nextIdx = board.getIndex(label);
     
     if( !board.tiles[nextIdx].isOccupied() ) {
+      board.tiles[nextIdx].occupied = true;
+      board.tiles[nextIdx].currentUnit = this;
       board.tiles[currIdx].occupied = false;
+      board.tiles[currIdx].currentUnit = null;
+      
+      
+      
       Integer[] coords = board.tiles[nextIdx].getCoords();
       this.x = coords[0];
       this.y = coords[1];

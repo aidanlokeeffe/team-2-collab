@@ -2,7 +2,16 @@ import java.util.Stack;
 import java.util.Arrays;
 import processing.sound.*;
 SoundFile file;
-Music sound;
+Music soundButton;
+
+void togglePlay() {
+  if (!file.isPlaying()) {
+    file.loop();
+  }
+  else {
+    file.pause();
+  }
+}
 
 // This function makes sprite arrays for us
 PImage[] makeSprite(String nameStr, int len, String imgType) {
@@ -83,8 +92,8 @@ void setup() {
 
   //play music
   file = new SoundFile(this, "DistantLand.wav");
-  file.play();
-  sound = new Music(735, 665);
+  file.loop();
+  soundButton = new Music(735, 665);
   
 
 
@@ -98,8 +107,12 @@ void draw() {
   P1.display();
   P2.display();
   theUI.display(currentTurn, board.selectedTile);
-  sound.display();
-
+  
+  soundButton.display();
+  if (soundButton.isMuted() && soundButton.paused == false) {
+    togglePlay();
+    soundButton.paused = true;
+  }
 
 
 }

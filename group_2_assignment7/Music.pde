@@ -2,20 +2,26 @@ class Music {
   float x;
   float y;
   boolean state;
-  boolean clicked = false;
   boolean pressed = false;
+  boolean paused = false;
   
   Music(float x, float y) {
     this.x = x;
     this.y = y;
     this.state = false;
+    this.pressed = false;
   }
   
   void display() {
+    this.update();
     if (!this.isMuted()) {
+      fill(255);
+      rect(700,630, 70,70);
       image(soundButtons[0], x, y);
     }
-    else {
+    if (this.isMuted()) {
+      fill(255);
+      rect(700,630, 70,70);
       image(soundButtons[1], x, y);
     }
   }
@@ -32,23 +38,16 @@ class Music {
     return this.state;
   }
   
-  //void changeState() {
-  //  if (mousePressed){
-  //    if (this.overButton()){
-  //      this.selected = true;
-  //    }
-  //  }
-  //  if (mousePressed && this.pressed == false) {
-  //    this.pressed = true;
-  //    if (this.overTile()) { //<>//
-  //      this.clicked = true;
-  //    }
-  //    else {
-  //      this.clicked = false;
-  //    }
-  //    if (mousePressed != true) {
-  //      this.pressed = false;
-  //    }
-  //  }
-  //}
+  void update() {
+    if (mousePressed && this.pressed == false) {
+      this.pressed = true;
+      if (this.overButton()) { //<>//
+        this.state = !this.state;
+      }
+      if (mousePressed != true) {
+        this.pressed = false;
+      }
+    }
+  }
+  
 }

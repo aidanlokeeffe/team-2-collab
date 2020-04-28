@@ -3,6 +3,8 @@ class Graph {
   Integer[][] adjMat;
   int x0, y0;
   Node selectedTile; 
+  Unit unitToMove;
+  ArrayList<Integer> unitToMoveAvailTiles = new ArrayList<Integer>();
   
   // IMPORTANT, because of the ordering of (i, j), the matrix below is the 
   // TRANSPOSE of what will appear on the screen. This can be frustrating
@@ -210,6 +212,30 @@ class Graph {
        }
        if (tiles[10*i + j].selected == true){ 
           tiles[10*i + j].display(1);
+          
+          // These are the conditions for movement
+          if( this.tiles[10*i+j].isOccupied() && this.tiles[10*i+j].currentUnit.p == currentTurn ){
+            this.unitToMove = this.tiles[10*i+j].currentUnit;
+            String lblToPass = this.unitToMove.location;
+            int mvmtToPass = this.unitToMove.movement;
+            this.unitToMoveAvailTiles = this.availableTiles(lblToPass, mvmtToPass);
+          }
+          else if(this.unitToMove != null) {
+            if( unitToMoveAvailTiles.contains(10*i+j) && !this.tiles[10*i+j].isOccupied() ) {
+              String targetLabel = this.tiles[10*i+j].getLabel();
+              this.unitToMove.move(targetLabel);
+              this.unitToMove = null;
+              this.unitToMoveAvailTiles.clear();
+            }
+          
+          
+          }
+          
+          
+          
+          
+          
+          
         }
        else if (tiles[10*i + j].overTile()){
             tiles[10*i + j].display(3);

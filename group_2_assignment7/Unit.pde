@@ -25,12 +25,16 @@
   // show the stats of a unit on the right side of the screen when the unit is clicked/selected
   void displayStats() {
     if (this.p ==1){
-      fill(201, 234, 255);
+      fill(201, 234, 255); //<>//
       rect(720, 60, 260, 240, 25, 25, 25, 25);
+      fill(0);
+      //text(id, 730, 100);
+      
     }
     else{
       fill(255, 145, 145);
       rect(720, 60, 260, 240, 25, 25, 25, 25);
+      fill(0);
     }
   }
   

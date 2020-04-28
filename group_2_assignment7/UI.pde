@@ -22,7 +22,7 @@ class UI{
       fill(Player2);
       rect(700, 0, 300, 700);
       currentPlayer = 2; 
-    }
+    } //<>//
     fill(turnFont);
     textSize(30);
     text("Player " + currentPlayer +"'s turn!", 710, 30);
@@ -30,7 +30,7 @@ class UI{
     if (selectedTile == null){
     }
     else if (selectedTile.isOccupied() == true){
-      selectedTile.currentUnit.displayStats(); //<>//
+      selectedTile.currentUnit.displayStats(); //<>// //<>//
     }
     else{
     }

@@ -208,7 +208,7 @@ class Graph {
            }
          }
        }
-       if (tiles[10*i + j].selected == true){
+       if (tiles[10*i + j].selected == true){ 
           tiles[10*i + j].display(1);
         }
        else if (tiles[10*i + j].overTile()){

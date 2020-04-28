@@ -1,8 +1,8 @@
- class Unit {
+class Unit {
   int hp, atk, def, movement, range;
   
   float x, y;
-  String location; 
+  public String location; 
   int p;
 
   Unit(String label) {
@@ -12,6 +12,7 @@
       this.x = board.tiles[idx].x;
       this.y = board.tiles[idx].y;
       board.tiles[idx].occupied = true;
+      board.tiles[idx].currentUnit = this;
       
     }
     else {
@@ -22,7 +23,20 @@
   }
   
   // show the stats of a unit on the right side of the screen when the unit is clicked/selected
-  void displayStats() {}
+  void displayStats() {
+    if (this.p ==0){
+      fill(201, 234, 255); //<>//
+      rect(720, 60, 260, 240, 25, 25, 25, 25);
+      fill(0);
+      //text(id, 730, 100);
+      
+    }
+    else{
+      fill(255, 145, 145);
+      rect(720, 60, 260, 240, 25, 25, 25, 25);
+      fill(0);
+    }
+  }
   
   // move a unit
   void move(String label) {

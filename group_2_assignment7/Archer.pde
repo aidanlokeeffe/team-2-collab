@@ -1,6 +1,6 @@
 class Archer extends Unit {
   
-  String id;
+  
   
   Archer(String label, int player) {
     super(label);

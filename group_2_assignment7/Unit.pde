@@ -1,6 +1,6 @@
 class Unit {
   int hp, atk, def, movement, range;
-  
+  String id;
   float x, y;
   public String location; 
   int p;
@@ -23,19 +23,37 @@ class Unit {
   }
   
   // show the stats of a unit on the right side of the screen when the unit is clicked/selected
-  void displayStats() {
+  void displayStats(Unit unitToDisplay) {
+    String unitID = unitToDisplay.id;
     if (this.p ==0){
-      fill(201, 234, 255); //<>//
-      rect(720, 60, 260, 240, 25, 25, 25, 25);
-      fill(0);
-      //text(id, 730, 100);
+      fill(192, 125, 240); //<>//
+      rect(720, 60, 260, 240, 25, 25, 25, 25);   
+      if(unitID == "Archer"){
+        image(archerIdle[0], 900, 100);
+      }
+      else if(unitID == "Cavalry"){
+        image(cavalryIdle[0], 900, 100);
+      }
+      else if(unitID == "Infantry"){
+        image(infantryIdle[0], 900, 100);
+      }
       
     }
     else{
-      fill(255, 145, 145);
+      fill(229, 195, 71);
       rect(720, 60, 260, 240, 25, 25, 25, 25);
-      fill(0);
+      if(unitID == "Archer"){
+        image(archerIdleRed[0], 900, 100);
+      }
+      else if(unitID == "Cavalry"){
+        image(cavalryIdleRed[0], 900, 100);
+      }
+      else if(unitID == "Infantry"){
+        image(infantryIdleRed[0], 900, 100);
+      }
     }
+    fill(0);
+    text(unitID, 730, 100);
   }
   
   // move a unit

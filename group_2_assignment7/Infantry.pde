@@ -1,5 +1,5 @@
 class Infantry extends Unit {
-  String id;
+
 
   Infantry(String label, int player) {
     super(label);

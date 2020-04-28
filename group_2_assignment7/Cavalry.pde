@@ -1,6 +1,5 @@
 class Cavalry extends Unit {
 
-  String id;
   int idleFrame;
   int currentFrame;
 

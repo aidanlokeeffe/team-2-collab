@@ -6,6 +6,7 @@ class Graph {
   Unit unitToMove;
   ArrayList<Integer> unitToMoveAvailTiles = new ArrayList<Integer>();
   //Player[] gamePlayers = new Player[2];
+  boolean[] moveFlag = {false, false};
   
   // IMPORTANT, because of the ordering of (i, j), the matrix below is the 
   // TRANSPOSE of what will appear on the screen. This can be frustrating
@@ -219,7 +220,7 @@ class Graph {
           tiles[10*i + j].display(1);
           
           // These are the conditions for movement
-          if( this.tiles[10*i+j].isOccupied() && this.tiles[10*i+j].currentUnit.p == currentTurn ){
+          if( this.tiles[10*i+j].isOccupied() && this.tiles[10*i+j].currentUnit.p == currentTurn && !this.moveFlag[currentTurn]){
             this.unitToMove = this.tiles[10*i+j].currentUnit;
             String lblToPass = this.unitToMove.location;
             int mvmtToPass = this.unitToMove.movement;
@@ -234,6 +235,7 @@ class Graph {
               //print(gamePlayers);
               this.unitToMove = null;
               this.unitToMoveAvailTiles.clear();
+              this.moveFlag[currentTurn] = true;
               
             }
           }

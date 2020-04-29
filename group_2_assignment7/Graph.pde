@@ -238,7 +238,7 @@ class Graph {
           
           
         }
-       else if (tiles[10*i + j].overTile()){
+       else if (tiles[10*i + j].overTile() || this.unitToMoveAvailTiles.contains(this.getIndex(tiles[10*i+j].getLabel()))){
             tiles[10*i + j].display(3);
         }
         else{

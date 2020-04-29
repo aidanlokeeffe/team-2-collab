@@ -4,8 +4,8 @@ class Archer extends Unit {
   
   Archer(String label, int player) {
     super(label);
-    this.hp = 20;
-    this.currenthp = 20;
+    this.hp = 25;
+    this.currenthp = 25;
     this.atk = 20;
     this.def = 5;
     this.movement = 2;

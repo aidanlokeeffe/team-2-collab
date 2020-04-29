@@ -109,7 +109,6 @@ class Unit { //<>//
     int unitIndex = board.getIndex(this.location);
     ArrayList<Integer> enemyPositions = this.checkForEnemies();
     if (enemyPositions.size() > 0) {
-      print(enemyPositions.get(0));
       if (p == 0) {
         fill(192, 125, 240);
       } else {
@@ -119,16 +118,28 @@ class Unit { //<>//
       String unitId = board.tiles[unitIndex].currentUnit.id;
       int numEnemies = enemyPositions.size();
       ArrayList<String> enemyIds = new ArrayList<String>();
+      ArrayList<Integer> damageDealt = new ArrayList<Integer>();
       for (int i=0; i < numEnemies; i++) {
         enemyIds.add(board.tiles[enemyPositions.get(i)].currentUnit.id);
+        damageDealt.add(board.tiles[unitIndex].currentUnit.atk);
       }
       textSize(30);
-      fill(0);
       for (int i=0; i < numEnemies; i++) {
         this.combatForecast(p, unitId, enemyIds.get(i), 755, 345+i*70, 840, 345+i*70);
-        text("VS", 795, 345+i*75);
+        fill(0);
+        text("VS", 780, 355+i*75);
+        text(damageDealt.get(i), 865, 355+i*75);
+        displayAttackButton(p, 910, 325+i*75);
       }
     }
+  }
+  
+  void displayAttackButton(int p, int x, int y) {
+    if (p == 0) {fill(35, 63, 242);}
+    else {fill(255, 0, 0);}
+    rect(x, y, 60, 35, 25, 25, 25, 25);
+    fill(255);
+    text("atk", x+8, y+28);
   }
 
   void combatForecast(int p, String unitId, String enemyId, int x1, int y1, int x2, int y2) {

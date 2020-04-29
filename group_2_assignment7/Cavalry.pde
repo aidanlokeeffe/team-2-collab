@@ -10,7 +10,7 @@ class Cavalry extends Unit {
     this.currenthp = 25;
     this.atk = 10;
     this.def = 10;
-    this.movement = 6;
+    this.movement = 4;
     this.range = 1;
     this.id = "Cavalry";
     this.p = player;

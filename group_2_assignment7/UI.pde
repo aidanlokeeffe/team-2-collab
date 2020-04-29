@@ -34,6 +34,9 @@ class UI{
         }
         board.unitToMoveAvailTiles.clear();
         board.selectedTile = null;
+        /*for(Player P : thePlayers) {
+          P.moved = false;
+        }*/
       }
       else if(!mousePressed){
         endTurnPressed = false;

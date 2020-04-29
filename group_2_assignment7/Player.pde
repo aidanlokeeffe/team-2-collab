@@ -7,6 +7,8 @@ class Player{
   // 1: Player 2
   int p;
   
+  boolean moved;
+  
   
 
   Player(int _p){
@@ -83,7 +85,11 @@ class Player{
     for (Cavalry cal : this.knights) {
       cal.display();
     }
-
   }
+  
+  boolean hasMoved() {
+    return moved;
+  }
+  
 
 }

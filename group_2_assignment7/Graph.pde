@@ -5,6 +5,7 @@ class Graph {
   Node selectedTile; 
   Unit unitToMove;
   ArrayList<Integer> unitToMoveAvailTiles = new ArrayList<Integer>();
+  //Player[] gamePlayers = new Player[2];
   
   // IMPORTANT, because of the ordering of (i, j), the matrix below is the 
   // TRANSPOSE of what will appear on the screen. This can be frustrating
@@ -229,8 +230,11 @@ class Graph {
             if( unitToMoveAvailTiles.contains(10*i+j) && !this.tiles[10*i+j].isOccupied() ) {
               String targetLabel = this.tiles[10*i+j].getLabel();
               this.unitToMove.move(targetLabel);
+              //thePlayers[this.unitToMove.p].moved = true;
+              //print(gamePlayers);
               this.unitToMove = null;
               this.unitToMoveAvailTiles.clear();
+              
             }
           }
         }

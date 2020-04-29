@@ -48,6 +48,9 @@ public Graph board;
 // The players
 public Player P1;
 public Player P2;
+//public Player[] thePlayers = { P1, P2 };
+
+//board.gamePlayers[0] = P1;
 
 //P1 = 0, P2 = 1
 int currentTurn = 0;

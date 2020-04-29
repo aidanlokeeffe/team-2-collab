@@ -38,15 +38,7 @@ class Music {
     return this.state;
   }
   
-  void update() {
-  //  if(mousePressed){
-  //    if(this.overButton()){
-  //        this.state = !this.state;
-
-  //    }
-  //  }
-  //}
-  
+  void update() {  
     if (mousePressed && this.pressed == false) {
       this.pressed = true; //<>//
       if (this.overButton()) { //<>//
@@ -56,6 +48,6 @@ class Music {
     else if (mousePressed != true) {
         this.pressed = false;
       }
-  }
+  } //<>//
   
 }

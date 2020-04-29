@@ -12,6 +12,7 @@ class Archer extends Unit {
     this.range = 3;
     this.id = "Archer";
     this.p = player;
+    this.alive = true;
   }
   
   void display() {
@@ -22,6 +23,10 @@ class Archer extends Unit {
       else{
         image(archerIdleRed[frameCount/50%3], x, y);
       }
+    }
+    if (this.currenthp <= 0 && this.alive == true) {
+      this.alive = false;
+      this.die();
     }
   }
   

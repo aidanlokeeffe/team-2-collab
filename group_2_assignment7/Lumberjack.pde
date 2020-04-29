@@ -12,6 +12,7 @@ class Lumberjack extends Unit {
     this.range = 1;
     this.id = "Lumberjack";
     this.p = player;
+    this.alive = true;
   }
   
   void display() {
@@ -22,6 +23,10 @@ class Lumberjack extends Unit {
       else{
         image(lumberjackIdleRed[frameCount/50%3], x, y);
       }
+    }
+    if (this.currenthp <= 0 && this.alive == true) {
+      this.alive = false;
+      this.die();
     }
   }
   

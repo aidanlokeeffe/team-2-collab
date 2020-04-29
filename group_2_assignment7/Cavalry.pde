@@ -15,6 +15,7 @@ class Cavalry extends Unit {
     this.range = 1;
     this.id = "Cavalry";
     this.p = player;
+    this.alive = true;
   }
 
   void display() {
@@ -25,6 +26,10 @@ class Cavalry extends Unit {
       else{
         image(cavalryIdleRed[frameCount/50%3], x, y);
       }
+    }
+    if (this.currenthp <= 0 && this.alive == true) {
+      this.alive = false;
+      this.die();
     }
   }
   

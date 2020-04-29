@@ -6,6 +6,7 @@ class Unit { //<>//
   int p;
   boolean hasAttacked;
   int currentPlayer;
+  boolean alive;
 
   Unit(String label) {
     if (board.hasVertex(label)) {
@@ -77,6 +78,7 @@ class Unit { //<>//
     }
   }
 
+  // returns an arrayList containing the indices of adjacent enemies if there are any
   ArrayList<Integer> checkForEnemies() {
 
     ArrayList<Integer> adjacentTiles = new ArrayList<Integer>();
@@ -107,6 +109,7 @@ class Unit { //<>//
     return attackableTiles;
   }
 
+  //displays the UI for combat between units. This includes the unit sprites, the damage dealt, and an attack button
   void displayCombat() {
     int unitIndex = board.getIndex(this.location);
     ArrayList<Integer> enemyPositions = this.checkForEnemies();
@@ -135,32 +138,36 @@ class Unit { //<>//
         text(damageDealt.get(i), 865, 355+i*75);
         displayAttackButton(p, 910, 325+i*75, enemyUnits.get(i));
       }
-      
     }
   }
-  
-  //problem: unit hasAttacked is not reset
+
   //problem units can attack when it isnt their turn
-  // units cannot die yet
-  
+
   void displayAttackButton(int p, int x, int y, Unit enemy) {
-    if (p == 0) {fill(35, 63, 242);}
-    else {fill(255, 0, 0);}
+    if (p == 0) {
+      fill(35, 63, 242);
+    } else {
+      fill(255, 0, 0);
+    }
     rect(x, y, 60, 35, 25, 25, 25, 25);
     fill(255);
     text("atk", x+8, y+28);
-    if (mousePressed && this.overAtkButton(x, y, 120, 70) && this.hasAttacked == false) {
-      this.attack(enemy);
-      this.hasAttacked = true;
+    if (this.overAtkButton(x, y, 120, 70)) {
+      fill(255);
+      rect(x, y, 60, 35, 25, 25, 25, 25);
+      fill(0);
+      text("atk", x+8, y+28);
+      if (mousePressed && this.hasAttacked == false) {
+        this.attack(enemy);
+        this.hasAttacked = true;
+      }
     }
-    
   }
-  
+
   boolean overAtkButton(int x, int y, int w, int h) {
     if (mouseX > x - (w / 2) && mouseX < x + (w / 2) && mouseY > y - (h / 2) && mouseY <  y + (h / 2)) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -230,5 +237,8 @@ class Unit { //<>//
   // units might need to occupy its space
   // change tile.isOccupied to false
   void die() {
+    int unitIndex = board.getIndex(this.location);
+    board.tiles[unitIndex].occupied = false;
+    board.tiles[unitIndex].currentUnit = null;
   }
 }

@@ -201,17 +201,14 @@ class Graph {
        if (tiles[10*i + j].selected){
          selectedTile = tiles[10*i + j];
          
-         
          //println(Integer.toString(frameCount) + ": " + Integer.toString(10*i + j));
          // break;
-         
        }
        else{
          for(int x = 0; x < 10; x++){
            for(int y = 0; y < 10; y++) {
              if (tiles[10*x + y] != selectedTile){
                tiles[10*x + y].selected = false;
-               
              }
            }
          }
@@ -235,15 +232,7 @@ class Graph {
               this.unitToMove = null;
               this.unitToMoveAvailTiles.clear();
             }
-          
-          
           }
-          
-          
-          
-          
-          
-          
         }
        // Please pardon this monster of a condition
        else if (tiles[10*i + j].overTile() || this.unitToMoveAvailTiles.contains(this.getIndex(tiles[10*i+j].getLabel()))){
@@ -252,9 +241,7 @@ class Graph {
         else{
           tiles[10*i + j].display(0);
         }
-
       }
-    
     }
   }
   

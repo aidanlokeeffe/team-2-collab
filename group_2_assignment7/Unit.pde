@@ -87,7 +87,33 @@ class Unit {
   
   }
   
-  
+  ArrayList<Integer> checkForEnemies() {
+    
+    ArrayList<Integer> adjacentTiles = new ArrayList<Integer>();
+    ArrayList<Integer> attackableTiles = new ArrayList<Integer>();
+    //  get the label of the tile unit is on
+    int unitIndex = board.getIndex(this.location);
+    //if the tile is selected
+    if (board.tiles[unitIndex].selected) {
+    //println(unitIndex);
+    // get adjacent tiles
+    adjacentTiles.add(unitIndex+1); 
+    adjacentTiles.add(unitIndex-1);
+    adjacentTiles.add(unitIndex+10);
+    adjacentTiles.add(unitIndex-10);
+    //print(adjacentTiles.get(0),adjacentTiles.get(1),adjacentTiles.get(2),adjacentTiles.get(3));
+    // check if enemies are on adjacent tiles
+    for(int i = 0; i<adjacentTiles.size(); i++) {
+      if (adjacentTiles.get(i) < 0 || adjacentTiles.get(i) > 99) {continue;}
+      if(board.tiles[adjacentTiles.get(i)].isOccupied() && board.tiles[unitIndex].currentUnit.p != board.tiles[adjacentTiles.get(i)].currentUnit.p) {
+        attackableTiles.add(adjacentTiles.get(i));
+        //print("/",adjacentTiles.get(i),"/");
+      }
+    }
+    }
+    //return arrayList of tiles that can be attacked;
+    return attackableTiles;
+  }
   
   // attacking unit attacks other unit
   void attack(Unit otherUnit) {

@@ -18,9 +18,19 @@ class UI{
         endTurnPressed = true;
         if(currentTurn == 0){
           currentTurn = 1;
+          for (int i = 0; i < board.tiles.length; i++) {
+            if (board.tiles[i].isOccupied() && board.tiles[i].currentUnit.p == 1) {
+              board.tiles[i].currentUnit.hasAttacked = false;
+            }
+          }
         }
         else{
           currentTurn = 0;
+          for (int i = 0; i < board.tiles.length; i++) {
+            if (board.tiles[i].isOccupied() && board.tiles[i].currentUnit.p == 0) {
+              board.tiles[i].currentUnit.hasAttacked = false;
+            }
+          }
         }
         board.unitToMoveAvailTiles.clear();
         board.selectedTile = null;

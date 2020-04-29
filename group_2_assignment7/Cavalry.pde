@@ -6,6 +6,7 @@ class Cavalry extends Unit {
 
   Cavalry(String label, int player) {
     super(label);
+    this.hasAttacked = false;
     this.hp = 35;
     this.currenthp = 35;
     this.atk = 10;
@@ -17,7 +18,7 @@ class Cavalry extends Unit {
   }
 
   void display() {
-    if (this.hp > 0) {
+    if (this.currenthp > 0) {
       if (this.p == 0){
       image(cavalryIdle[frameCount/50%3], x, y);
       }

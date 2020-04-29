@@ -3,6 +3,7 @@ class Lumberjack extends Unit {
 
   Lumberjack(String label, int player) {
     super(label);
+    this.hasAttacked = false;
     this.hp = 25;
     this.currenthp = 20;
     this.atk = 20;
@@ -14,7 +15,7 @@ class Lumberjack extends Unit {
   }
   
   void display() {
-    if (this.hp > 0) {
+    if (this.currenthp > 0) {
       if(this.p == 1){
         image(lumberjackIdle[frameCount/50%3], x, y);
       }

@@ -3,8 +3,7 @@ class Infantry extends Unit {
 
   Infantry(String label, int player) {
     super(label);
-    
-    
+    this.hasAttacked = false;
     this.hp = 35;
     this.currenthp = 35;
     this.atk = 15;
@@ -16,7 +15,7 @@ class Infantry extends Unit {
   }
   
   void display() {
-    if (this.hp > 0) {
+    if (this.currenthp > 0) {
       if(this.p == 0){
         image(infantryIdle[frameCount/50%3], x, y);
       }

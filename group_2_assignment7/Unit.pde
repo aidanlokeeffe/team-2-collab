@@ -4,6 +4,8 @@ class Unit { //<>//
   float x, y;
   public String location; 
   int p;
+  boolean hasAttacked;
+  int currentPlayer;
 
   Unit(String label) {
     if (board.hasVertex(label)) {
@@ -119,9 +121,11 @@ class Unit { //<>//
       int numEnemies = enemyPositions.size();
       ArrayList<String> enemyIds = new ArrayList<String>();
       ArrayList<Integer> damageDealt = new ArrayList<Integer>();
+      ArrayList<Unit> enemyUnits = new ArrayList<Unit>();
       for (int i=0; i < numEnemies; i++) {
         enemyIds.add(board.tiles[enemyPositions.get(i)].currentUnit.id);
         damageDealt.add(board.tiles[unitIndex].currentUnit.atk);
+        enemyUnits.add(board.tiles[enemyPositions.get(i)].currentUnit);
       }
       textSize(30);
       for (int i=0; i < numEnemies; i++) {
@@ -129,17 +133,36 @@ class Unit { //<>//
         fill(0);
         text("VS", 780, 355+i*75);
         text(damageDealt.get(i), 865, 355+i*75);
-        displayAttackButton(p, 910, 325+i*75);
+        displayAttackButton(p, 910, 325+i*75, enemyUnits.get(i));
       }
+      
     }
   }
   
-  void displayAttackButton(int p, int x, int y) {
+  //problem: unit hasAttacked is not reset
+  //problem units can attack when it isnt their turn
+  // units cannot die yet
+  
+  void displayAttackButton(int p, int x, int y, Unit enemy) {
     if (p == 0) {fill(35, 63, 242);}
     else {fill(255, 0, 0);}
     rect(x, y, 60, 35, 25, 25, 25, 25);
     fill(255);
     text("atk", x+8, y+28);
+    if (mousePressed && this.overAtkButton(x, y, 120, 70) && this.hasAttacked == false) {
+      this.attack(enemy);
+      this.hasAttacked = true;
+    }
+    
+  }
+  
+  boolean overAtkButton(int x, int y, int w, int h) {
+    if (mouseX > x - (w / 2) && mouseX < x + (w / 2) && mouseY > y - (h / 2) && mouseY <  y + (h / 2)) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   void combatForecast(int p, String unitId, String enemyId, int x1, int y1, int x2, int y2) {
@@ -197,10 +220,10 @@ class Unit { //<>//
   }
 
   // attacking unit attacks other unit
-  void attack(Unit otherUnit) {
+  void attack(Unit enemy) {
     int damage = this.atk;
-    int newHealth = otherUnit.hp - damage;
-    otherUnit.hp = newHealth;
+    int newHealth = enemy.currenthp - damage;
+    enemy.currenthp = newHealth;
   }
 
   // when a units hp drops below zero I have it stopped being displayed in its display method but it will still exist so we must erase it because other

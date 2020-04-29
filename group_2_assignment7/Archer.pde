@@ -1,9 +1,9 @@
 class Archer extends Unit {
   
   
-  
   Archer(String label, int player) {
     super(label);
+    this.hasAttacked = false;
     this.hp = 25;
     this.currenthp = 25;
     this.atk = 20;
@@ -15,7 +15,7 @@ class Archer extends Unit {
   }
   
   void display() {
-    if (this.hp > 0) {
+    if (this.currenthp > 0) {
       if (this.p == 0){
         image(archerIdle[frameCount/50%3], x, y);
       }

@@ -48,10 +48,9 @@ the widest possible range of tiles due to the large number of cycles in the
 board graph. A major imporvement would be to change the algorithm used in 
 availableTiles.
 *(2) There is a bug where selecting the tile immediately above a previously 
-selected tile does not deselect the previous tile. This causes difficulty in
-moving units, as to move them into a tile directly above them, the player has to
-first click a tile to the left or right of the tile immediately above the 
-previously selected tile, and then slide the pointer over the target tile.
+selected tile does not deselect the previous tile. The player has to click another tile to deselect this particular 
+tile.
 (3) The emphasize that units can jump over each other, they should trace out an
 arc between their current tile and the target tile. 
 (4) The game would benefit from a title screen, a pause screen, and more maps.
+(5) The game would also benefit from more sound effects.

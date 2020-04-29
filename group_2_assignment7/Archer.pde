@@ -9,7 +9,7 @@ class Archer extends Unit {
     this.atk = 20;
     this.def = 5;
     this.movement = 2;
-    this.range = 2;
+    this.range = 3;
     this.id = "Archer";
     this.p = player;
   }

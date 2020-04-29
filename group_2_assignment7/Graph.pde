@@ -200,17 +200,24 @@ class Graph {
        tiles[10*i + j].update();
        if (tiles[10*i + j].selected){
          selectedTile = tiles[10*i + j];
+         
+         
+         //println(Integer.toString(frameCount) + ": " + Integer.toString(10*i + j));
+         // break;
+         
        }
        else{
          for(int x = 0; x < 10; x++){
            for(int y = 0; y < 10; y++) {
              if (tiles[10*x + y] != selectedTile){
                tiles[10*x + y].selected = false;
+               
              }
            }
          }
        }
        if (tiles[10*i + j].selected == true){ 
+          selectedTile = tiles[10*i + j];
           tiles[10*i + j].display(1);
           
           // These are the conditions for movement
@@ -238,6 +245,7 @@ class Graph {
           
           
         }
+       // Please pardon this monster of a condition
        else if (tiles[10*i + j].overTile() || this.unitToMoveAvailTiles.contains(this.getIndex(tiles[10*i+j].getLabel()))){
             tiles[10*i + j].display(3);
         }

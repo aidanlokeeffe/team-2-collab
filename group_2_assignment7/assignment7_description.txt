@@ -31,7 +31,10 @@ Methods Russell helped out with were availableTiles in the Graph class, and the 
 Node class. Additionally, Russell created the music for the game, and made all of the sprites and their
 animations, including the tile sprites for the map.
 
-Angelo Gomez:
+Angelo Gomez: Angelo was mostly responsible for implementing the UI seen on the right side of the board.
+He created the end turn button, the ability to see a units stats, and designed the colors of the interface.
+Additionally, Angelo worked on board by having tiles that highlight as you mouse over them and created the function
+that allows you to select a function and see the data of unit sitting on there.
 
 Aidan O'Keeffe: Aidan was broadly responsible for implementing the board. 
 Particular methods which Aidan either wrote or to which he was a contributor 

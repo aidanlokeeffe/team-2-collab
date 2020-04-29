@@ -65,6 +65,7 @@ void setup() {
   size(1000, 700);
   imageMode(CENTER);
   background(25);
+  
 
 
   // Create all geosprites
@@ -122,6 +123,7 @@ void draw() {
     togglePlay();
     soundButton.paused = false;
   }
-
+  
+  
 
 }

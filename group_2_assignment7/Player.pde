@@ -91,5 +91,21 @@ class Player{
     return moved;
   }
   
+  // Returns true if all the units are not alive, and false otherwise
+  boolean lost() {
+    boolean myArmyIsNoMore = true;
+    for(Infantry inf : this.swords) {
+      myArmyIsNoMore = myArmyIsNoMore && ! inf.alive;
+    }
+    for(Archer arc : this.bows) {
+      myArmyIsNoMore = myArmyIsNoMore && ! arc.alive;
+    }
+    for(Cavalry horsey : this.knights) {
+      myArmyIsNoMore = myArmyIsNoMore && ! horsey.alive;
+    }
+    return myArmyIsNoMore;
+    
+  
+  }
 
 }

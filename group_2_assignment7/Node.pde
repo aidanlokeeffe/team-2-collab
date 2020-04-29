@@ -70,9 +70,11 @@ class Node {
   }
   
   void update() {
-    if (mousePressed){
-      if (this.overTile()){
+    if (this.overTile()){
+      if (mousePressed){
+      
         this.selected = true;
+        //print("booty");
       }
     }
     

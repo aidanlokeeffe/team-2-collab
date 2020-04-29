@@ -39,15 +39,23 @@ class Music {
   }
   
   void update() {
+  //  if(mousePressed){
+  //    if(this.overButton()){
+  //        this.state = !this.state;
+
+  //    }
+  //  }
+  //}
+  
     if (mousePressed && this.pressed == false) {
-      this.pressed = true;
+      this.pressed = true; //<>//
       if (this.overButton()) { //<>//
         this.state = !this.state;
       }
-      if (mousePressed != true) {
+    }
+    else if (mousePressed != true) {
         this.pressed = false;
       }
-    }
   }
   
 }

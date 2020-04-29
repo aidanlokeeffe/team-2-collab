@@ -113,6 +113,10 @@ void draw() {
     togglePlay();
     soundButton.paused = true;
   }
+  else if (!(soundButton.isMuted()) && soundButton.paused == true){
+    togglePlay();
+    soundButton.paused = false;
+  }
 
 
 }

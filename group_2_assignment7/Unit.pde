@@ -52,6 +52,7 @@ class Unit {
         image(infantryIdleRed[0], 900, 100);
       }
     }
+    textSize(30);
     fill(0);
     text(unitID, 730, 100);
     textSize(20);

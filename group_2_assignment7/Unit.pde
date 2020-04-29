@@ -233,9 +233,8 @@ class Unit { //<>//
     enemy.currenthp = newHealth;
   }
 
-  // when a units hp drops below zero I have it stopped being displayed in its display method but it will still exist so we must erase it because other
-  // units might need to occupy its space
-  // change tile.isOccupied to false
+  // tile unit on is changed to unoccupied and current unit is set to null
+  // sprite disappearance is implemented in specific unit class
   void die() {
     int unitIndex = board.getIndex(this.location);
     board.tiles[unitIndex].occupied = false;

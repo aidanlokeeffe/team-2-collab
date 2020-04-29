@@ -226,7 +226,7 @@ class Graph {
             String lblToPass = this.unitToMove.location;
             int mvmtToPass = this.unitToMove.movement;
             this.unitToMoveAvailTiles = this.availableTiles(lblToPass, mvmtToPass);
-            println(unitToMoveAvailTiles);
+            //println(unitToMoveAvailTiles);
           }
           else if(this.unitToMove != null) {
             if( unitToMoveAvailTiles.contains(10*i+j) && !this.tiles[10*i+j].isOccupied() ) {

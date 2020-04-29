@@ -22,6 +22,8 @@ class UI{
         else{
           currentTurn = 0;
         }
+        board.unitToMoveAvailTiles.clear();
+        board.selectedTile = null;
       }
       else if(!mousePressed){
         endTurnPressed = false;

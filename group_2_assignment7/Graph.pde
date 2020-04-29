@@ -180,10 +180,10 @@ class Graph {
     }
     
     
-    for(int i : outList) {
+    for(int i=0; i<100; i++) {
       this.tiles[i].visited = false;
     }
-    this.tiles[myPosn].visited = false;
+    
     
     return outList;
   
@@ -219,6 +219,7 @@ class Graph {
             String lblToPass = this.unitToMove.location;
             int mvmtToPass = this.unitToMove.movement;
             this.unitToMoveAvailTiles = this.availableTiles(lblToPass, mvmtToPass);
+            println(unitToMoveAvailTiles);
           }
           else if(this.unitToMove != null) {
             if( unitToMoveAvailTiles.contains(10*i+j) && !this.tiles[10*i+j].isOccupied() ) {
@@ -237,7 +238,7 @@ class Graph {
           
           
         }
-       else if (tiles[10*i + j].overTile()){
+       else if (tiles[10*i + j].overTile() || this.unitToMoveAvailTiles.contains(this.getIndex(tiles[10*i+j].getLabel()))){
             tiles[10*i + j].display(3);
         }
         else{

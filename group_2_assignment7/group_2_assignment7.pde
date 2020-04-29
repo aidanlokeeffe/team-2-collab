@@ -46,8 +46,8 @@ public Graph board;
 
 
 // The players
-Player P1;
-Player P2;
+public Player P1;
+public Player P2;
 
 //P1 = 0, P2 = 1
 int currentTurn = 0;

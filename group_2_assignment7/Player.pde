@@ -6,6 +6,8 @@ class Player{
   // 0: Player 1;
   // 1: Player 2
   int p;
+  
+  
 
   Player(int _p){
     this.p = _p;

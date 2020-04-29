@@ -239,5 +239,9 @@ class Unit { //<>//
     int unitIndex = board.getIndex(this.location);
     board.tiles[unitIndex].occupied = false;
     board.tiles[unitIndex].currentUnit = null;
+    
+    
+    
+    
   }
 }

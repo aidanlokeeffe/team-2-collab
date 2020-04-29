@@ -74,7 +74,6 @@ class Player{
   void display() {
     for (Infantry inf : this.swords) {
       inf.display();
-      inf.checkForEnemies();
     }
     for (Archer arc : this.bows) {
       arc.display();

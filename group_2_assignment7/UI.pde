@@ -80,7 +80,8 @@ class UI{
     if (selectedTile == null){
     }
     else if (selectedTile.isOccupied() == true){
-      selectedTile.currentUnit.displayStats(selectedTile.currentUnit);  //<>//
+      selectedTile.currentUnit.displayStats(selectedTile.currentUnit); //<>//
+      selectedTile.currentUnit.displayCombat();
     }
     else{
     }

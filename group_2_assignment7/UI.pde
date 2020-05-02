@@ -72,7 +72,7 @@ class UI{
     }
     
      updateEndTurn();
-     //end turn button
+    //end turn button
     fill(buttonBase);
     rect(790, 630, 200, 60, 25, 25, 25, 25);
     fill(buttonColor);

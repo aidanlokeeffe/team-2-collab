@@ -27,6 +27,11 @@ class Node{
       tileSprite = waterSprite;
     }
   }
+  
+  //show image of the node
+  void display(int frame) {
+    image(tileSprite[frame], x, y);       
+  }
 
 
 }

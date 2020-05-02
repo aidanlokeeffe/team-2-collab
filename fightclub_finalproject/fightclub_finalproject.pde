@@ -33,16 +33,18 @@ public static PImage[] infantryIdleRed = new PImage[3];
 int currentTurn = 0;
 
 //Declare the UI
-UI userInterface;
+UI userInterface = new UI();
 
 void setup(){
   // Basic setup
   size(1000, 700);
   imageMode(CENTER);
   background(25);
+  
 
 }
 
 void draw(){
+  userInterface.display(currentTurn); //<>//
 
 }

@@ -45,7 +45,7 @@ public static PImage[] infantryIdleRed = new PImage[3];
 //sound button sprite
 public static PImage[] soundButtons = new PImage[2];
 
-// Graph is public so as to be accessible by unit classes //<>//
+// Graph is public so as to be accessible by unit classes //<>// //<>//
 public Graph board;
 
 
@@ -88,7 +88,8 @@ void setup(){
   
   //play music
   file = new SoundFile(this, "DistantLand.wav");
-  file.loop();
+  //UNCOMMENT BELOW B4 WE SUBMIT SO MUSIC PLAYS
+  //file.loop();
   soundButton = new Music(735, 665);
   
 

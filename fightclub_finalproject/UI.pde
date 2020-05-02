@@ -31,6 +31,7 @@ class UI{
     }
   }
   
+  //display the UI to the screen
   void display(int currentTurn){
     
     //change background color based on player

@@ -28,6 +28,11 @@ class Node{
     }
   }
   
+  //returns strue if the node is occupied
+  boolean isOccupied() {
+   return this.occupied;
+ }
+  
   //show image of the node
   void display(int frame) {
     image(tileSprite[frame], x, y);       

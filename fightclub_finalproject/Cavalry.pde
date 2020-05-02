@@ -1,3 +1,3 @@
-class Cavalry{
+class Cavalry extends Unit{
 
 }

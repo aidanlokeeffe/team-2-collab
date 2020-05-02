@@ -83,9 +83,11 @@ void setup(){
   //create sound button spirte
   soundButtons = makeSprite("Sound_", 2, ".png");
   
+  board = new Graph(35, 35);
+  
   // Create players
-  P1 = new Player(0);
-  P2 = new Player(1);
+  //P1 = new Player(0);
+  //P2 = new Player(1);
   
   //play music
   file = new SoundFile(this, "DistantLand.wav");
@@ -97,6 +99,8 @@ void setup(){
 }
 
 void draw(){
+  
+  board.display();
   
   //display the UI
   userInterface.display(currentTurn);

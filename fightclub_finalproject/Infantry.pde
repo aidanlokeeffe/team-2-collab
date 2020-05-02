@@ -1,3 +1,3 @@
-class Infantry extends Unit{
+/*class Infantry extends Unit{
 
-}
+}*/

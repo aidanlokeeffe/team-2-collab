@@ -1,3 +1,3 @@
-class Archer{
+class Archer extends Unit{
 
 }

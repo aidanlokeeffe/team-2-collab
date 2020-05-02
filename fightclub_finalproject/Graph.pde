@@ -1,0 +1,10 @@
+class Graph{
+
+  
+  
+  //Constructor
+  Graph(){
+  
+  }
+
+}

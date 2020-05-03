@@ -1,6 +1,6 @@
-class Archer extends Unit {
+class Wizard extends Unit {
   
-  Archer(String label, int player) {
+  Wizard(String label, int player) {
     super(label);
     this.hasAttacked = false;
     this.hp = 25;
@@ -17,10 +17,10 @@ class Archer extends Unit {
   void display() {
     if (this.currenthp > 0) {
       if (this.p == 0){
-        image(archerIdle[frameCount/50%3], x, y);
+        image(wizardIdle[frameCount/50%3], x, y);
       }
       else{
-        image(archerIdleRed[frameCount/50%3], x, y);
+        image(wizardIdleRed[frameCount/50%3], x, y);
       }
     }
     if (this.currenthp <= 0 && this.alive == true) {

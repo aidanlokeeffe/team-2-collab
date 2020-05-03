@@ -1,26 +1,27 @@
-class Archer extends Unit {
-  
-  Archer(String label, int player) {
+class Lumberjack extends Unit {
+  String id;
+
+  Lumberjack(String label, int player) {
     super(label);
     this.hasAttacked = false;
     this.hp = 25;
-    this.currenthp = 25;
+    this.currenthp = 20;
     this.atk = 20;
     this.def = 5;
     this.movement = 2;
-    this.range = 3;
-    this.id = "Archer";
+    this.range = 1;
+    this.id = "Lumberjack";
     this.p = player;
     this.alive = true;
   }
   
   void display() {
     if (this.currenthp > 0) {
-      if (this.p == 0){
-        image(archerIdle[frameCount/50%3], x, y);
+      if(this.p == 1){
+        image(lumberjackIdle[frameCount/50%3], x, y);
       }
       else{
-        image(archerIdleRed[frameCount/50%3], x, y);
+        image(lumberjackIdleRed[frameCount/50%3], x, y);
       }
     }
     if (this.currenthp <= 0 && this.alive == true) {
@@ -28,5 +29,7 @@ class Archer extends Unit {
       this.die();
     }
   }
+  
+  void chop() {}
   
 }

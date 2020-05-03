@@ -37,11 +37,17 @@ public static PImage[] waterSprite = new PImage[3];
 public static PImage[] cavalryIdle = new PImage[3];
 public static PImage[] archerIdle = new PImage[3];
 public static PImage[] infantryIdle = new PImage[3];
+public static PImage[] lumberjackIdle = new PImage[3];
+public static PImage[] wizardIdle = new PImage[3];
+public static PImage[] clericIdle = new PImage[3];
 
 //Player 2 unit sprites
 public static PImage[] cavalryIdleRed = new PImage[3];
 public static PImage[] archerIdleRed = new PImage[3];
 public static PImage[] infantryIdleRed = new PImage[3];
+public static PImage[] lumberjackIdleRed = new PImage[3];
+public static PImage[] wizardIdleRed = new PImage[3];
+public static PImage[] clericIdleRed = new PImage[3];
 
 //sound button sprite
 public static PImage[] soundButtons = new PImage[2];
@@ -75,10 +81,16 @@ void setup(){
   cavalryIdle = makeSprite("Cavalry_Idle_", 3, ".png");
   archerIdle = makeSprite("Archer_Idle_", 3, ".png");
   infantryIdle = makeSprite("Infantry_Idle_", 3, ".png");
+  lumberjackIdle = makeSprite("Lumberjack_Idle_", 3, ".png");
+  wizardIdle = makeSprite("Wizard_Idle_", 3, ".png");
+  clericIdle = makeSprite("Cleric_Idle_", 3, ".png");
 
   cavalryIdleRed = makeSprite("Cavalry_Idle_Enemy_", 3, ".png");
   archerIdleRed = makeSprite("Archer_Idle_Enemy_", 3, ".png");
   infantryIdleRed = makeSprite("Infantry_Idle_Enemy_", 3, ".png");
+  lumberjackIdleRed = makeSprite("Lumberjack_Idle_Enemy_", 3, ".png");
+  wizardIdleRed = makeSprite("Wizard_Idle_Enemy_", 3, ".png");
+  clericIdleRed = makeSprite("Cleric_Idle_Enemy_", 3, ".png");
   
   //create sound button spirte
   soundButtons = makeSprite("Sound_", 2, ".png");

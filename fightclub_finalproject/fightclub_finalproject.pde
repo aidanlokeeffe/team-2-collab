@@ -34,6 +34,7 @@ public static PImage[] forestSprite = new PImage[3];
 public static PImage[] waterSprite = new PImage[3];
 
 // PLayer 1 unit sprites
+// Idle Sprites
 public static PImage[] cavalryIdle = new PImage[3];
 public static PImage[] archerIdle = new PImage[3];
 public static PImage[] infantryIdle = new PImage[3];
@@ -41,13 +42,20 @@ public static PImage[] lumberjackIdle = new PImage[3];
 public static PImage[] wizardIdle = new PImage[3];
 public static PImage[] clericIdle = new PImage[3];
 
-//Player 2 unit sprites
+// Movement and Attack Sprites
+public static PImage[] archerAttack = new PImage[4];
+
+// Player 2 unit sprites
+// Idle Sprites
 public static PImage[] cavalryIdleRed = new PImage[3];
 public static PImage[] archerIdleRed = new PImage[3];
 public static PImage[] infantryIdleRed = new PImage[3];
 public static PImage[] lumberjackIdleRed = new PImage[3];
 public static PImage[] wizardIdleRed = new PImage[3];
 public static PImage[] clericIdleRed = new PImage[3];
+
+// Movement and Attack Sprites
+public static PImage[] archerAttackRed = new PImage[4];
 
 //sound button sprite
 public static PImage[] soundButtons = new PImage[2];
@@ -84,6 +92,9 @@ void setup(){
   lumberjackIdle = makeSprite("Lumberjack_Idle_", 3, ".png");
   wizardIdle = makeSprite("Wizard_Idle_", 3, ".png");
   clericIdle = makeSprite("Cleric_Idle_", 3, ".png");
+  
+  // will add rest of attack sprites once I have verified that they display correctly - Russell
+  archerAttack = makeSprite("Archer_Attack_", 4, ".png");
 
   cavalryIdleRed = makeSprite("Cavalry_Idle_Enemy_", 3, ".png");
   archerIdleRed = makeSprite("Archer_Idle_Enemy_", 3, ".png");
@@ -91,6 +102,9 @@ void setup(){
   lumberjackIdleRed = makeSprite("Lumberjack_Idle_Enemy_", 3, ".png");
   wizardIdleRed = makeSprite("Wizard_Idle_Enemy_", 3, ".png");
   clericIdleRed = makeSprite("Cleric_Idle_Enemy_", 3, ".png");
+  
+  // will add rest of red attack sprites once I have verified that they display correctly - Russell
+  archerAttack = makeSprite("Archer_Attack_Enemy_", 4, ".png");
   
   //create sound button spirte
   soundButtons = makeSprite("Sound_", 2, ".png");

@@ -1,5 +1,5 @@
 class Archer extends Unit {
-  
+
   Archer(String label, int player) {
     super(label);
     this.hasAttacked = false;
@@ -13,14 +13,23 @@ class Archer extends Unit {
     this.p = player;
     this.alive = true;
   }
-  
+
   void display() {
     if (this.currenthp > 0) {
-      if (this.p == 0){
-        image(archerIdle[frameCount/50%3], x, y);
+      if (board.tiles[board.getIndex(this.location)].selected) {
+        if (this.p == 0) {
+          image(archerAttack[frameCount/50%3], x, y);
+        } 
+        else {
+          image(archerAttackRed[frameCount/50%3], x, y);
+        }
       }
-      else{
-        image(archerIdleRed[frameCount/50%3], x, y);
+      else {
+        if (this.p == 0) {
+          image(archerIdle[frameCount/50%3], x, y);
+        } else {
+          image(archerIdleRed[frameCount/50%3], x, y);
+        }
       }
     }
     if (this.currenthp <= 0 && this.alive == true) {
@@ -28,5 +37,4 @@ class Archer extends Unit {
       this.die();
     }
   }
-  
 }

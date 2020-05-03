@@ -5,7 +5,7 @@ class Cleric extends Unit {
     this.hasAttacked = false;
     this.hp = 25;
     this.currenthp = 25;
-    this.atk = 20;
+    this.atk = 5;
     this.def = 5;
     this.movement = 2;
     this.range = 3;

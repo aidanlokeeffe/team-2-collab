@@ -17,11 +17,20 @@ class Lumberjack extends Unit {
   
   void display() {
     if (this.currenthp > 0) {
-      if(this.p == 1){
-        image(lumberjackIdle[frameCount/50%3], x, y);
+      if (board.tiles[board.getIndex(this.location)].selected) {
+        if (this.p == 0) {
+          image(lumberjackAttack[frameCount/20%4], x, y);
+        } 
+        else {
+          image(lumberjackAttackRed[frameCount/20%4], x, y);
+        }
       }
-      else{
-        image(lumberjackIdleRed[frameCount/50%3], x, y);
+      else {
+        if (this.p == 0) {
+          image(lumberjackIdle[frameCount/50%3], x, y);
+        } else {
+          image(lumberjackIdleRed[frameCount/50%3], x, y);
+        }
       }
     }
     if (this.currenthp <= 0 && this.alive == true) {

@@ -44,6 +44,10 @@ public static PImage[] clericIdle = new PImage[3];
 
 // Movement and Attack Sprites
 public static PImage[] archerAttack = new PImage[4];
+public static PImage[] cavalryAttack = new PImage[4];
+public static PImage[] infantryAttack = new PImage[4];
+public static PImage[] lumberjackAttack = new PImage[4];
+public static PImage[] wizardAttack = new PImage[4];
 
 // Player 2 unit sprites
 // Idle Sprites
@@ -56,6 +60,10 @@ public static PImage[] clericIdleRed = new PImage[3];
 
 // Movement and Attack Sprites
 public static PImage[] archerAttackRed = new PImage[4];
+public static PImage[] cavalryAttackRed = new PImage[4];
+public static PImage[] infantryAttackRed = new PImage[4];
+public static PImage[] lumberjackAttackRed = new PImage[4];
+public static PImage[] wizardAttackRed = new PImage[4];
 
 //sound button sprite
 public static PImage[] soundButtons = new PImage[2];
@@ -86,6 +94,7 @@ void setup(){
   waterSprite = makeSprite("water_", 4, ".png");
 
   // Create all unit sprites
+  // Blue Unit Idle Sprites
   cavalryIdle = makeSprite("Cavalry_Idle_", 3, ".png");
   archerIdle = makeSprite("Archer_Idle_", 3, ".png");
   infantryIdle = makeSprite("Infantry_Idle_", 3, ".png");
@@ -93,9 +102,14 @@ void setup(){
   wizardIdle = makeSprite("Wizard_Idle_", 3, ".png");
   clericIdle = makeSprite("Cleric_Idle_", 3, ".png");
   
-  // will add rest of attack sprites once I have verified that they display correctly - Russell
+  // Blue Unit Attack/Movement Sprites
   archerAttack = makeSprite("Archer_Attack_", 4, ".png");
-
+  cavalryAttack = makeSprite("Cavalry_Attack_", 4, ".png");
+  infantryAttack = makeSprite("Infantry_Attack_", 4, ".png");
+  lumberjackAttack = makeSprite("Lumberjack_Attack_", 4, ".png");
+  wizardAttack = makeSprite("Wizard_Attack_", 4, ".png");
+  
+  // Red Unit Idle Sprites
   cavalryIdleRed = makeSprite("Cavalry_Idle_Enemy_", 3, ".png");
   archerIdleRed = makeSprite("Archer_Idle_Enemy_", 3, ".png");
   infantryIdleRed = makeSprite("Infantry_Idle_Enemy_", 3, ".png");
@@ -103,8 +117,12 @@ void setup(){
   wizardIdleRed = makeSprite("Wizard_Idle_Enemy_", 3, ".png");
   clericIdleRed = makeSprite("Cleric_Idle_Enemy_", 3, ".png");
   
-  // will add rest of red attack sprites once I have verified that they display correctly - Russell
-  archerAttack = makeSprite("Archer_Attack_Enemy_", 4, ".png");
+  // Red Unit Attack/Movement Sprites
+  archerAttackRed = makeSprite("Archer_Attack_Enemy_", 4, ".png");
+  cavalryAttackRed = makeSprite("Cavalry_Attack_Enemy_", 4, ".png");
+  infantryAttackRed = makeSprite("Infantry_Attack_Enemy_", 4, ".png");
+  //lumberjackAttackRed = makeSprite("Lumberjack_Attack_Enemy_", 4, ".png");
+  wizardAttackRed = makeSprite("Wizard_Attack_Enemy_", 4, ".png");
   
   //create sound button spirte
   soundButtons = makeSprite("Sound_", 2, ".png");

@@ -18,10 +18,10 @@ class Archer extends Unit {
     if (this.currenthp > 0) {
       if (board.tiles[board.getIndex(this.location)].selected) {
         if (this.p == 0) {
-          image(archerAttack[frameCount/50%3], x, y);
+          image(archerAttack[frameCount/20%4], x, y);
         } 
         else {
-          image(archerAttackRed[frameCount/50%3], x, y);
+          image(archerAttackRed[frameCount/20%4], x, y);
         }
       }
       else {

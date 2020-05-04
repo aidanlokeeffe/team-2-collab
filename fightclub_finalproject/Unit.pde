@@ -1,5 +1,3 @@
-
-
 class Unit {
   int hp, currenthp, atk, def, movement, range;
   String id;

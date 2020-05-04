@@ -1,25 +1,25 @@
-class Node{
+class Node {
   int x, y;
   String label;
-  int type;
-  PImage[] tileSprite = new PImage[3];
   public boolean occupied = false;
+  public boolean visited = false;
+  boolean clicked;
+  boolean pressed;
+  int type;
+  int cost;
+  PImage[] tileSprite = new PImage[3];
   boolean selected = false; 
-  
+  int p;
   Unit currentUnit;
   
-  // Attributes related to availableTiles
-  public boolean visited = true;
-  int cost;
-  
-
-
-//Constructor
-  Node(int _x, int _y, String _label, int _type){
+  // Constructor 
+  Node(int _x, int _y, String _label, int _type) {
     this.x = _x;
     this.y = _y;
     this.label = _label;
     this.type = _type;
+    this.clicked = false;
+    this.pressed = false;
     
     // 0: Plains, 1: Forest, 2: Water
     if(type == 0) {  
@@ -33,19 +33,17 @@ class Node{
     else if(type == 2) {
       tileSprite = waterSprite;
     }
+    
   }
   
-  // Returns true if node has been visited 
   boolean wasVisited() {
     return this.visited;
-  }
-  
-  //returns true if the node is occupied
-  boolean isOccupied() {
-   return this.occupied;
-  }
+ }
  
-  // Returns label of node
+ boolean isOccupied() {
+   return this.occupied;
+ }
+  
   String getLabel() {
     return this.label;
   }
@@ -55,6 +53,10 @@ class Node{
     outArray[0] = this.x;
     outArray[1] = this.y;
     return outArray;
+  }
+  
+  void display(int frame) {
+    image(tileSprite[frame], x, y);       
   }
   
   // checks if mouse cursor is over tile
@@ -75,12 +77,19 @@ class Node{
         //print("booty");
       }
     }
+    
   }
   
-  //show image of the node
-  void display(int frame) {
-    image(tileSprite[frame], x, y);       
+  boolean isClicked() {
+    return this.clicked;
   }
-
+  
+  
+  
+  
+  
+  
+  
+  
 
 }

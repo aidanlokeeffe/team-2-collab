@@ -4,7 +4,7 @@ is to eliminate all of your opponent's units.
 I) The rules of play are:
 (1) On a player's turn, they may select one unit, and move them to an available tile. A
 tile is available if it is not water, it is not occupied, and it is within the 
-units movement range.*
+units movement range.
 (2) If an enemy is within a unit's attack range, it may be attacked.
 (3) A player may end their turn without moving, with moving but without attacking,
 vice versa, or with moving and with attacking.
@@ -18,7 +18,7 @@ II) The user inputs are:
 (2) A unit may be moved with the mouse.
 (3) A player may select an enemy unit adjacent to their unit to attack via the gui on the right-hand side of the screen.
 (4) A player ends their turn by clicking the end turn button.
-(5) Either player may mute or unmute the sound using the button on the gui.
+(5) Either player may mute or unmute the sound using the button on the GUI.
 (6) A highlighted cursor follows the unit's mouse along the map.
 
 III) Member Contributions:

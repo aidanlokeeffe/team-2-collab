@@ -7,6 +7,9 @@ import processing.sound.*;
 SoundFile file;
 Music soundButton;
 
+boolean start = false;
+TitleButton startb;
+
 //toggles wether or not music plays
 void togglePlay() {
   if (!file.isPlaying()) {
@@ -32,6 +35,7 @@ PImage[] makeSprite(String nameStr, int len, String imgType) {
 public static PImage[] plainsSprite = new PImage[3];
 public static PImage[] forestSprite = new PImage[3];
 public static PImage[] waterSprite = new PImage[3];
+public static PImage[] TitleScreen = new PImage[1];
 
 // PLayer 1 unit sprites
 // Idle Sprites
@@ -92,6 +96,7 @@ void setup(){
   plainsSprite = makeSprite("plains_", 4, ".png");
   forestSprite = makeSprite("forest_", 4, ".png");
   waterSprite = makeSprite("water_", 4, ".png");
+  TitleScreen = makeSprite("Title_Screen_", 1, ".png");
 
   // Create all unit sprites
   // Blue Unit Idle Sprites
@@ -127,6 +132,9 @@ void setup(){
   //create sound button spirte
   soundButtons = makeSprite("Sound_", 2, ".png");
   
+  // title and menu buttons
+  startb = new TitleButton(width/2, height/2 + 200, 200, 100);
+  
   board = new Graph(35, 35);
   
   // Create players
@@ -144,6 +152,7 @@ void setup(){
 
 void draw(){
   
+  if (start == true) {
   board.display();
   
   P1.display();
@@ -155,6 +164,7 @@ void draw(){
   
   //display the sound button and toggle music if it is pressed
   soundButton.display();
+  
   if (soundButton.isMuted() && soundButton.paused == false) {
     togglePlay();
     soundButton.paused = true;
@@ -162,6 +172,15 @@ void draw(){
   else if (!(soundButton.isMuted()) && soundButton.paused == true){
     togglePlay();
     soundButton.paused = false;
+  }
+  }
+  
+  else {
+    image(TitleScreen[0], width/2, height/2);
+    startb.display();
+    if (startb.isClicked()) {
+      start = true;
+    }
   }
 
 }

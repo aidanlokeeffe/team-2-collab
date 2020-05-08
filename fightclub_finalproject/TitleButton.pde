@@ -43,11 +43,11 @@ class TitleButton {
   void display() {
     this.update();
     if (this.overButton()) {
-      fill(255);
+      fill(210,214,217);
       rectMode(CENTER);
       rect(this.x, this.y, this.w, this.l);
       rectMode(CORNER);
-      fill(0,222,100);
+      fill(0,211,0);
       textSize(32);
       text("START",this.x - textWidth("START")/2 ,this.y + 32/2);
     }
@@ -56,7 +56,7 @@ class TitleButton {
       rectMode(CENTER);
       rect(this.x, this.y, this.w, this.l);
       rectMode(CORNER);
-      fill(0,222,100);
+      fill(242,207,43);
       textSize(32);
       text("START",this.x - textWidth("START")/2 ,this.y + 32/2);
     }

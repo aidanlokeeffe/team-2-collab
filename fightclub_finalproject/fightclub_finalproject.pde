@@ -71,6 +71,7 @@ public static PImage[] wizardAttackRed = new PImage[4];
 
 //sound button sprite
 public static PImage[] soundButtons = new PImage[2];
+public static PImage[] TitleLogo = new PImage[1];
 
 // Graph is public so as to be accessible by unit classes //<>// //<>// //<>//
 public Graph board;
@@ -133,7 +134,8 @@ void setup(){
   soundButtons = makeSprite("Sound_", 2, ".png");
   
   // title and menu buttons
-  startb = new TitleButton(width/2, height/2 + 200, 200, 100);
+  startb = new TitleButton(width/2, height/2 + 250, 200, 100);
+  TitleLogo = makeSprite("Title_Logo_", 1, ".png");
   
   board = new Graph(35, 35);
   
@@ -177,6 +179,7 @@ void draw(){
   
   else {
     image(TitleScreen[0], width/2, height/2);
+    image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {
       start = true;

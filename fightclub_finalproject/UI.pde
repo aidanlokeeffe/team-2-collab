@@ -92,10 +92,27 @@ class UI{
     }
     else if (selectedTile.isOccupied() == true){
       selectedTile.currentUnit.displayStats(selectedTile.currentUnit);
-      selectedTile.currentUnit.displayCombat();
+      //selectedTile.currentUnit.displayCombat();
     }
     else{
     }
+    
+   if(P1.lost()){
+    fill(255);
+    rect(210, 280, 280, 140, 25, 25, 25, 25);
+    fill(0);
+    textSize(24);
+    text("Congrats!", 290, 320);
+    text("Player 2 wins!", 270,  350);
+   }
+   else if(P2.lost()){
+    fill(255);
+    rect(210, 280, 280, 140, 25, 25, 25, 25);
+    fill(0);
+    textSize(24);
+    text("Congrats!", 290, 320);
+    text("Player 1 wins!", 270,  350);
+   }
   
   }
 

@@ -161,7 +161,7 @@ void draw(){
   P2.display();
   
   //display the UI
-  userInterface.display(currentTurn);
+  userInterface.display(currentTurn, board.selectedTile);
   
   
   //display the sound button and toggle music if it is pressed

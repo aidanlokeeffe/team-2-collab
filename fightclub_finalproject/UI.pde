@@ -12,6 +12,7 @@ class UI{
   UI(){
   }
   
+  //change whoevers turn it is when pressed
   void updateEndTurn(){
     if (overEndTurn()){
       buttonColor = color(255);
@@ -57,7 +58,7 @@ class UI{
   }
   
   //display the UI to the screen
-  void display(int currentTurn){
+  void display(int currentTurn, Node selectedTile){
     
     //change background color based on player
     if (currentTurn == 0){
@@ -86,6 +87,15 @@ class UI{
     text("Player " + currentPlayer +"'s turn!", 710, 30);
     textSize(20);
     text("End Turn", 850, 665);
+    
+    if (selectedTile == null){
+    }
+    else if (selectedTile.isOccupied() == true){
+      selectedTile.currentUnit.displayStats(selectedTile.currentUnit);
+      selectedTile.currentUnit.displayCombat();
+    }
+    else{
+    }
   
   }
 

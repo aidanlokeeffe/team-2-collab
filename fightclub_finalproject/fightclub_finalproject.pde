@@ -1,4 +1,4 @@
- import java.util.LinkedList;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Arrays;
 
@@ -74,6 +74,9 @@ public static PImage[] wizardAttackRed = new PImage[4];
 public static PImage[] soundButtons = new PImage[2];
 public static PImage[] TitleLogo = new PImage[1];
 
+// Level select screen
+PImage lvlSelect;
+
 // Graph is public so as to be accessible by unit classes //<>// //<>// //<>//
 public Graph board;
 
@@ -138,11 +141,9 @@ void setup(){
   startb = new TitleButton(width/2, height/2 + 250, 200, 100);
   TitleLogo = makeSprite("Title_Logo_", 1, ".png");
   
-  board = new Graph(35, 35, 3);
+  // level select sprite 
+  lvlSelect = loadImage("levelSelectScreen.png");
   
-  // Create players
-  P1 = new Player(0);
-  P2 = new Player(1);
   
   //play music
   file = new SoundFile(this, "DistantLand.wav");
@@ -177,13 +178,43 @@ void draw(){
       soundButton.paused = false;
     }
   }
+  else if (gameState == 1) {
+    image(lvlSelect, width/2, height/2);
+    if(key == '1'){
+      board = new Graph(35, 35, 1);
   
+      // Create players
+      P1 = new Player(0);
+      P2 = new Player(1);
+ 
+      gameState = 2;
+    }
+    else if(key == '2'){
+       board = new Graph(35, 35, 2);
+  
+      // Create players
+      P1 = new Player(0);
+      P2 = new Player(1);
+      
+      gameState = 2;
+    }
+    else if(key == '3'){
+      board = new Graph(35, 35, 3);
+  
+      // Create players
+      P1 = new Player(0);
+      P2 = new Player(1);
+      
+      gameState = 2;
+    }
+    
+  }
   else if (gameState == 0){
     image(TitleScreen[0], width/2, height/2);
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {
-      gameState = 2;
+      gameState = 1;
     }
   }
 

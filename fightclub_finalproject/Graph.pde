@@ -7,6 +7,7 @@ class Graph {
   ArrayList<Integer> unitToMoveAvailTiles = new ArrayList<Integer>();
   //Player[] gamePlayers = new Player[2];
   boolean[] moveFlag = {false, false};
+  int level;
   
   // IMPORTANT, because of the ordering of (i, j), the matrix below is the 
   // TRANSPOSE of what will appear on the screen. This can be frustrating
@@ -22,12 +23,37 @@ class Graph {
   {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
   {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}
   };
+  public int tileTypes2[][] = new int[][]{
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+  };
+  public int tileTypes3[][] = new int[][]{
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0},
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0},
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}, 
+  {0, 0, 0, 1, 1, 1, 1, 0, 0, 0}
+  };
   
   // Make the graph
   // !!! Coded with some generality, but for our purposes, _x0 = _y0 = 35
-  Graph(int _x0, int _y0) {
+  Graph(int _x0, int _y0, int _level) {
     tiles = new Node[100];
     adjMat = new Integer[100][100];
+    this.level = _level;
     
     for(int i=0; i<100; i++){
       for(int j=0; j<100; j++){
@@ -38,26 +64,56 @@ class Graph {
     this.x0 = _x0;
     this.y0 = _y0;
     
-    this.setNodes();
+    this.setNodes(this.level);
     this.setEdges();
   }
   
   // I'll add every tile in the game board
-  void setNodes() {
+  void setNodes(int level) {
     String[] horizontal = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
     String[] vertical = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     
-    for(int i=0; i<10; i++) {
-      for(int j=0; j<10; j++) {
-      String lbl = horizontal[i] + vertical[j];
-      int x = x0 + i*70;
-      int y = y0 + j*70;
+    // Conditions for different choice of level
+    if(level == 1) {
+      for(int i=0; i<10; i++) {
+        for(int j=0; j<10; j++) {
+          String lbl = horizontal[i] + vertical[j];
+          int x = x0 + i*70;
+          int y = y0 + j*70;
       
-      int idx = j + i*10;
+          int idx = j + i*10;
       
-      tiles[idx] = new Node(x, y, lbl, tileTypes[i][j]);
+          tiles[idx] = new Node(x, y, lbl, tileTypes[i][j]);
+        }
       }
     }
+    else if(level == 2) {
+      for(int i=0; i<10; i++) {
+        for(int j=0; j<10; j++) {
+          String lbl = horizontal[i] + vertical[j];
+          int x = x0 + i*70;
+          int y = y0 + j*70;
+      
+          int idx = j + i*10;
+      
+          tiles[idx] = new Node(x, y, lbl, tileTypes2[i][j]);
+        }
+      }
+    }
+    else if(level == 3) {
+      for(int i=0; i<10; i++) {
+        for(int j=0; j<10; j++) {
+          String lbl = horizontal[i] + vertical[j];
+          int x = x0 + i*70;
+          int y = y0 + j*70;
+      
+          int idx = j + i*10;
+      
+          tiles[idx] = new Node(x, y, lbl, tileTypes3[i][j]);
+        }
+      }
+    }
+    
   }
   
   // We'll add all the connections between the tiles

@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Arrays;
 
@@ -7,7 +7,8 @@ import processing.sound.*;
 SoundFile file;
 Music soundButton;
 
-boolean start = false;
+// 0: Title Screen,  1: Level Select,  2: Game Board,  3: Victory Screen
+int gameState = 0;
 TitleButton startb;
 
 //toggles wether or not music plays
@@ -137,7 +138,7 @@ void setup(){
   startb = new TitleButton(width/2, height/2 + 250, 200, 100);
   TitleLogo = makeSprite("Title_Logo_", 1, ".png");
   
-  board = new Graph(35, 35);
+  board = new Graph(35, 35, 3);
   
   // Create players
   P1 = new Player(0);
@@ -154,35 +155,35 @@ void setup(){
 
 void draw(){
   
-  if (start == true) {
-  board.display();
+  if (gameState == 2) {
+    board.display();
   
-  P1.display();
-  P2.display();
+    P1.display();
+    P2.display();
   
-  //display the UI
-  userInterface.display(currentTurn, board.selectedTile);
+    //display the UI
+    userInterface.display(currentTurn, board.selectedTile);
   
   
-  //display the sound button and toggle music if it is pressed
-  soundButton.display();
+    //display the sound button and toggle music if it is pressed
+    soundButton.display();
   
-  if (soundButton.isMuted() && soundButton.paused == false) {
-    togglePlay();
-    soundButton.paused = true;
+    if (soundButton.isMuted() && soundButton.paused == false) {
+      togglePlay();
+      soundButton.paused = true;
+    }
+    else if (!(soundButton.isMuted()) && soundButton.paused == true){
+      togglePlay();
+      soundButton.paused = false;
+    }
   }
-  else if (!(soundButton.isMuted()) && soundButton.paused == true){
-    togglePlay();
-    soundButton.paused = false;
-  }
-  }
   
-  else {
+  else if (gameState == 0){
     image(TitleScreen[0], width/2, height/2);
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {
-      start = true;
+      gameState = 2;
     }
   }
 

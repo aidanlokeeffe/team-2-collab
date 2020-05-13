@@ -190,8 +190,6 @@ void draw(){
   }
   else if (gameState == 1) {
     background(100);
-    plat1.display();
-    plat1.move();
     image(lvl1, width/4, height/2 - 50);
     image(lvl2, width/2, height/2 - 50);
     image(lvl3, 3*width/4, height/2 - 50);
@@ -231,6 +229,9 @@ void draw(){
   }
   else if (gameState == 0){
     image(TitleScreen[0], width/2, height/2);
+    plat1.display();
+    plat1.displayHierarchy();
+    plat1.move();
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {

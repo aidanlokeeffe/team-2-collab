@@ -40,6 +40,7 @@ public static PImage[] plainsSprite = new PImage[3];
 public static PImage[] forestSprite = new PImage[3];
 public static PImage[] waterSprite = new PImage[3];
 public static PImage[] TitleScreen = new PImage[1];
+public static PImage[] fireBall = new PImage[3];
 
 // PLayer 1 unit sprites
 // Idle Sprites
@@ -108,6 +109,7 @@ void setup(){
   forestSprite = makeSprite("forest_", 4, ".png");
   waterSprite = makeSprite("water_", 4, ".png");
   TitleScreen = makeSprite("Title_Screen_", 1, ".png");
+  fireBall = makeSprite("fireball_",3 , ".png");
 
   // Create all unit sprites
   // Blue Unit Idle Sprites
@@ -232,6 +234,7 @@ void draw(){
     plat1.display();
     plat1.displayHierarchy();
     plat1.move();
+    plat1.displayWizard();
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {

@@ -3,8 +3,17 @@ class Platoon {
   int y = 630;
   int horseX = -180;
   int horseY = 560;
+  float wizardX =width;
+  float wizardY = 105;
+  float fireX;
+  float fireY;
+  float frequency = PI/2;
 
   Platoon() {
+    this.wizardX = width;
+    this.wizardY = 245;
+    this.fireX = width;
+    this.fireY = 285;
   }
 
   void display() {
@@ -35,4 +44,17 @@ void move() {
   }
   this.x += 2;
 }
+
+void displayWizard() {
+  image(wizardAttackRed[frameCount/20%4], this.wizardX, this.wizardY);
+  this.wizardY += 5 * cos(frequency);
+  if (this.wizardX < 0) {this.wizardX = width;}
+  this.wizardX -= 1;
+  print(" ",this.wizardY," ");
+  image(fireBall[frameCount/20%3], this.fireX, this.fireY);
+  this.fireX += 5 * sin(frequency) - 1;
+  this.fireY += 5 * cos(frequency) + 5 * cos(frequency);
+  frequency += .1;
+}
+
 }

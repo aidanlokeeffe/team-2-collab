@@ -232,9 +232,10 @@ void draw(){
   else if (gameState == 0){
     image(TitleScreen[0], width/2, height/2);
     plat1.display();
-    plat1.displayHierarchy();
+    plat1.displayCavalry();
     plat1.move();
     plat1.displayWizard();
+    plat1.displayIdles();
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {

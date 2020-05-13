@@ -89,8 +89,8 @@ class Unit {
     if (board.tiles[unitIndex].selected) {
       //println(unitIndex);
       // get adjacent tiles
-      adjacentTiles.add(unitIndex+1); 
-      adjacentTiles.add(unitIndex-1);
+      if (unitIndex%10 != 9 && unitIndex != 9) {adjacentTiles.add(unitIndex+1);}
+      if (unitIndex%10 != 0 && unitIndex != 0) {adjacentTiles.add(unitIndex-1);}
       adjacentTiles.add(unitIndex+10);
       adjacentTiles.add(unitIndex-10);
       //print(adjacentTiles.get(0),adjacentTiles.get(1),adjacentTiles.get(2),adjacentTiles.get(3));

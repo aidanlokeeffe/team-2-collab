@@ -10,6 +10,9 @@ Music soundButton;
 // 0: Title Screen,  1: Level Select,  2: Game Board,  3: Victory Screen
 int gameState = 0;
 TitleButton startb;
+TitleButton optionb;
+Platoon plat1;
+
 
 //toggles wether or not music plays
 void togglePlay() {
@@ -76,6 +79,9 @@ public static PImage[] TitleLogo = new PImage[1];
 
 // Level select screen
 PImage lvlSelect;
+PImage lvl1;
+PImage lvl2;
+PImage lvl3;
 
 // Graph is public so as to be accessible by unit classes //<>// //<>// //<>//
 public Graph board;
@@ -139,11 +145,15 @@ void setup(){
   
   // title and menu buttons
   startb = new TitleButton(width/2, height/2 + 250, 200, 100);
+  optionb = new TitleButton(width/2, height/2 + 150, 600, 100);
   TitleLogo = makeSprite("Title_Logo_", 1, ".png");
+  plat1 = new Platoon();
   
   // level select sprite 
   lvlSelect = loadImage("levelSelectScreen.png");
-  
+  lvl1 = loadImage("lvl1.png");
+  lvl2 = loadImage("lvl2.png");
+  lvl3 = loadImage("lvl3.png");
   
   //play music
   file = new SoundFile(this, "DistantLand.wav");
@@ -179,7 +189,17 @@ void draw(){
     }
   }
   else if (gameState == 1) {
-    image(lvlSelect, width/2, height/2);
+    background(100);
+    plat1.display();
+    plat1.move();
+    image(lvl1, width/4, height/2 - 50);
+    image(lvl2, width/2, height/2 - 50);
+    image(lvl3, 3*width/4, height/2 - 50);
+    textSize(48);
+    text("1", width/4 - textWidth("1")/2, height/2 - 200);
+    text("2", width/2 - textWidth("2")/2, height/2 - 200);
+    text("3", 3*width/4 - textWidth("3")/2, height/2 - 200);
+    optionb.displayOptionButton();
     if(key == '1'){
       board = new Graph(35, 35, 1);
   

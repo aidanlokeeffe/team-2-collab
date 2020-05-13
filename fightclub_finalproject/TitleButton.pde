@@ -62,4 +62,16 @@ class TitleButton {
     }
   }
   
+  void displayOptionButton() {
+      fill(127);
+      rectMode(CENTER);
+      rect(this.x, this.y, this.w, this.l);
+      rectMode(CORNER);
+      fill(242,207,43);
+      textSize(32);
+      text("PRESS 1, 2, OR 3 TO CHOOSE LVL",this.x - textWidth("PRESS 1, 2, OR 3 TO CHOOSE LVL")/2 ,this.y + 32/2);
+  }
+  
+  
+  
 }

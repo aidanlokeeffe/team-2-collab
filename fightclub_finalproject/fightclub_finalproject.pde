@@ -7,8 +7,12 @@ import processing.sound.*;
 SoundFile file;
 Music soundButton;
 
-boolean start = false;
+// 0: Title Screen,  1: Level Select,  2: Game Board,  3: Victory Screen
+int gameState = 0;
 TitleButton startb;
+TitleButton optionb;
+Platoon plat1;
+
 
 //toggles wether or not music plays
 void togglePlay() {
@@ -36,6 +40,7 @@ public static PImage[] plainsSprite = new PImage[3];
 public static PImage[] forestSprite = new PImage[3];
 public static PImage[] waterSprite = new PImage[3];
 public static PImage[] TitleScreen = new PImage[1];
+public static PImage[] fireBall = new PImage[3];
 
 // PLayer 1 unit sprites
 // Idle Sprites
@@ -73,6 +78,12 @@ public static PImage[] wizardAttackRed = new PImage[4];
 public static PImage[] soundButtons = new PImage[2];
 public static PImage[] TitleLogo = new PImage[1];
 
+// Level select screen
+PImage lvlSelect;
+PImage lvl1;
+PImage lvl2;
+PImage lvl3;
+
 // Graph is public so as to be accessible by unit classes //<>// //<>// //<>//
 public Graph board;
 
@@ -98,6 +109,7 @@ void setup(){
   forestSprite = makeSprite("forest_", 4, ".png");
   waterSprite = makeSprite("water_", 4, ".png");
   TitleScreen = makeSprite("Title_Screen_", 1, ".png");
+  fireBall = makeSprite("fireball_",3 , ".png");
 
   // Create all unit sprites
   // Blue Unit Idle Sprites
@@ -135,13 +147,15 @@ void setup(){
   
   // title and menu buttons
   startb = new TitleButton(width/2, height/2 + 250, 200, 100);
+  optionb = new TitleButton(width/2, height/2 + 150, 600, 100);
   TitleLogo = makeSprite("Title_Logo_", 1, ".png");
+  plat1 = new Platoon();
   
-  board = new Graph(35, 35);
-  
-  // Create players
-  P1 = new Player(0);
-  P2 = new Player(1);
+  // level select sprite 
+  lvlSelect = loadImage("levelSelectScreen.png");
+  lvl1 = loadImage("lvl1.png");
+  lvl2 = loadImage("lvl2.png");
+  lvl3 = loadImage("lvl3.png");
   
   //play music
   file = new SoundFile(this, "DistantLand.wav");
@@ -154,35 +168,78 @@ void setup(){
 
 void draw(){
   
-  if (start == true) {
-  board.display();
+  if (gameState == 2) {
+    board.display();
   
-  P1.display();
-  P2.display();
+    P1.display();
+    P2.display();
   
-  //display the UI
-  userInterface.display(currentTurn, board.selectedTile);
+    //display the UI
+    userInterface.display(currentTurn, board.selectedTile);
   
   
-  //display the sound button and toggle music if it is pressed
-  soundButton.display();
+    //display the sound button and toggle music if it is pressed
+    soundButton.display();
   
-  if (soundButton.isMuted() && soundButton.paused == false) {
-    togglePlay();
-    soundButton.paused = true;
+    if (soundButton.isMuted() && soundButton.paused == false) {
+      togglePlay();
+      soundButton.paused = true;
+    }
+    else if (!(soundButton.isMuted()) && soundButton.paused == true){
+      togglePlay();
+      soundButton.paused = false;
+    }
   }
-  else if (!(soundButton.isMuted()) && soundButton.paused == true){
-    togglePlay();
-    soundButton.paused = false;
-  }
-  }
+  else if (gameState == 1) {
+    background(100);
+    image(lvl1, width/4, height/2 - 50);
+    image(lvl2, width/2, height/2 - 50);
+    image(lvl3, 3*width/4, height/2 - 50);
+    textSize(48);
+    text("1", width/4 - textWidth("1")/2, height/2 - 200);
+    text("2", width/2 - textWidth("2")/2, height/2 - 200);
+    text("3", 3*width/4 - textWidth("3")/2, height/2 - 200);
+    optionb.displayOptionButton();
+    if(key == '1'){
+      board = new Graph(35, 35, 1);
   
-  else {
+      // Create players
+      P1 = new Player(0);
+      P2 = new Player(1);
+ 
+      gameState = 2;
+    }
+    else if(key == '2'){
+       board = new Graph(35, 35, 2);
+  
+      // Create players
+      P1 = new Player(0);
+      P2 = new Player(1);
+      
+      gameState = 2;
+    }
+    else if(key == '3'){
+      board = new Graph(35, 35, 3);
+  
+      // Create players
+      P1 = new Player(0);
+      P2 = new Player(1);
+      
+      gameState = 2;
+    }
+    
+  }
+  else if (gameState == 0){
     image(TitleScreen[0], width/2, height/2);
+    plat1.display();
+    plat1.displayCavalry();
+    plat1.move();
+    plat1.displayWizard();
+    plat1.displayIdles();
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {
-      start = true;
+      gameState = 1;
     }
   }
 

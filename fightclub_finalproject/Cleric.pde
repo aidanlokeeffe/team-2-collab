@@ -9,7 +9,7 @@ class Cleric extends Unit {
     this.def = 5;
     this.movement = 2;
     this.range = 3;
-    this.id = "Archer";
+    this.id = "Cleric";
     this.p = player;
     this.alive = true;
   }

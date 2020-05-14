@@ -221,6 +221,18 @@ class Unit {
         }
       }
       else{
+        if (enemyId == "Archer") {
+          image(cavalryIdleRed[0], x1, y1);
+          image(archerIdle[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(cavalryIdleRed[0], x1, y1);
+          image(cavalryIdle[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(cavalryIdleRed[0], x1, y1);
+          image(infantryIdle[0], x2, y2);
+        }
       }
     }
     if (unitId == "Infantry") {
@@ -239,6 +251,18 @@ class Unit {
         }
       }
       else{
+         if (enemyId == "Archer") {
+          image(infantryIdleRed[0], x1, y1);
+          image(archerIdle[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(infantryIdleRed[0], x1, y1);
+          image(cavalryIdle[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(infantryIdleRed[0], x1, y1);
+          image(infantryIdle[0], x2, y2);
+        }
       
       }
     }

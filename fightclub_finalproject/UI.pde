@@ -5,6 +5,7 @@ color buttonBase = color(133, 87, 35);
 color buttonColor;
 int currentPlayer;
 boolean endTurnPressed = false;
+boolean roundCounterPrinted = false;
 
 class UI{
   
@@ -28,6 +29,9 @@ class UI{
         }
         else{
           currentTurn = 0;
+          roundCounterPrinted = false;
+          roundCounter += 1;
+          print();
           for (int i = 0; i < board.tiles.length; i++) {
             if (board.tiles[i].isOccupied() && board.tiles[i].currentUnit.p == 0) {
               board.tiles[i].currentUnit.hasAttacked = false;
@@ -59,6 +63,11 @@ class UI{
   
   //display the UI to the screen
   void display(int currentTurn, Node selectedTile){
+    
+    if (roundCounterPrinted == false){
+      print("ROUND " + roundCounter +"\n\n");
+      roundCounterPrinted = true;
+    }
     
     //change background color based on player
     if (currentTurn == 0){
@@ -92,7 +101,7 @@ class UI{
     }
     else if (selectedTile.isOccupied() == true){
       selectedTile.currentUnit.displayStats(selectedTile.currentUnit);
-      //selectedTile.currentUnit.displayCombat();
+      selectedTile.currentUnit.displayCombat();
     }
     else{
     }

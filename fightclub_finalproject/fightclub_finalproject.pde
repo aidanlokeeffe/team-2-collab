@@ -95,6 +95,10 @@ public Player P2;
 //P1 = 0, P2 = 1
 int currentTurn = 0;
 
+//Turn count
+
+int roundCounter = 0;
+
 //Declare the UI
 UI userInterface = new UI();
 
@@ -169,6 +173,10 @@ void setup(){
 void draw(){
   
   if (gameState == 2) {
+    if (roundCounter == 0){
+      print("Game Start!\n\n");
+      roundCounter += 1;
+    }
     board.display();
   
     P1.display();
@@ -208,6 +216,7 @@ void draw(){
       P2 = new Player(1);
  
       gameState = 2;
+      print("The match will be played on Level 1.\n\n");
     }
     else if(key == '2'){
        board = new Graph(35, 35, 2);
@@ -217,6 +226,7 @@ void draw(){
       P2 = new Player(1);
       
       gameState = 2;
+      print("The match will be played on Level 2.\n\n");
     }
     else if(key == '3'){
       board = new Graph(35, 35, 3);
@@ -226,10 +236,12 @@ void draw(){
       P2 = new Player(1);
       
       gameState = 2;
+      print("The match will be played on Level 3.\n\n");
     }
     
   }
   else if (gameState == 0){
+
     image(TitleScreen[0], width/2, height/2);
     plat1.display();
     plat1.displayCavalry();
@@ -239,6 +251,7 @@ void draw(){
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {
+      print("Thank you for playing Noble Souls!\n\n");
       gameState = 1;
     }
   }

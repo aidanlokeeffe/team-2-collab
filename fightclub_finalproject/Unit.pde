@@ -173,55 +173,73 @@ class Unit {
   }
 
   void combatForecast(int p, String unitId, String enemyId, int x1, int y1, int x2, int y2) {
-    if (p == 1) {
-      int xp, yp;
-      xp = x1;
-      yp = y1;
-      x1 = x2;
-      y1 = y2;
-      x2 = xp;
-      y2 = yp;
-    }
+
     if (unitId == "Archer") {
-      if (enemyId == "Archer") {
-        image(archerIdle[0], x1, y1);
-        image(archerIdleRed[0], x2, y2);
+      if (p == 0){
+        if (enemyId == "Archer") {
+           image(archerIdle[0], x1, y1);
+           image(archerIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(archerIdle[0], x1, y1);
+          image(cavalryIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(archerIdle[0], x1, y1);
+          image(infantryIdleRed[0], x2, y2);
+        }
       }
-      if (enemyId == "Cavalry") {
-        image(archerIdle[0], x1, y1);
-        image(cavalryIdleRed[0], x2, y2);
-      }
-      if (enemyId == "Infantry") {
-        image(archerIdle[0], x1, y1);
-        image(infantryIdleRed[0], x2, y2);
+      else{
+        if (enemyId == "Archer") {
+           image(archerIdleRed[0], x1, y1);
+           image(archerIdle[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(archerIdleRed[0], x1, y1);
+          image(cavalryIdle[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(archerIdleRed[0], x1, y1);
+          image(infantryIdle[0], x2, y2);
+        }
       }
     }
+    
     if (unitId == "Cavalry") {
-      if (enemyId == "Archer") {
-        image(cavalryIdle[0], x1, y1);
-        image(archerIdleRed[0], x2, y2);
+      if (p == 0){
+        if (enemyId == "Archer") {
+          image(cavalryIdle[0], x1, y1);
+          image(archerIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(cavalryIdle[0], x1, y1);
+          image(cavalryIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(cavalryIdle[0], x1, y1);
+          image(infantryIdleRed[0], x2, y2);
+        }
       }
-      if (enemyId == "Cavalry") {
-        image(cavalryIdle[0], x1, y1);
-        image(cavalryIdleRed[0], x2, y2);
-      }
-      if (enemyId == "Infantry") {
-        image(cavalryIdle[0], x1, y1);
-        image(infantryIdleRed[0], x2, y2);
+      else{
       }
     }
     if (unitId == "Infantry") {
-      if (enemyId == "Archer") {
-        image(infantryIdle[0], x1, y1);
-        image(archerIdleRed[0], x2, y2);
+      if (p == 0){
+        if (enemyId == "Archer") {
+          image(infantryIdle[0], x1, y1);
+          image(archerIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(infantryIdle[0], x1, y1);
+          image(cavalryIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(infantryIdle[0], x1, y1);
+          image(infantryIdleRed[0], x2, y2);
+        }
       }
-      if (enemyId == "Cavalry") {
-        image(infantryIdle[0], x1, y1);
-        image(cavalryIdleRed[0], x2, y2);
-      }
-      if (enemyId == "Infantry") {
-        image(infantryIdle[0], x1, y1);
-        image(infantryIdleRed[0], x2, y2);
+      else{
+      
       }
     }
   }

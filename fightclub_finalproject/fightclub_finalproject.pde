@@ -174,7 +174,7 @@ void draw(){
   
   if (gameState == 2) {
     if (roundCounter == 0){
-      print("Game Start!\n\n");
+      print("Game Start!\n");
       roundCounter += 1;
     }
     board.display();

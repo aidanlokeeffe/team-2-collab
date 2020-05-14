@@ -65,7 +65,7 @@ class UI{
   void display(int currentTurn, Node selectedTile){
     
     if (roundCounterPrinted == false){
-      print("ROUND " + roundCounter +"\n\n");
+      print("\n" + "ROUND " + roundCounter +"\n\n");
       roundCounterPrinted = true;
     }
     

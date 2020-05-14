@@ -96,13 +96,17 @@ public Player P2;
 int currentTurn = 0;
 
 //Turn count
-
 int roundCounter = 0;
 
 //Declare the UI
 UI userInterface = new UI();
 
+//Output .txt file
+PrintWriter output;
+
 void setup(){
+
+  output = createWriter("previousGameData.txt");
   // Basic setup
   size(1000, 700);
   imageMode(CENTER);

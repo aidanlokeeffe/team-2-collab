@@ -6,6 +6,7 @@ color buttonColor;
 int currentPlayer;
 boolean endTurnPressed = false;
 boolean roundCounterPrinted = false;
+boolean victoryPrinted = false;
 
 class UI{
   
@@ -111,16 +112,23 @@ class UI{
     rect(210, 280, 280, 140, 25, 25, 25, 25);
     fill(0);
     textSize(24);
-    text("Congrats!", 290, 320);
-    text("Player 2 wins!", 270,  350);
+    if (victoryPrinted == false){
+      text("Congrats!", 290, 320);
+      text("Player 2 wins!", 270,  350);
+      print("\n" + "Player 1's army has been defeated!" + "\n" + "Player 2 has won!");
+      victoryPrinted = true;
+    }
    }
    else if(P2.lost()){
     fill(255);
     rect(210, 280, 280, 140, 25, 25, 25, 25);
     fill(0);
     textSize(24);
-    text("Congrats!", 290, 320);
-    text("Player 1 wins!", 270,  350);
+    if (victoryPrinted == false){
+      text("Congrats!", 290, 320);
+      text("Player 1 wins!", 270,  350);
+      print("\n" + "Player 2's army has been defeated!" + "\n" + "Player 1 has won!");
+    }
    }
   
   }

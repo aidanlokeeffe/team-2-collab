@@ -32,7 +32,7 @@ class UI{
           currentTurn = 0;
           roundCounterPrinted = false;
           roundCounter += 1;
-          print();
+          output.flush();
           for (int i = 0; i < board.tiles.length; i++) {
             if (board.tiles[i].isOccupied() && board.tiles[i].currentUnit.p == 0) {
               board.tiles[i].currentUnit.hasAttacked = false;
@@ -66,7 +66,7 @@ class UI{
   void display(int currentTurn, Node selectedTile){
     
     if (roundCounterPrinted == false){
-      print("\n" + "ROUND " + roundCounter +"\n\n");
+      output.print("\n" + "ROUND " + roundCounter +"\n\n");
       roundCounterPrinted = true;
     }
     
@@ -115,8 +115,10 @@ class UI{
     if (victoryPrinted == false){
       text("Congrats!", 290, 320);
       text("Player 2 wins!", 270,  350);
-      print("\n" + "Player 1's army has been defeated!" + "\n" + "Player 2 has won!");
+      output.print("\n" + "Player 1's army has been defeated!" + "\n" + "Player 2 has won!");
       victoryPrinted = true;
+      output.flush();
+      output.close();
     }
    }
    else if(P2.lost()){
@@ -127,7 +129,9 @@ class UI{
     if (victoryPrinted == false){
       text("Congrats!", 290, 320);
       text("Player 1 wins!", 270,  350);
-      print("\n" + "Player 2's army has been defeated!" + "\n" + "Player 1 has won!");
+      output.print("\n" + "Player 2's army has been defeated!" + "\n" + "Player 1 has won!");
+      output.flush();
+      output.close();
     }
    }
   

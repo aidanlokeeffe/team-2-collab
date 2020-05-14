@@ -178,7 +178,8 @@ void draw(){
   
   if (gameState == 2) {
     if (roundCounter == 0){
-      print("Game Start!\n");
+      output.print("Game Start!\n");
+      output.flush();
       roundCounter += 1;
     }
     board.display();
@@ -220,7 +221,7 @@ void draw(){
       P2 = new Player(1);
  
       gameState = 2;
-      print("The match will be played on Level 1.\n\n");
+      output.print("The match will be played on Level 1.\n\n");
     }
     else if(key == '2'){
        board = new Graph(35, 35, 2);
@@ -230,7 +231,8 @@ void draw(){
       P2 = new Player(1);
       
       gameState = 2;
-      print("The match will be played on Level 2.\n\n");
+      output.print("The match will be played on Level 2.\n\n");
+
     }
     else if(key == '3'){
       board = new Graph(35, 35, 3);
@@ -240,7 +242,7 @@ void draw(){
       P2 = new Player(1);
       
       gameState = 2;
-      print("The match will be played on Level 3.\n\n");
+      output.print("The match will be played on Level 3.\n\n");
     }
     
   }
@@ -255,7 +257,7 @@ void draw(){
     image(TitleLogo[0], width/2, height/2 - 100);
     startb.display();
     if (startb.isClicked()) {
-      print("Thank you for playing Noble Souls!\n\n");
+      output.print("Thank you for playing Noble Souls!\n\n");
       gameState = 1;
     }
   }

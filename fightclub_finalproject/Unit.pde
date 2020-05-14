@@ -73,7 +73,7 @@ class Unit {
       this.x = coords[0];
       this.y = coords[1];
       this.location = label;
-      print("Player " + (p + 1) + " moves " + id + " from location " + currIdx + " to location " + nextIdx + ".\n");
+      output.print("Player " + (p + 1) + " moves " + id + " from location " + currIdx + " to location " + nextIdx + ".\n");
     } else {
       println("Someone is standing here");
     }
@@ -274,13 +274,13 @@ class Unit {
     int damage = this.atk;
     int newHealth = enemy.currenthp - damage;
     enemy.currenthp = newHealth;
-    print("Player " + (p +1) + "'s " + id + " attacks the enemy " + enemy.id + ".\n");
-    print("The enemy " + enemy.id + " takes " + damage + " damage.\n");
+    output.print("Player " + (p +1) + "'s " + id + " attacks the enemy " + enemy.id + ".\n");
+    output.print("The enemy " + enemy.id + " takes " + damage + " damage.\n");
     if(enemy.currenthp <= 0){
-      print("The enemy " + enemy.id + " died from the damage!\n");
+      output.print("The enemy " + enemy.id + " died from the damage!\n");
     }
     else{
-      print("They have " + newHealth + " health remaining.\n");
+      output.print("They have " + newHealth + " health remaining.\n");
     }
   }
 

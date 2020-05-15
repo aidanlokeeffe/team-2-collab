@@ -168,7 +168,7 @@ void setup(){
   //play music
   file = new SoundFile(this, "DistantLand.wav");
   //UNCOMMENT BELOW B4 WE SUBMIT SO MUSIC PLAYS
-  //file.loop();
+  file.loop();
   soundButton = new Music(735, 665);
   
 

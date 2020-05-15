@@ -26,6 +26,9 @@ II) The user inputs are:
 The title screen constitutes GUI 1, the level select GUI 2, and the gameplay and sidebar GUIs 3 and 4, respectively.
 
 III) Data Output:
+To the text file "previousGameData", the game (1) thanks the players for choosing Noble Souls, (2) records the chosen 
+level, and (3) records each players moves by which tile was left and which tile was entered on a numbered round-by-round 
+basis, where a round is defined one set of turns taken by blue, then red.
 
 III) Member Contributions:
 Russell Dickerson: Russell was responsible for the units themselves, for creating the art, 

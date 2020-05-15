@@ -3,3 +3,23 @@ Thank you for playing Noble Souls!
 The match will be played on Level 3.
 
 Game Start!
+
+ROUND 1
+
+Player 1 moves Infantry from location 68 to location 66.
+Player 2 moves Infantry from location 61 to location 63.
+
+ROUND 2
+
+Player 1 moves Infantry from location 66 to location 65.
+Player 2 moves Infantry from location 71 to location 72.
+
+ROUND 3
+
+Player 1 moves Infantry from location 78 to location 76.
+Player 2 moves Infantry from location 81 to location 82.
+
+ROUND 4
+
+Player 1 moves Infantry from location 88 to location 86.
+Player 2 moves Archer from location 60 to location 62.

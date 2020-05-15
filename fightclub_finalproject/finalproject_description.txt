@@ -1,0 +1,59 @@
+This is an extension of the submission for assignment 7, a tactical game called "Noble Souls". This is a two player game. 
+The goal is to eliminate all of your opponent's units.
+
+I) The rules of play are:
+(1) On a player's turn, they may select one unit, and move them to an available tile. A
+tile is available if it is not water, it is not occupied, and it is within the 
+units movement range.
+(2) If an enemy is within a unit's attack range, it may be attacked.
+(3) A player may end their turn without moving, with moving but without attacking,
+vice versa, or with moving and with attacking.
+(4) Each unit can attack once per turn.
+(5) If a unit's health drops to zero, then the unit is eliminated.
+(6) When you have eliminated all of your opponent's units, you win. This is the 
+end game condition.
+
+II) The user inputs are:
+(1) The start button.
+(2) Keys 1, 2, and 3 for level selection.
+(3) A unit may be selected with the mouse.
+(4) A unit may be moved with the mouse.
+(5) A player may select an enemy unit adjacent to their unit to attack via the gui on the right-hand side of the screen.
+(6) A player ends their turn by clicking the end turn button.
+(7) Either player may mute or unmute the sound using the button on the GUI.
+(8) A highlighted cursor follows the unit's mouse along the map.
+
+The title screen constitutes GUI 1, the level select GUI 2, and the gameplay and sidebar GUIs 3 and 4, respectively.
+
+III) Data Output:
+
+III) Member Contributions:
+Russell Dickerson: Russell was responsible for the units themselves, for creating the art, 
+for composing the music, and for implementing attacking for units and the combat forecast interface.
+Methods that Russell wrote include: (1) all display and constructor methods under unit classes, 
+(2) overButton, isMuted, update, and display methods in the Music class, (3) checkForEnemies, displayCombat,
+displayAttackButton, overAttackButton, combatForecast, attack, die, and the constructor for the Unit Class.
+Methods Russell helped out with were availableTiles in the Graph class, and the update and overtile in the 
+Node class. Additionally, Russell created the music for the game, and made all of the sprites and their
+animations, including the tile sprites for the map. 
+	Russell also animated and coded a large number of additional units. He created the title screen, and also
+implemented hierarchical animations on the title screen. He fixed bugs realted to combat as well.
+
+Angelo Gomez: Angelo was mostly responsible for implementing the UI seen on the right side of the board.
+He created the end turn button, the ability to see a units stats, and designed the colors of the interface.
+Additionally, Angelo worked on board by having tiles that highlight as you mouse over them and created the function
+that allows you to select a function and see the data of unit sitting on there. 
+	Angelo initiated the transfer of old code to the new program file. Angelo also did a lot of work to simplify the 
+UI code. He spotted and fixed other bugs throughout the code as well. Finally, Angelo programmed the data output.
+
+Aidan O'Keeffe: Aidan was broadly responsible for implementing the board. 
+Particular methods which Aidan either wrote or to which he was a contributor 
+include: (1) under Graph: constructor, setNodes, setEdges, addEdge, 
+hasVertex, getAdjacentUnvisitedVertex, getIndex, and availableTiles, (2) under
+Node: constructor, was visited, isOccupied, getLabel, getCoords, and display,
+(3) under Unit: constructor and Move, and (4) under Player, constructor and
+display.
+	Aidan modidified the availableTiles method to use breadth-first search
+instead of depth-first search, which cleared bugs related to this method. He also
+created the new maps and programmed the level select.
+

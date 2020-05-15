@@ -39,8 +39,9 @@ displayAttackButton, overAttackButton, combatForecast, attack, die, and the cons
 Methods Russell helped out with were availableTiles in the Graph class, and the update and overtile in the 
 Node class. Additionally, Russell created the music for the game, and made all of the sprites and their
 animations, including the tile sprites for the map. 
-	Russell also animated and coded a large number of additional units including wizards, clerics, and lumberjacks. 
-He created the title screen, and also implemented hierarchical animations on the title screen. He also created the art assets 
+	Russell also animated and coded a large number of additional units including wizards, clerics, and lumberjacks. He ended up
+implementing wizards in the game by making each player have a 50/50 chance of getting either wizards or archers since they are comparable
+in power. He created the title screen, and also implemented hierarchical animations on the title screen. He also created the art assets 
 for the level select screen. He fixed bugs related to combat as well.
 
 Angelo Gomez: Angelo was mostly responsible for implementing the UI seen on the right side of the board.

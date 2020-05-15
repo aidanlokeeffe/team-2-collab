@@ -3,9 +3,9 @@ class Cavalry extends Unit {
   Cavalry(String label, int player) {
     super(label);
     this.hasAttacked = false;
-    this.hp = 35;
-    this.currenthp = 35;
-    this.atk = 10;
+    this.hp = 55;
+    this.currenthp = 55;
+    this.atk = 15;
     this.def = 10;
     this.movement = 4;
     this.range = 1;

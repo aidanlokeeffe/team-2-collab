@@ -2,6 +2,8 @@ class Player{
   ArrayList<Infantry> swords = new ArrayList<Infantry>();
   ArrayList<Archer> bows = new ArrayList<Archer>();
   ArrayList<Cavalry> knights = new ArrayList<Cavalry>();
+  ArrayList<Wizard> mages = new ArrayList<Wizard>();
+  float rng = random(0,2);
 
   // 0: Player 1;
   // 1: Player 2
@@ -21,14 +23,24 @@ class Player{
         Infantry next = new Infantry(place, p);
         swords.add(next);
       }
-
+      
+      if (rng < 1) {
       // Create archers
       for(int i=99; i<105; i++) {
         char col = (char) i;
         String place = col + "10";
         Archer next = new Archer(place, p);
         bows.add(next);
-      }
+      }}
+      
+      if (rng >= 1) {
+      // create mages
+      for(int i=99; i<105; i++) {
+        char col = (char) i;
+        String place = col + "10";
+        Wizard next = new Wizard(place, p);
+        mages.add(next);
+      }}
 
       // Create cavalry
       for(int i=0; i<2; i++) {
@@ -50,14 +62,24 @@ class Player{
         Infantry next = new Infantry(place, p);
         swords.add(next);
       }
-
+      
+      if (rng < 1) {
       // Create archers
       for(int i=99; i<105; i++) {
         char col = (char) i;
         String place = col + "1";
         Archer next = new Archer(place, p);
         bows.add(next);
-      }
+      }}
+      
+      if (rng >= 1) {
+      // Create wizards
+      for(int i=99; i<105; i++) {
+        char col = (char) i;
+        String place = col + "1";
+        Wizard next = new Wizard(place, p);
+        mages.add(next);
+      }}
 
       // Create cavalry
       for(int i=0; i<2; i++) {
@@ -79,9 +101,14 @@ class Player{
     for (Infantry inf : this.swords) {
       inf.display();
     }
+    if (rng < 1) {
     for (Archer arc : this.bows) {
       arc.display();
-    }
+    }}
+    if (rng >= 1) {
+    for (Wizard wiz : this.mages) {
+      wiz.display();
+    }}
     for (Cavalry cal : this.knights) {
       cal.display();
     }
@@ -97,9 +124,14 @@ class Player{
     for(Infantry inf : this.swords) {
       myArmyIsNoMore = myArmyIsNoMore && ! inf.alive;
     }
+    if (rng < 1) {
     for(Archer arc : this.bows) {
       myArmyIsNoMore = myArmyIsNoMore && ! arc.alive;
-    }
+    }}
+    if (rng >= 1) {
+    for(Wizard wiz : this.mages) {
+      myArmyIsNoMore = myArmyIsNoMore && ! wiz.alive;
+    }}
     for(Cavalry horsey : this.knights) {
       myArmyIsNoMore = myArmyIsNoMore && ! horsey.alive;
     }

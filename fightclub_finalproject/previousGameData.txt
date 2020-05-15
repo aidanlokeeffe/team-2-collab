@@ -1,25 +1,240 @@
 Thank you for playing Noble Souls!
 
-The match will be played on Level 3.
+The match will be played on Level 2.
 
 Game Start!
 
 ROUND 1
 
-Player 1 moves Infantry from location 68 to location 66.
-Player 2 moves Infantry from location 61 to location 63.
+Player 1 moves Wizard from location 69 to location 67.
 
 ROUND 2
 
-Player 1 moves Infantry from location 66 to location 65.
-Player 2 moves Infantry from location 71 to location 72.
+Player 1 moves Wizard from location 67 to location 65.
 
 ROUND 3
 
-Player 1 moves Infantry from location 78 to location 76.
-Player 2 moves Infantry from location 81 to location 82.
+Player 1 moves Wizard from location 65 to location 63.
 
 ROUND 4
 
-Player 1 moves Infantry from location 88 to location 86.
-Player 2 moves Archer from location 60 to location 62.
+Player 1 moves Wizard from location 63 to location 62.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 5
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 6
+
+Player 1 moves Wizard from location 62 to location 72.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 7
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 8
+
+Player 1 moves Wizard from location 72 to location 82.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 9
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 10
+
+Player 1 moves Wizard from location 82 to location 92.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 11
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 12
+
+Player 1 moves Wizard from location 92 to location 91.
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+They have 25 health remaining.
+
+ROUND 13
+
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+The enemy Cavalry died from the damage!
+
+ROUND 14
+
+Player 1 moves Wizard from location 91 to location 81.
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+They have 25 health remaining.
+
+ROUND 15
+
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+The enemy Cavalry died from the damage!
+
+ROUND 16
+
+Player 1 moves Wizard from location 81 to location 71.
+Player 1's Wizard attacks the enemy Wizard.
+The enemy Wizard takes 30 damage.
+The enemy Wizard died from the damage!
+
+ROUND 17
+
+Player 1 moves Wizard from location 71 to location 61.
+Player 1's Wizard attacks the enemy Wizard.
+The enemy Wizard takes 30 damage.
+The enemy Wizard died from the damage!
+
+ROUND 18
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 19
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 20
+
+Player 1 moves Wizard from location 61 to location 60.
+Player 1's Wizard attacks the enemy Wizard.
+The enemy Wizard takes 30 damage.
+The enemy Wizard died from the damage!
+
+ROUND 21
+
+Player 1 moves Wizard from location 60 to location 50.
+Player 1's Wizard attacks the enemy Wizard.
+The enemy Wizard takes 30 damage.
+The enemy Wizard died from the damage!
+
+ROUND 22
+
+Player 1 moves Wizard from location 50 to location 40.
+Player 1's Wizard attacks the enemy Wizard.
+The enemy Wizard takes 30 damage.
+The enemy Wizard died from the damage!
+
+ROUND 23
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 24
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 25
+
+Player 1 moves Wizard from location 40 to location 30.
+Player 1's Wizard attacks the enemy Wizard.
+The enemy Wizard takes 30 damage.
+The enemy Wizard died from the damage!
+
+ROUND 26
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 27
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 28
+
+Player 1 moves Wizard from location 30 to location 31.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 29
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 30
+
+Player 1 moves Wizard from location 31 to location 21.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 31
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 32
+
+Player 1 moves Wizard from location 21 to location 11.
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+They have 5 health remaining.
+
+ROUND 33
+
+Player 1's Wizard attacks the enemy Infantry.
+The enemy Infantry takes 30 damage.
+The enemy Infantry died from the damage!
+
+ROUND 34
+
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+They have 25 health remaining.
+
+ROUND 35
+
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+The enemy Cavalry died from the damage!
+
+ROUND 36
+
+Player 1 moves Wizard from location 11 to location 10.
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+They have 25 health remaining.
+
+ROUND 37
+
+Player 1's Wizard attacks the enemy Cavalry.
+The enemy Cavalry takes 30 damage.
+The enemy Cavalry died from the damage!
+
+Player 2's army has been defeated!
+Player 1 has won!

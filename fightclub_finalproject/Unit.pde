@@ -34,6 +34,9 @@ class Unit {
       } else if (unitID == "Infantry") {
         image(infantryIdle[0], 900, 100);
       }
+      else if (unitID == "Wizard") {
+        image(wizardIdle[0], 900, 100);
+      }
     } else {
       fill(229, 195, 71);
       rect(720, 60, 260, 240, 25, 25, 25, 25);
@@ -43,6 +46,9 @@ class Unit {
         image(cavalryIdleRed[0], 900, 100);
       } else if (unitID == "Infantry") {
         image(infantryIdleRed[0], 900, 100);
+      }
+      else if (unitID == "Wizard") {
+        image(wizardIdleRed[0], 900, 100);
       }
     }
     textSize(30);
@@ -142,8 +148,6 @@ class Unit {
     }
   }
 
-  //problem units can attack when it isnt their turn
-
   void displayAttackButton(int p, int x, int y, Unit enemy) {
     if (p == 0) {
       fill(35, 63, 242);
@@ -189,6 +193,10 @@ class Unit {
           image(archerIdle[0], x1, y1);
           image(infantryIdleRed[0], x2, y2);
         }
+        if (enemyId == "Wizard") {
+          image(archerIdle[0], x1, y1);
+          image(wizardIdleRed[0], x2, y2);
+        }
       }
       else{
         if (enemyId == "Archer") {
@@ -202,6 +210,10 @@ class Unit {
         if (enemyId == "Infantry") {
           image(archerIdleRed[0], x1, y1);
           image(infantryIdle[0], x2, y2);
+        }
+        if (enemyId == "Wizard") {
+          image(archerIdleRed[0], x1, y1);
+          image(wizardIdle[0], x2, y2);
         }
       }
     }
@@ -220,6 +232,10 @@ class Unit {
           image(cavalryIdle[0], x1, y1);
           image(infantryIdleRed[0], x2, y2);
         }
+        if (enemyId == "Wizard") {
+          image(cavalryIdle[0], x1, y1);
+          image(wizardIdleRed[0], x2, y2);
+        }
       }
       else{
         if (enemyId == "Archer") {
@@ -233,6 +249,10 @@ class Unit {
         if (enemyId == "Infantry") {
           image(cavalryIdleRed[0], x1, y1);
           image(infantryIdle[0], x2, y2);
+        }
+        if (enemyId == "Wizard") {
+          image(cavalryIdleRed[0], x1, y1);
+          image(wizardIdle[0], x2, y2);
         }
       }
     }
@@ -250,6 +270,10 @@ class Unit {
           image(infantryIdle[0], x1, y1);
           image(infantryIdleRed[0], x2, y2);
         }
+        if (enemyId == "Wizard") {
+          image(infantryIdle[0], x1, y1);
+          image(wizardIdleRed[0], x2, y2);
+        }
       }
       else{
          if (enemyId == "Archer") {
@@ -263,6 +287,49 @@ class Unit {
         if (enemyId == "Infantry") {
           image(infantryIdleRed[0], x1, y1);
           image(infantryIdle[0], x2, y2);
+        }
+        if (enemyId == "Wizard") {
+          image(infantryIdleRed[0], x1, y1);
+          image(wizardIdle[0], x2, y2);
+        }
+      
+      }
+    }
+    if (unitId == "Wizard") {
+      if (p == 0){
+        if (enemyId == "Archer") {
+          image(wizardIdle[0], x1, y1);
+          image(archerIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(wizardIdle[0], x1, y1);
+          image(cavalryIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(wizardIdle[0], x1, y1);
+          image(infantryIdleRed[0], x2, y2);
+        }
+        if (enemyId == "Wizard") {
+          image(wizardIdle[0], x1, y1);
+          image(wizardIdleRed[0], x2, y2);
+        }
+      }
+      else{
+         if (enemyId == "Archer") {
+          image(wizardIdleRed[0], x1, y1);
+          image(archerIdle[0], x2, y2);
+        }
+        if (enemyId == "Cavalry") {
+          image(wizardIdleRed[0], x1, y1);
+          image(cavalryIdle[0], x2, y2);
+        }
+        if (enemyId == "Infantry") {
+          image(wizardIdleRed[0], x1, y1);
+          image(infantryIdle[0], x2, y2);
+        }
+        if (enemyId == "Wizard") {
+          image(wizardIdleRed[0], x1, y1);
+          image(wizardIdle[0], x2, y2);
         }
       
       }
